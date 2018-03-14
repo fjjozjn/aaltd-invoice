@@ -1,4 +1,4 @@
-<!--<div style="text-align:center; margin:100px auto; color:#06C; font-weight:bold;">欢迎来到 樂思供應鏈管理系統 。</div>-->
+<!--<div style="text-align:center; margin:100px auto; color:#06C; font-weight:bold;">欢迎来到 Assential Accessories LTD供應鏈管理系統 。</div>-->
 
 <?php
 

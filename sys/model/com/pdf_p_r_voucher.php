@@ -128,13 +128,13 @@ if(isset($_GET['prv_id']) && $_GET['prv_id'] != ''){
     $html .= '<table align="center" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="30%"></td>
-					<td width="40%">Lux Design Limited</td>
+					<td width="40%">Assential Accessories LTD</td>
 					<td width="15%"></td>
 					<td width="15%"></td>
 				</tr>
 				<tr>
 					<td width="30%"></td>
-					<td width="40%">樂思(配飾) 設計有限公司</td>
+					<td width="40%"></td>
 					<td width="15%"></td>
 					<td width="15%"></td>
 				</tr>

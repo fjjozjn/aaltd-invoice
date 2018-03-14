@@ -152,9 +152,9 @@ for($i = 0; $i < count($result2); $i++){
             $img_html = '<img src="/sys/'.$pic_path_watermark . 'l_water_'.$result2[$i]['photos'].'" align="middle" />';
         }
 
-        //$img_html = '<div style="width:200px;height:150px;background-image:url(\'http://223.197.254.157/sys/'.$pic_path_small.'l_'.$result2[$i]['photos'].'\');">Lux Design Ltd</div>';
-        //$img_html = '<div style="position:relative;"><img width="200px" height="150px" src="/sys/'.$pic_path_small . 'l_'.$result2[$i]['photos'].'" /><div style="position:absolute;width:200px;height:150px;z-indent:2;left:0;top:50px;color:grey;font-size:10;">Lux Design Ltd</div></div>';
-        //$img_html = '<span style="background-image:url(\'/sys/'.$pic_path_small.'l_'.$result2[$i]['photos'].'\');">&nbsp;Lux Design Ltd&nbsp;</span>';
+        //$img_html = '<div style="width:200px;height:150px;background-image:url(\'http://223.197.254.157/sys/'.$pic_path_small.'l_'.$result2[$i]['photos'].'\');">Assential Accessories LTD</div>';
+        //$img_html = '<div style="position:relative;"><img width="200px" height="150px" src="/sys/'.$pic_path_small . 'l_'.$result2[$i]['photos'].'" /><div style="position:absolute;width:200px;height:150px;z-indent:2;left:0;top:50px;color:grey;font-size:10;">Assential Accessories LTD</div></div>';
+        //$img_html = '<span style="background-image:url(\'/sys/'.$pic_path_small.'l_'.$result2[$i]['photos'].'\');">&nbsp;Assential Accessories LTD&nbsp;</span>';
     }
 
     if($i % $col_num == 0){

@@ -67,7 +67,7 @@ if(!$myerror->getError()){
 
 <BR><HR>
 <div align='center'>	
-	copyright &copy 2011-<?=date("Y");?> LUX DESIGN LTD All rights reserved
+	copyright &copy 2018-<?=date("Y");?> Assential Accessories LTD All rights reserved
 </div>
 
 </body>

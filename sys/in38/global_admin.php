@@ -1,6 +1,6 @@
 <?
 if(!defined('BEEN_INCLUDE'))exit('Welcome to The Matrix');
-define('SITE_NAME', 'LUX ERP SYSTEM');
+define('SITE_NAME', 'Assential Accessories LTD');
 define('SITE_VER', '');
 
 //specify functions for admin system

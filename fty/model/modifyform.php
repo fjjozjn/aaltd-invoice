@@ -258,7 +258,7 @@ judgeFtyPerm( (isset($_GET['modid'])?$_GET['modid']:'').(isset($_GET['delid'])?$
                             $large_photo_water = 'l_water_' . $target;
                             if($_POST['p_show_in_catalog'] && $_POST['p_theme'] == '7'){
                                 makethumb($pic_path_com.$target, $pic_path_small.$large_photo, 'l');
-                                createWordsWatermark($pic_path_small.$large_photo, 'Lux Design Ltd', '12', '200,170,200', '5', ROOT_DIR.'font/arial.ttf', '0', $pic_path_watermark.$large_photo_water);
+                                createWordsWatermark($pic_path_small.$large_photo, 'Assential Accessories LTD', '12', '200,170,200', '5', ROOT_DIR.'font/arial.ttf', '0', $pic_path_watermark.$large_photo_water);
                             }*/
 
                             $add_tip = 'Upload photo '.$target.' success! ';

@@ -124,9 +124,9 @@ if ($myerror->getWarn()) {
             $rtn = $mysql->qone('select email_fty_user_info_to, email_admin_request_to from setting');
             $account_info = array('date' => date('Y-m-d'));
             //邮件的信息
-            $info1 = "你好,<br />付款申请单已核批，内容如下<br />'.$email_content.'<br />详情请登入系统查看.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Lux Design Limited";
-            $info2 = "你好,<br />付款申请单已核批，内容如下<br />'.$email_content.'<br />详情请登入系统查看.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Lux Design Limited";
-            $info3 = $_SESSION['ftylogininfo']['aName']." 你好,<br />付款申请单已核批，内容如下<br />'.$email_content.'<br />详情请登入系统查看.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Lux Design Limited";
+            $info1 = "你好,<br />付款申请单已核批，内容如下<br />'.$email_content.'<br />详情请登入系统查看.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Assential Accessories LTD";
+            $info2 = "你好,<br />付款申请单已核批，内容如下<br />'.$email_content.'<br />详情请登入系统查看.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Assential Accessories LTD";
+            $info3 = $_SESSION['ftylogininfo']['aName']." 你好,<br />付款申请单已核批，内容如下<br />'.$email_content.'<br />详情请登入系统查看.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Assential Accessories LTD";
 
             send_mail(trim($rtn['email_fty_user_info_to']), '', "付款申请单 - ".$_GET['approveId'], $info1, $account_info);
             send_mail(trim($rtn['email_admin_request_to']), '', "付款申请单 - ".$_GET['approveId'], $info2, $account_info);

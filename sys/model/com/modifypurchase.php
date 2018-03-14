@@ -74,8 +74,8 @@ if($myerror->getWarn()){
                     foreach($rtn_user as $v){
                         $account_info = array('date' => date('Y-m-d'));
                         //邮件的信息
-                        //$info = "你好,<br />附件為新的工廠訂單 ".$_GET['approve_po_no'].", 要求出货日期為".$rtn['expected_date'].", 你亦可以在樂思系統內查看及覆期.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Lux Design Limited";
-                        $info = $v['AdminName']." 你好,<br />新的工廠訂單 ".$_GET['approve_po_no'].", 要求出货日期為".$rtn['expected_date'].", 你亦可以在樂思系統內查看及覆期.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Lux Design Limited";
+                        //$info = "你好,<br />附件為新的工廠訂單 ".$_GET['approve_po_no'].", 要求出货日期為".$rtn['expected_date'].", 你亦可以在Assential Accessories LTD系統內查看及覆期.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Assential Accessories LTD";
+                        $info = $v['AdminName']." 你好,<br />新的工廠訂單 ".$_GET['approve_po_no'].", 要求出货日期為".$rtn['expected_date'].", 你亦可以在Assential Accessories LTD系統內查看及覆期.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Assential Accessories LTD";
 
                         send_mail($v['AdminEmail'], '', "新的工廠訂廠 - ".$_GET['approve_po_no']." (ETD: ".$rtn['expected_date'].")", $info, $account_info);
                         $notice .= $v['AdminName'].' ';
@@ -88,8 +88,8 @@ if($myerror->getWarn()){
                     $notice .= 'send mail to ';
                     $account_info = array('date' => date('Y-m-d'));
                     //邮件的信息
-                    //$info = "你好,<br />附件為新的工廠訂單 ".$_GET['approve_po_no'].", 要求出货日期為".$rtn['expected_date'].", 你亦可以在樂思系統內查看及覆期.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Lux Design Limited";
-                    $info = trim($rtn['attention'])." 你好,<br />新的工廠訂單 ".$_GET['approve_po_no'].", 要求出货日期為".$rtn['expected_date'].", 你亦可以在樂思系統內查看及覆期.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Lux Design Limited";
+                    //$info = "你好,<br />附件為新的工廠訂單 ".$_GET['approve_po_no'].", 要求出货日期為".$rtn['expected_date'].", 你亦可以在Assential Accessories LTD系統內查看及覆期.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Assential Accessories LTD";
+                    $info = trim($rtn['attention'])." 你好,<br />新的工廠訂單 ".$_GET['approve_po_no'].", 要求出货日期為".$rtn['expected_date'].", 你亦可以在Assential Accessories LTD系統內查看及覆期.<br />(此郵件為系統訊息, 請勿回覆)<br />Best Regards,<br />Assential Accessories LTD";
 
                     send_mail($user_rtn['email'], '', "新的工廠訂廠 - ".$_GET['approve_po_no']." (ETD: ".$rtn['expected_date'].")", $info, $account_info);
                     $notice .= trim($rtn['attention']).' ';

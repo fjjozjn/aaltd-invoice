@@ -802,7 +802,7 @@ if(strpos($act, 'formdetail') !== 0){
     <HR>
 <? } ?>
 <div align='center'>
-    copyright &copy 2011-<?=date("Y");?> LUX DESIGN LTD ALL RIGHTS RESERVED
+    copyright &copy 2018-<?=date("Y");?> Assential Accessories LTD ALL RIGHTS RESERVED
 </div>
 
 </body>

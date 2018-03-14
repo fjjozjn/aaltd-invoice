@@ -57,7 +57,7 @@ $myerror->getMsg();
 </td></tr></table>
 <BR><HR>
 <div align='center'>	
-	copyright &copy <?=date("Y");?>  LUX DESIGN LTD All rights reserved
+	copyright &copy 2018-<?=date("Y");?> Assential Accessories LTD All rights reserved
 </div>
 
 </body>

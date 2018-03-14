@@ -128,14 +128,14 @@ if(isset($_GET['pcv_id']) && $_GET['pcv_id'] != ''){
     $html .= '<table align="center" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="25%"></td>
-					<td width="35%">Lux Design Limited</td>
+					<td width="35%">Assential Accessories LTD</td>
 					<td width="12%"></td>
 					<td width="12%"></td>
 					<td width="16%"></td>
 				</tr>
 				<tr>
 					<td width="25%"></td>
-					<td width="35%">樂思(配飾) 設計有限公司</td>
+					<td width="35%"></td>
 					<td width="12%"></td>
 					<td width="12%"></td>
 					<td width="16%"></td>
