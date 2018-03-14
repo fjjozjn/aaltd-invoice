@@ -1,1 +1,0 @@
-<div style="text-align:center; margin:100px auto; color:#06C; font-weight:bold;">Welcome to Lux POS System</div>
