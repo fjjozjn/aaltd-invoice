@@ -55,6 +55,3 @@ if(in_array($act, $specialList)){
 }else{
 	require_once('./page.php');
 }
-
-
-?>

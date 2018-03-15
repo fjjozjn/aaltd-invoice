@@ -40,7 +40,7 @@ require 'class.pop3.php';
 
 function send_mail($to, $toname, $subject, $body, $msg, $attachmentFile = '', $attachmentName = '', $mail_info = '')
 {
-
+    return false;
     //20160911
     //global $mail_info;
     if (!$mail_info) {
