@@ -48,7 +48,7 @@ if(!IS_DIST){
 	</tr>		
 	<tr>
 		<td width="38%">&nbsp;</td>
-		<td align='center' width="20%" background="../sys/images/banner_bg.gif"><img src="images/gologo.jpg"  alt="" width="180" height="108"></td>		
+		<td align='center' width="20%"><img src="images/gologo.jpg"></td>
 		<td width="42%">&nbsp;</td>
 	</tr>	
 </table>

@@ -92,9 +92,9 @@ checkAdminLogin();
 if(strpos($act, 'formdetail') !== 0){
     ?>
 
-    <table width='100%' border='0' cellpadding='0' cellspacing='0' bgcolor='#FFFFFF' background="images/banner_bg.gif">
+    <table width='100%' border='0' cellpadding='0' cellspacing='0'>
     <tr>
-        <td width='180' rowspan='3'><img src="images/gologo.jpg"  alt="" width="180" height="108"></td>
+        <td width='180' rowspan='3'><img src="images/gologo.jpg"></td>
         <td width='35' height="35">&nbsp;</td>
         <td width="400" align='left' class='headertitle'><?=SITE_NAME.SITE_VER?></td>
         <td align='left' class='normal'>&nbsp;</td>
