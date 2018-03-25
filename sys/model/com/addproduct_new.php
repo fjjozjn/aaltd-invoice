@@ -179,10 +179,10 @@ if($myerror->getError()){
 
 
 ?>
-<h1 class="green">PRODUCT<em>* indicates required fields</em></h1>
+<!-- <h1 class="green">PRODUCT<em>* indicates required fields</em></h1> -->
 
-    <fieldset>
-        <legend class='legend'>Add Product 1.Upload image</legend>
+   <!--  <fieldset>
+        <legend class='legend'>Add Product 1.Upload image</legend> -->
         <?
         /*if(isset($_SESSION['upload_photo_add']) && $_SESSION['upload_photo_add'] != ''){
             $arr = getimagesize($pic_path_com . $_SESSION['upload_photo_add']);
@@ -206,9 +206,9 @@ if($myerror->getError()){
             */
         //}
         ?>
-    </fieldset>
+    <!-- </fieldset>
     <fieldset>
-        <legend class='legend'>2.Fill the form</legend>
+        <legend class='legend'>2.Fill the form</legend> -->
         <table width="100%" id="table">
             <tr valign="top">
                 <td width="25%"><? $goodsForm->show('p_type');?></td>
@@ -236,11 +236,11 @@ if($myerror->getError()){
                 <td width="25%"><? $goodsForm->show('p_ccode');?></td>
                 <td width="25%"><? $goodsForm->show('p_exclusive_to');?></td>
                 <td width="25%"><? $goodsForm->show('p_theme');?></td>
-                <td width="25%"><? $goodsForm->show('p_show_in_catalog');?></td>
+                <td width="25%"><? /*$goodsForm->show('p_show_in_catalog');*/?></td>
             </tr>
             <tr>
                 <td width="25%"><? $goodsForm->show('p_suggested_price');?></td>
-                <td width="25%"><div class="set"><label for="p_product_file" class="formtitle">Upload PDF File</label><div class="formfield"><input type='file' name='product_file' id='product_file' /></div></div></td>
+                <td width="25%"><!-- <div class="set"><label for="p_product_file" class="formtitle">Upload PDF File</label><div class="formfield"><input type='file' name='product_file' id='product_file' /></div></div> --></td>
                 <td width="25%">&nbsp;</td>
                 <td width="25%">&nbsp;</td>
             </tr>
@@ -249,7 +249,7 @@ if($myerror->getError()){
         <?
         $goodsForm->show('submitbtn');
         ?>
-    </fieldset>
+    <!-- </fieldset> -->
 <?
     $goodsForm->end();
 }

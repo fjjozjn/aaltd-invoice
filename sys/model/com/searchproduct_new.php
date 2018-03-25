@@ -90,7 +90,7 @@ if($myerror->getWarn()){
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
     ?>
-    <h1 class="green">PRODUCT<em>* indicates required fields</em></h1>
+    <!--<h1 class="green">PRODUCT<em>* indicates required fields</em></h1>-->
 
     <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
@@ -122,12 +122,12 @@ if($myerror->getWarn()){
                             <td align="right">End Date : </td>
                             <td align="left"><? $form->show('end_date'); ?></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td align="right">Show in catalog : </td>
-                            <td align="left"><? $form->show('show_in_catalog'); ?></td>
+                            <td align="left"><? /*$form->show('show_in_catalog');*/ ?></td>
                             <td align="right">Theme : </td>
-                            <td align="left"><? $form->show('theme'); ?></td>
-                        </tr>
+                            <td align="left"><? /*$form->show('theme');*/ ?></td>
+                        </tr> -->
                         <tr><td>&nbsp;</td></tr>
                         <tr>
                             <td width="100%" colspan='4'>
@@ -235,7 +235,7 @@ if($myerror->getWarn()){
 
         //$rs->col_width = "100";
         $rs->SetRecordCol("Photos", "photos");
-        $rs->SetRecordCol("File", "product_file");
+        //$rs->SetRecordCol("File", "product_file");
         $rs->SetRecordCol("Product ID", "pid");
         $rs->SetRecordCol("Description", "description");
         $rs->SetRecordCol("Desc(Chi)", "description_chi");
@@ -246,13 +246,13 @@ if($myerror->getWarn()){
         $rs->SetRecordCol("Cost Remark", "cost_remark");
         $rs->SetRecordCol("Exclusive to", "exclusive_to");
         $rs->SetRecordCol("Suggested Price", "suggested_price");
-        $rs->SetRecordCol("Show In Catalog", "show_in_catalog");
+        //$rs->SetRecordCol("Show In Catalog", "show_in_catalog");
         $rs->SetRecordCol("Creation Date", "in_date");
         $rs->SetRecordCol("Last Update", "mod_date");
 
         $sort = GENERAL_NO;
         $edit = GENERAL_YES;
-        $rs->SetRecordCol("BOM", "pid", $sort, $edit,"?act=formdetail","gid");
+        //$rs->SetRecordCol("BOM", "pid", $sort, $edit,"?act=formdetail","gid");
         $rs->SetRecordCol("HISTORY", "pid", $sort, $edit,"?a=1","pid");
         $rs->SetRecordCol("MODIFY", "pid", $sort, $edit,"?act=com-modifyproduct_new","modid");
         $rs->SetRecordCol("DEL", "pid", $sort, $edit,"?act=com-modifyproduct_new","delid");

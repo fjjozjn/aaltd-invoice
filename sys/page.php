@@ -47,7 +47,7 @@ checkAdminLogin();
     }
     ?>
 
-    <script type="text/javascript" language="JavaScript1.2">
+    <!-- <script type="text/javascript" language="JavaScript1.2">
         function jsClock(){
             //current date time update
             var now=new Date(); now.hrs=now.getHours(); now.min=now.getMinutes(); now.sec=now.getSeconds();
@@ -66,7 +66,7 @@ checkAdminLogin();
         $(function(){
             jsClock();
         });
-    </script>
+    </script> -->
 
     <script type="text/javascript">
         <? if($_SESSION['logininfo']['aName'] != 'ZJN'){ //我的测试不记录进去 ?>
@@ -88,10 +88,9 @@ checkAdminLogin();
 <body bgcolor="#FFFFFF">
 
 <?php
-//20150331
-if(strpos($act, 'formdetail') !== 0){
+//20180324 一般都不显示menu
+if(strpos($act, 'menu') === 0){
     ?>
-
     <table width='100%' border='0' cellpadding='0' cellspacing='0'>
     <tr>
         <td width='180' rowspan='3'><img src="images/gologo.jpg"></td>
@@ -103,8 +102,8 @@ if(strpos($act, 'formdetail') !== 0){
     <tr>
         <td>&nbsp;</td>
         <td class='normal'>Login User : <?=@$_SESSION["logininfo"]["aName"]?></td>
-        <td width='110' align='left' class='normal'>Current Time :</td>
-        <td align='left' id='current_datetime' class='normal_num'>-</td>
+        <!-- <td width='110' align='left' class='normal'>Current Time :</td>
+        <td align='left' id='current_datetime' class='normal_num'>-</td> -->
     </tr>
     <tr>
     <td>&nbsp;</td>
@@ -798,12 +797,12 @@ if(strpos($act, 'formdetail') !== 0){
     <!-- content end //-->
 </div>
 <BR>
-<? if($act != 'main'){//main页面由于div多，所以分割没法在正常的位置显示 ?>
+<? /*if($act != 'main'){//main页面由于div多，所以分割没法在正常的位置显示 ?>
     <HR>
-<? } ?>
-<div align='center'>
-    copyright &copy 2018-<?=date("Y");?> Assential Accessories LTD ALL RIGHTS RESERVED
-</div>
+<? }*/ ?>
+<!-- <div align='center'>
+    copyright &copy 2018-<?=/*date("Y")*/"";?> Assential Accessories LTD ALL RIGHTS RESERVED
+</div> -->
 
 </body>
 </html>

@@ -5,7 +5,7 @@
  * Time: 15:07
  */
 
-// http://aaltd-inovice.cxm/auth/auth.php?aAdminEmail=2322289219@qq.com&aFtyName=fjjozjn&aID=2&aLogin=fjjozjn&aName=fjjozjn&aNameChi=zjn
+// http://aaltd-invoice.cxm/auth/auth.php?aAdminEmail=2322289219@qq.com&aFtyName=fjjozjn&aID=2&aLogin=fjjozjn&aName=fjjozjn&aNameChi=zjn
 
 //打开session
 if(session_id() == '') {

@@ -46,11 +46,11 @@ if(!IS_DIST){
 }
 ?>
 
-<script type="text/javascript" language="JavaScript1.2">
+<!-- <script type="text/javascript" language="JavaScript1.2">
 function jsClock(){
 	//current date time update
 	var now=new Date(); now.hrs=now.getHours(); now.min=now.getMinutes(); now.sec=now.getSeconds();
-	
+
 	now.hrs=((now.hrs<10)? "0" : "")+now.hrs;
 	now.min=((now.min<10)? "0" : "")+now.min;
 	now.sec=((now.sec<10)? "0" : "")+now.sec;
@@ -62,10 +62,10 @@ function jsClock(){
 	setTimeout('jsClock()',1000);
 }
 
-$(function(){ 
-	jsClock(); 
+$(function(){
+	jsClock();
 });
-</script>
+</script> -->
 
 <script type="text/javascript">
 <? if($_SESSION['ftylogininfo']['aName'] != 'ZJN'){ //我的测试不记录进去 ?>
@@ -85,7 +85,10 @@ $(function(){
 </head>
 
 <body bgcolor="#FFFFFF">
-
+<?php
+//20180324 一般都不显示menu
+if(strpos($act, 'menu') === 0){
+    ?>
 <table width='100%' border='0' cellpadding='0' cellspacing='0'>
 	<tr>
 	  <td width='180' rowspan='3'><img src="images/gologo.jpg"></td>
@@ -97,8 +100,8 @@ $(function(){
 	<tr>		
 		<td>&nbsp;</td>
     	<td class='normal'>登入用户 : <?=@$_SESSION["ftylogininfo"]["aNameChi"]?></td>
-		<td width='90' align='left' class='normal'>现在时间 :</td>
-		<td align='left' id='current_datetime' class='normal_num'>-</td>	
+		<!-- <td width='90' align='left' class='normal'>现在时间 :</td>
+		<td align='left' id='current_datetime' class='normal_num'>-</td> -->
 	</tr>
 	<tr>
 	  <td>&nbsp;</td>
@@ -256,6 +259,9 @@ if(strpos($rtn['FtyGrpID'], '1') !== false){
   </tr>
 	
 </table>
+<?php
+}
+?>
 <BR clear="all" />
 <div style="padding:1% 1%;">
 
