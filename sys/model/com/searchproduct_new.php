@@ -95,8 +95,8 @@ if($myerror->getWarn()){
     <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
             <td align="center">
-                <fieldset>
-                    <legend class='legend'>Search</legend>
+                <!-- <fieldset>
+                    <legend class='legend'>Search</legend> -->
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td align="right">Product ID : </td>
@@ -138,7 +138,7 @@ if($myerror->getWarn()){
                                 ?></td>
                         </tr>
                     </table>
-                </fieldset>
+                <!-- </fieldset> -->
             </td>
         </tr>
     </table>

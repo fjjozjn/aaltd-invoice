@@ -9,7 +9,7 @@ change log
 
 if(!defined('BEEN_INCLUDE') || !is_object($myerror))exit('Welcome to The Matrix');
 
-if(isset($_POST['content']) && $_POST['content'] != ''){
+/*if(isset($_POST['content']) && $_POST['content'] != ''){
     $mysql->q('insert into bulletin_board (b_from, content, b_date) values (?, ?, ?)',
         $_SESSION['logininfo']['aName'], $_POST['content'], dateMore());
 }
@@ -21,7 +21,7 @@ if($bulletin_board){
     foreach($rtn as $v){
         $b_info .= ('('.$v['b_date'].') '.$v['b_from'].' : '.$v['content']."\r\n");
     }
-}
+}*/
 
 ?>
 <!-- BEGIN CBOX - www.cbox.ws - v001 -->
@@ -31,16 +31,16 @@ if($bulletin_board){
 </div>-->
 <!-- END CBOX -->
 
-<div align="center" style=" float:left;width:100%;">
+<!-- <div align="center" style=" float:left;width:100%;">
     <fieldset class="center2col" style="width:95%; padding-left:5px">
         <legend class='legend'>Bulletin Board</legend>
         <div><textarea readonly="readonly" id="bb_t" rows="5" style="width: 95%;font-size: 12px;"><?php
-                echo $b_info; ?></textarea></div>
+                /*echo $b_info;*/ ?></textarea></div>
         <form method="post" action="">
             <div><input type="text" id="content" name="content" style="width: 89%" required="1" strlen="1,500"><input type="submit" value="Submit" style="cursor:pointer;"></div>
         </form>
     </fieldset>
-</div>
+</div> -->
 
 <?
 
@@ -48,7 +48,7 @@ if($bulletin_board){
 
 
 //从导航栏点过带的会带 today 参数，这样默认显示当天的前5后24天，加当天共30天
-$chart_date = cal_date_new(date('Y-m-d',strtotime('-5 day')), date('Y-m-d',strtotime('+24 day')));
+/*$chart_date = cal_date_new(date('Y-m-d',strtotime('-5 day')), date('Y-m-d',strtotime('+24 day')));
 
 //找出在区间内的pi和po
 $start_date = $chart_date[0];
@@ -135,11 +135,11 @@ $heng_color = '#DADADA';
 //$table_td_attr = 'border-style: none solid none solid; border-color: '.$today_color.'; border-width: 1px;';
 $table_td_attr = 'border-style:solid; border-color: '.$heng_color.' '.$today_color.' '.$heng_color.' '.$today_color.'; border-width: 1px;';
 //设置表格只有横线的border
-$table_attr = 'style=" border:1px solid '.$heng_color.'" rules="rows"';
+$table_attr = 'style=" border:1px solid '.$heng_color.'" rules="rows"';*/
 //*******************参数设置*******************
 
 ?>
-<div align="center" style=" float:left;width:50%;">
+<!-- <div align="center" style=" float:left;width:50%;">
     <fieldset class="center2col" style="width:90%; padding-left:5px">
         <legend class='legend'>Gantt Chart</legend>
         <font color="#0066CC"><b><span style="background-color:<?=$pi_bg_color?>">&nbsp;PI Colour&nbsp;</span> <span style="background-color:<?=$po_bg_color?>">&nbsp;PO Colour&nbsp;</span> <span style="background-color:<?=$pipo_bg_color?>">&nbsp;PI & PO Overlap&nbsp;</span><br /></b></font>
@@ -150,13 +150,13 @@ $table_attr = 'style=" border:1px solid '.$heng_color.'" rules="rows"';
                 <td align="right" style="width:<?=$left_td_width?>;"><font style="font-size:<?=$font_size?>;">Day&nbsp;<br />Month&nbsp;</font></td>
                 <?
                 //顶部表头**
-                foreach($chart_date as $v){
+                /*foreach($chart_date as $v){
                     if($v == date('Y-m-d')){
                         echo '<td align="center" style="width:'.$td_width.'; font-size:'.$font_size.'; background-color:'.$today_color.';"><b><font color="#FFFFFF">'.date('d', strtotime($v)).'<br />'.date('m', strtotime($v)).'</font></b></td>';
                     }else{
                         echo '<td align="center" style="width:'.$td_width.'; font-size:'.$font_size.'">'.date('d', strtotime($v)).'<br />'.date('m', strtotime($v)).'</td>';
                     }
-                }
+                }*/
                 //*********
                 ?>
             </tr>
@@ -165,7 +165,7 @@ $table_attr = 'style=" border:1px solid '.$heng_color.'" rules="rows"';
         <div style="height: 299px; overflow-y: auto;">
             <table <?=@$table_attr?>>
                 <?
-                foreach($pipo as $v){
+                /*foreach($pipo as $v){
                     echo '<tr align="left" height="'.$tr_height.'">';
 
                     //左侧表头td***
@@ -243,7 +243,7 @@ $table_attr = 'style=" border:1px solid '.$heng_color.'" rules="rows"';
 
                     //每个pi和相应的po块结束后，下面有个空行
                     //echo '<tr><td>&nbsp;</td></tr>';
-                }
+                }*/
 
                 ?>
             </table>
@@ -255,7 +255,7 @@ $table_attr = 'style=" border:1px solid '.$heng_color.'" rules="rows"';
     .td_chart_highlight {
         background-color:#F3F3F3;
     }
-</style>
+</style> -->
 
 <!--script>
 jQuery.fn.fixedtableheader = function(options) { var settings = jQuery.extend({ headerrowsize: 1, highlightrow: false, highlightclass: "highlight" }, options); this.each(function(i) { var $tbl = $(this); var $tblhfixed = $tbl.find("tr:lt(" + settings.headerrowsize + ")"); var headerelement = "th"; if ($tblhfixed.find(headerelement).length == 0) headerelement = "td"; if ($tblhfixed.find(headerelement).length > 0) { $tblhfixed.find(headerelement).each(function() { $(this).css("width", $(this).width()); }); var $clonedTable = $tbl.clone().empty(); var tblwidth = GetTblWidth($tbl); $clonedTable.attr("id", "fixedtableheader" + i).css({ "position": "fixed", "top": "0", "left": $tbl.offset().left }).append($tblhfixed.clone()).width(tblwidth).hide().appendTo($("body")); if (settings.highlightrow) $("tr:gt(" + (settings.headerrowsize - 1) + ")", $tbl).hover(function() { $(this).addClass(settings.highlightclass); }, function() { $(this).removeClass(settings.highlightclass); }); $(window).scroll(function() { if (jQuery.browser.msie && jQuery.browser.version == "6.0") $clonedTable.css({ "position": "absolute", "top": $(window).scrollTop(), "left": $tbl.offset().left }); else $clonedTable.css({ "position": "fixed", "top": "0", "left": $tbl.offset().left - $(window).scrollLeft() }); var sctop = $(window).scrollTop(); var elmtop = $tblhfixed.offset().top; if (sctop > elmtop && sctop <= (elmtop + $tbl.height() - $tblhfixed.height())) $clonedTable.show(); else $clonedTable.hide(); }); $(window).resize(function() { if ($clonedTable.outerWidth() != $tbl.outerWidth()) { $tblhfixed.find(headerelement).each(function(index) { var w = $(this).width(); $(this).css("width", w); $clonedTable.find(headerelement).eq(index).css("width", w); }); $clonedTable.width($tbl.outerWidth()); } $clonedTable.css("left", $tbl.offset().left); }); } }); function GetTblWidth($tbl) { var tblwidth = $tbl.outerWidth(); return tblwidth; } };
@@ -310,7 +310,7 @@ if($myerror->getError()){
 
 
 ?>
-<div style="width:50%; float:left;">
+<!-- <div style="width:50%; float:left;">
     <fieldset class="center2col" style="width:90%; padding-left:5px">
         <legend class='legend'>Delay</legend>
         <div align="right"><a class="button" href="/task/delay_refresh.php">REFRESH</a><a class="button" href="?act=bulletin_board&page=1">More</a></div>
@@ -333,7 +333,7 @@ if($myerror->getError()){
                 //$rs2 = $mysql->q('select * from bulletin_board where TO_DAYS(b_date) = TO_DAYS(NOW()) and b_from = ? limit 100', 'system');
                 //20130627 去掉了limit 50的限制，因为现在用户在这里的发消息的功能去掉了，只显示系统提示的pi过期信息和overdue的shipment
                 //20140426 只显示 b_from 为 system
-                if(isSysAdmin()){
+                /*if(isSysAdmin()){
                     $rs2 = $mysql->q('select * from bulletin_board where TO_DAYS(b_date) = TO_DAYS(NOW()) AND b_from = ? order by content desc', 'system');
                 }else{
                     $rs2 = $mysql->q('select * from bulletin_board where TO_DAYS(b_date) = TO_DAYS(NOW()) AND b_from = ? AND b_to in (SELECT AdminName FROM tw_admin WHERE AdminLuxGroup LIKE ? OR AdminName = ?) order by content desc', 'system', '%'.$_SESSION['logininfo']['aName'].'%', '%'.$_SESSION['logininfo']['aName'].'%');
@@ -343,7 +343,7 @@ if($myerror->getError()){
                     foreach($rtn as $v){
                         echo '<tr><td valign="top" width="130">[ '.$v['b_from'].' '.date('d/m', strtotime($v['b_date'])).' ]</td><td>'.$v['b_to'].' </td><td>'.str_replace("\r\n", '<br />', match_id($v['content'])).'</td>';
                     }
-                }
+                }*/
                 ?>
             </table>
         </div>
@@ -377,13 +377,13 @@ $goodsForm->end();
 
 </div>
 
-<div style="width: 100%; float: right;">
+<!-- <div style="width: 100%; float: right;">
     <fieldset class="center2col" style="width:95%; padding-left:5px">
         <legend class='legend'>USER LOG</legend>
         <div style="height: 100px; overflow-y: auto;">
             <table>
                 <?php
-                if(isSysAdmin()){
+                /*if(isSysAdmin()){
                     $rs3 = $mysql->q("select AdminHistDate, AdminHistRemark from tw_admin_hist where AdminHistCatg like ? and AdminID <> 4 order by AdminHistDate desc limit 50", 'action_log_%');
                 }else{
                     $rs3 = $mysql->q("select AdminHistDate, AdminHistRemark from tw_admin_hist where AdminHistCatg like ? and AdminID <> 4 and AdminID in (select AdminID from tw_admin where AdminLuxGroup LIKE ? OR AdminName = ?) order by AdminHistDate desc limit 50", 'action_log_%', '%'.$_SESSION['logininfo']['aName'].'%', '%'.$_SESSION['logininfo']['aName'].'%');
@@ -394,9 +394,9 @@ $goodsForm->end();
                     foreach($rtn as $v){
                         echo '<tr><td>'.$v['AdminHistDate'].' : '.$v['AdminHistRemark'].'</td></tr>';
                     }
-                }
+                }*/
                 ?>
             </table>
         </div>
     </fieldset>
-</div>
+</div> -->

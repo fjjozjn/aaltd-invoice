@@ -214,11 +214,11 @@ if($myerror->getError()){
                 <td width="25%"><? $goodsForm->show('p_type');?></td>
                 <td width="25%"><? $goodsForm->show('p_pid');?></td>
                 <td width="25%"><? $goodsForm->show('p_cat_num');?></td>
-                <td width="25%"></td>
+                <td width="25%"><? $goodsForm->show('p_sample_order_no');?></td>
             </tr>
             <tr valign="top">
-                <td width="25%"><? $goodsForm->show('p_sample_order_no');?></td>
-                <td width="25%"><? $goodsForm->show('p_sample_order_no_remark');?></td>
+                <td width="25%"><? /*$goodsForm->show('p_sample_order_no_remark');*/?></td>
+                <td width="25%"></td>
                 <td width="25%"></td>
                 <td width="25%"></td>
             </tr>
@@ -235,11 +235,11 @@ if($myerror->getError()){
             <tr valign="top">
                 <td width="25%"><? $goodsForm->show('p_ccode');?></td>
                 <td width="25%"><? $goodsForm->show('p_exclusive_to');?></td>
-                <td width="25%"><? $goodsForm->show('p_theme');?></td>
-                <td width="25%"><? /*$goodsForm->show('p_show_in_catalog');*/?></td>
+                <td width="25%"><? $goodsForm->show('p_suggested_price');?></td>
+                <td width="25%"><? /*$goodsForm->show('p_theme');*/?></td>
             </tr>
             <tr>
-                <td width="25%"><? $goodsForm->show('p_suggested_price');?></td>
+                <td width="25%"><? /*$goodsForm->show('p_show_in_catalog');*/?></td>
                 <td width="25%"><!-- <div class="set"><label for="p_product_file" class="formtitle">Upload PDF File</label><div class="formfield"><input type='file' name='product_file' id='product_file' /></div></div> --></td>
                 <td width="25%">&nbsp;</td>
                 <td width="25%">&nbsp;</td>

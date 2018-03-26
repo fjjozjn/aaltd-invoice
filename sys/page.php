@@ -1,7 +1,7 @@
 <?php
 if(!defined('BEEN_INCLUDE') || !is_object($myerror))exit('Welcome to The Matrix');
 //check admin login
-checkAdminLogin();
+//checkAdminLogin();
 //20131120 for 360 加meta webkit
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
