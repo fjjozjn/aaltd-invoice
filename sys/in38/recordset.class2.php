@@ -83,11 +83,11 @@ Class RecordSetControl2 {
 	function ShowRecordSet($row_count){		
 		global $mysql, $act;
 		echo "<div align='center'>";
-		echo "<fieldset>";
+		//echo "<fieldset>";
 		// echo "<legend class='legend'>".$recordset_title." (".$recordset_total_row." : ".count($value_arr).")"."</legend>";		
-		echo "<legend class='legend'>".$this->recordset_title." ( ".$this->recordset_total_row." : ".$row_count." )"."</legend>";		
-		echo "<table width='".$this->table_width."' border='1' bordercolor='#ABABAB' cellspacing='1' cellpadding='3' bgcolor='#000000'>";
-		echo " <tr bgcolor='#EEEEEE'> ";
+		//echo "<legend class='legend'>".$this->recordset_title." ( ".$this->recordset_total_row." : ".$row_count." )"."</legend>";		
+		echo "<table width='".$this->table_width."' border='1' bordercolor='#E0ECFF' cellspacing='1' cellpadding='3' bgcolor='#000000'>";
+		echo " <tr bgcolor='#95B8E7'> ";
 		for($i = 0 ; $i < count($this->col_content); $i++ ){
 			echo "<th height='30' align='center'";
 			if (!empty($this->col_content[$i]["width"])){
@@ -606,7 +606,7 @@ Class RecordSetControl2 {
 		echo "<table width='".$this->table_width."' border='0' cellspacing='1' cellpadding='3' bgcolor='#CCCCCC'>";
 		echo " <tr bgcolor='#FFFFFF' valign='top'> ";			
 		if($this->display_back){
-			echo " 	<td align='center' width='20%'><a href='?act=main'>Return</a></td>";
+			echo " 	<td align='center' width='20%'><!-- <a href='?act=main'>Return</a> --></td>";
 		}else{
 			echo " 	<td align='center' width='20%'>&nbsp;</td>";
 		}
@@ -627,7 +627,7 @@ Class RecordSetControl2 {
 		echo " 	</td>";
 		echo " </tr>";	
 		echo "</table>";		
-		echo "</fieldset>";	
+		//echo "</fieldset>";	
 		echo "</div>";
 		// echo "COL:<input type='text' name='col' value='".@$_POST['col']."'>";
 		// echo "SEQ:<input type='text' name='seq' value='".@$_POST['seq']."'>";

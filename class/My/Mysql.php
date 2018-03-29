@@ -202,6 +202,8 @@ final class My_Mysql{
 			//$this->_error(set($GLOBALS['words']['queryError']) ? $GLOBALS['words']['queryError'] : 'Query Error!');
 			
 			$this->_debug(array('QUERY ERROR', $sql, mysqli_error($this->_conn)));
+			//print_r(array('QUERY ERROR', $sql, mysqli_error($this->_conn)));
+
 			$tmpRtn = false;
 		}else{
 			$this->_debug('the SQL statement is : '. $sql);

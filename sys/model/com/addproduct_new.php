@@ -31,7 +31,7 @@ $formItems = array(
     'p_exclusive_to' => array('title' => 'Exclusive to', 'type' => 'select', 'options' => get_customer(), 'info' => '此项选择后才可以填写Suggested Price'),
     //20130715 加 select sample_order_no 改原来的 sample_order_no 为 sample_order_no_remark
     //20170826 加required
-    'p_sample_order_no' => array('title' => 'Sample Order No.', 'type' => 'select', 'options' => get_sample_order_no(), 'required' => 1),
+    'p_sample_order_no' => array('title' => 'Sample Order No.', 'type' => 'select', 'options' => get_sample_order_no()/*, 'required' => 1*/),
     'p_sample_order_no_remark' => array('title' => 'Sample Order No. Remark', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'info' => '臨時的sample order,將會刪除'),
     'p_show_in_catalog' => array('title' => 'Show in catalog', 'type' => 'checkbox', 'options' => array('show')),
     'p_suggested_price' => array('title' => 'Suggested Price', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'number', 'readonly' => 'readonly'),
@@ -112,12 +112,12 @@ if(!$myerror->getAny() && $goodsForm->check()){
                     }
 
                     //20130321 add theme
-                    $theme = $_POST['p_theme'];
+                    $theme = 0;//$_POST['p_theme'];
                     //20130226 add product type
                     $type = $_POST['p_type'];
                     $in_date = dateMore();
                     $created_by = $_SESSION["logininfo"]["aName"];
-                    $cat_num = $_POST['p_cat_num'];
+                    $cat_num = '';//$_POST['p_cat_num'];
                     $description = $_POST['p_description'];
                     $description_chi = $_POST['p_description_chi'];
                     $sid = $_POST['p_sid'];
@@ -127,10 +127,10 @@ if(!$myerror->getAny() && $goodsForm->check()){
                     $cost_remark = $_POST['p_cost_remark'];
                     $exclusive_to = $_POST['p_exclusive_to'];
                     $photos = $target;
-                    $sample_order_no = $_POST['p_sample_order_no'];
-                    $sample_order_no_remark = $_POST['p_sample_order_no_remark'];
+                    $sample_order_no = '';//$_POST['p_sample_order_no'];
+                    $sample_order_no_remark = '';//$_POST['p_sample_order_no_remark'];
                     $show_in_catalog = isset($_POST['p_show_in_catalog']) ? 1 : 0;
-                    $suggested_price = $_POST['p_suggested_price'];
+                    $suggested_price = 0.00;//$_POST['p_suggested_price'];
                     $product_file = $file_target;
 
                     //判断是否输入的pid已存在，因为存在的话由于数据库限制，就会新增失败
@@ -213,8 +213,8 @@ if($myerror->getError()){
             <tr valign="top">
                 <td width="25%"><? $goodsForm->show('p_type');?></td>
                 <td width="25%"><? $goodsForm->show('p_pid');?></td>
-                <td width="25%"><? $goodsForm->show('p_cat_num');?></td>
-                <td width="25%"><? $goodsForm->show('p_sample_order_no');?></td>
+                <td width="25%"><? /*$goodsForm->show('p_cat_num');*/?></td>
+                <td width="25%"><? /*$goodsForm->show('p_sample_order_no');*/?></td>
             </tr>
             <tr valign="top">
                 <td width="25%"><? /*$goodsForm->show('p_sample_order_no_remark');*/?></td>
