@@ -79,7 +79,7 @@ div.setfocus{
 /* field標題 */
 .formtitle{
 	line-height:200%;
-	color:#40AA53;
+	color:#006393;
 }
 
 /* field本身 */
@@ -106,7 +106,7 @@ div.setfocus{
 */
 /* field補充說明 */
 p.forminfo{
-	color:#006393;
+	color:#95B8E7;
 	display:block;
 	margin:3px 0 0 10px;
 	font-size:12px;
@@ -183,7 +183,7 @@ h6.float{
 
 /* 輸入框正確 */
 .textok{
-	border-color:green;
+	border-color:#95B8E7;
 	color:#000;
 	background-position: 2px 4px;
 }
@@ -241,7 +241,7 @@ textarea.taerr{
 
 /* textarea 對應input樣式 */
 textarea.taok{
-	border-color:green;
+	border-color:#95B8E7;
 	color:#000;
 }
 
