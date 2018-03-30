@@ -79,7 +79,8 @@ div.setfocus{
 /* field標題 */
 .formtitle{
 	line-height:200%;
-	color:#006393;
+	color:#0E2D5F;
+	font-weight:600;
 }
 
 /* field本身 */
@@ -106,7 +107,7 @@ div.setfocus{
 */
 /* field補充說明 */
 p.forminfo{
-	color:#95B8E7;
+	color:#0E2D5F;
 	display:block;
 	margin:3px 0 0 10px;
 	font-size:12px;

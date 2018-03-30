@@ -76,7 +76,7 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
         //'p_in_date' => array('title' => 'In Date', 'type' => 'text', 'restrict' => 'date', 'value' => isset($mod_result['in_date'])?$mod_result['in_date']:''),
         //20130715 加 select sample_order_no 改原来的 sample_order_no 为 sample_order_no_remark
         //20170826 加required
-        'p_sample_order_no' => array('title' => 'Sample Order No.', 'type' => 'select', 'options' => get_sample_order_no(), 'value' => isset($mod_result['sample_order_no'])?$mod_result['sample_order_no']:'', 'required' => 1),
+        'p_sample_order_no' => array('title' => 'Sample Order No.', 'type' => 'select', 'options' => get_sample_order_no(), 'value' => isset($mod_result['sample_order_no'])?$mod_result['sample_order_no']:''/*, 'required' => 1*/),
         'p_sample_order_no_remark' => array('title' => 'Sample Order No. Remark', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'value' => isset($mod_result['sample_order_no_remark'])?$mod_result['sample_order_no_remark']:'', 'info' => '臨時的sample order,將會刪除'),
         'p_show_in_catalog' => array('title' => 'Show in catalog', 'type' => 'checkbox', 'options' => array('show'), 'value' => (isset($mod_result['show_in_catalog']) && $mod_result['show_in_catalog'] == 1)?'show':''),
         'p_suggested_price' => array('title' => 'Suggested Price', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'number', 'readonly' => (isset($mod_result['suggested_price']) && $mod_result['suggested_price'] != '')?false:true, 'value' => isset($mod_result['suggested_price'])
@@ -133,18 +133,18 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
                     }
 
                     //20150119 show_in_catalog 则用l图生成水印图
-                    $large_photo = 'l_' . $target;
+                    /*$large_photo = 'l_' . $target;
                     $large_photo_water = 'l_water_' . $target;
                     if($_POST['p_show_in_catalog'] && $_POST['p_theme'] == '7'){
                         makethumb($pic_path_com.$target, $pic_path_small.$large_photo, 'l');
                         createWordsWatermark($pic_path_small.$large_photo, 'Assential Accessories LTD', '12', '200,170,200', '5', ROOT_DIR.'font/arial.ttf', '0', $pic_path_watermark.$large_photo_water);
-                    }
+                    }*/
                 }else{
                     $add_tip = 'Upload photo '.$target.' <i>failure</i>! ';
                 }
 
                 //20130321 add theme
-                $theme = $_POST['p_theme'];
+                $theme = 0;//$_POST['p_theme'];
                 //20130226 add product type
                 $type = isset($_POST['p_type']) ? $_POST['p_type'] : '';
                 //20130619 cindy 让我改为显示修改的时间
@@ -152,7 +152,7 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
                 //$in_date = dateMore();//$_POST['p_in_date'];
                 $mod_date = dateMore();
                 $mod_by = $_SESSION["logininfo"]["aName"];
-                $cat_num = $_POST['p_cat_num'];
+                $cat_num = '';//$_POST['p_cat_num'];
                 $description = $_POST['p_description'];
                 $description_chi = $_POST['p_description_chi'];
                 $sid = $_POST['p_sid'];
@@ -161,10 +161,10 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
                 $cost_rmb = $_POST['p_cost_rmb'];
                 $cost_remark = $_POST['p_cost_remark'];
                 $exclusive_to = $_POST['p_exclusive_to'];
-                $sample_order_no = $_POST['p_sample_order_no'];
-                $sample_order_no_remark = $_POST['p_sample_order_no_remark'];
+                $sample_order_no = '';//$_POST['p_sample_order_no'];
+                $sample_order_no_remark = '';//$_POST['p_sample_order_no_remark'];
                 $show_in_catalog = isset($_POST['p_show_in_catalog'])?1:0;
-                $suggested_price = $_POST['p_suggested_price'];
+                $suggested_price = 0.00;//$_POST['p_suggested_price'];
 
                 if(isset($_GET['copypid'])){
                     //判断是否输入的pid已存在，因为存在的话由于数据库限制，就会新增失败
@@ -246,21 +246,21 @@ if($myerror->getError()){
 
 
     ?>
-    <h1 class="green">PRODUCT<em>* indicates required fields</em></h1>
-    <fieldset>
-        <legend class='legend'>Action</legend>
+    <!--<h1 class="green">PRODUCT<em>* indicates required fields</em></h1>-->
+    <!--<fieldset>
+        <legend class='legend'>Action</legend>-->
         <?php
-        if(isset($_GET['modid'])){
+        /*if(isset($_GET['modid'])){
             ?>
-            <div style="margin-left:28px;"><a class="button" href="?act=com-modifyproduct_new&copypid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Copy</b></a><!--<a id="<?/*=$_GET['modid']*/?>" class="button" href="#" onclick="bomConfirm(this)"><b>Bom</b></a>--><a class="button" href="<?=$bom_link?>"><b>Bom</b></a><a class="button" href="#" onclick="window.open ('model/com/proforma_pid_history.php?pid='+$('#p_pid').val(),'lux','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=yes, resizable=yes,location=no,status=no')"><b>History(PI)</b></a></div>
+            <div style="margin-left:28px;"><a class="button" href="?act=com-modifyproduct_new&copypid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Copy</b></a><a class="button" href="<?=$bom_link?>"><b>Bom</b></a><a class="button" href="#" onclick="window.open ('model/com/proforma_pid_history.php?pid='+$('#p_pid').val(),'lux','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=yes, resizable=yes,location=no,status=no')"><b>History(PI)</b></a></div>
         <?php
-        }
+        }*/
         ?>
-    </fieldset>
-    <fieldset>
-        <legend class='legend'><? if(isset($_GET['copypid'])){ echo 'Copy Product';}else{ echo 'Modify Product';}?></legend>
-        <fieldset>
-            <legend class='legend'>1.Upload image</legend>
+    <!--</fieldset>-->
+    <!--<fieldset>
+        <legend class='legend'><?/* if(isset($_GET['copypid'])){ echo 'Copy Product';}else{ echo 'Modify Product';}*/?></legend>-->
+        <!--<fieldset>
+            <legend class='legend'>1.Upload image</legend>-->
             <?
             /*if(isset($_SESSION['upload_photo_mod']) && $_SESSION['upload_photo_mod'] != ''){
                 if (is_file($pic_path_com . $_SESSION['upload_photo_mod']) == true) {
@@ -309,9 +309,9 @@ if($myerror->getError()){
             }
 
             ?>
-        </fieldset>
-        <fieldset>
-            <legend class='legend'>2.Fill the form</legend>
+        <!--</fieldset>-->
+        <!--<fieldset>
+            <legend class='legend'>2.Fill the form</legend>-->
             <table width="100%" id="table">
                 <tr valign="top">
                     <?php
@@ -326,20 +326,20 @@ if($myerror->getError()){
                     }
                     ?>
                     <td width="25%"><? $goodsForm->show('p_pid');?></td>
-                    <td width="25%"><? $goodsForm->show('p_cat_num');?></td>
+                    <td width="25%"><? /*$goodsForm->show('p_cat_num');*/?></td>
                     <td width="25%"></td>
                 </tr>
                 <tr valign="top">
-                    <td width="25%"><? $goodsForm->show('p_sample_order_no');?></td>
-                    <td width="25%"><? $goodsForm->show('p_sample_order_no_remark');?></td>
-                    <td width="25%"><div class="set"><label class="formtitle">Warehouse</label><br />
-                            <?
+                    <td width="25%"><? /*$goodsForm->show('p_sample_order_no');*/?></td>
+                    <td width="25%"><? /*$goodsForm->show('p_sample_order_no_remark');*/?></td>
+                    <td width="25%"><!--<div class="set"><label class="formtitle">Warehouse</label><br />
+                            <?/*
                                 if(!empty($pid_warehouse_info)){
                                     foreach($pid_warehouse_info as $v){
                                         echo $v."<br />";
                                     }
                                 }
-                            ?></div></td>
+                            */?></div>--></td>
                     <td width="25%"></td>
                 </tr>
                 <tr>
@@ -355,14 +355,9 @@ if($myerror->getError()){
                 <tr>
                     <td width="25%"><? $goodsForm->show('p_ccode');?></td>
                     <td width="25%"><? $goodsForm->show('p_exclusive_to');?></td>
-                    <td width="25%"><? $goodsForm->show('p_theme');?></td>
-                    <td width="25%"><? $goodsForm->show('p_show_in_catalog');?></td>
-                </tr>
-                <tr>
                     <td width="25%"><? $goodsForm->show('p_suggested_price');//$goodsForm->show('p_in_date');?></td>
-                    <td width="25%">&nbsp;</td>
-                    <td width="25%">&nbsp;</td>
-                    <td width="25%">&nbsp;</td>
+                    <td width="25%"><? /*$goodsForm->show('p_theme');*/?></td>
+                    <!--<td width="25%"><? /*$goodsForm->show('p_show_in_catalog');*/?></td>-->
                 </tr>
             </table>
             <div class="line"></div>
@@ -370,18 +365,18 @@ if($myerror->getError()){
             <?
             $goodsForm->show('submitbtn');
             ?>
-        </fieldset>
-    </fieldset>
-    <fieldset>
-        <legend class='legend'>Action</legend>
+        <!--</fieldset>-->
+    <!--</fieldset>-->
+    <!--<fieldset>
+        <legend class='legend'>Action</legend>-->
         <?php
-        if(isset($_GET['modid'])){
+        /*if(isset($_GET['modid'])){
         ?>
             <div style="margin-left:28px;"><a class="button" href="?act=com-modifyproduct_new&copypid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Copy</b></a><!--a id="<?=$_GET['modid']?>" class="button" href="#" onclick="bomConfirm(this)"><b>Bom</b></a--><a class="button" href="<?=$bom_link?>"><b>Bom</b></a><a class="button" href="#" onclick="window.open ('model/com/proforma_pid_history.php?pid='+$('#p_pid').val(),'lux','height=400,width=800,top=0,left=0,toolbar=no,menubar=no,scrollbars=yes, resizable=yes,location=no,status=no')"><b>History(PI)</b></a></div>
         <?php
-        }
+        }*/
         ?>
-    </fieldset>
+    <!--</fieldset>-->
     <?
     $goodsForm->end();
 
