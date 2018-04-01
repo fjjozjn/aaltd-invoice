@@ -125,7 +125,7 @@ if(!$myerror->getAny() && $goodsForm->check()){
                     $ccode = $_POST['p_ccode'];
                     $cost_rmb = $_POST['p_cost_rmb'];
                     $cost_remark = $_POST['p_cost_remark'];
-                    $exclusive_to = $_POST['p_exclusive_to'];
+                    $exclusive_to = '';//$_POST['p_exclusive_to'];
                     $photos = $target;
                     $sample_order_no = '';//$_POST['p_sample_order_no'];
                     $sample_order_no_remark = '';//$_POST['p_sample_order_no_remark'];
@@ -234,8 +234,8 @@ if($myerror->getError()){
             </tr>
             <tr valign="top">
                 <td width="25%"><? $goodsForm->show('p_ccode');?></td>
-                <td width="25%"><? $goodsForm->show('p_exclusive_to');?></td>
-                <td width="25%"><? $goodsForm->show('p_suggested_price');?></td>
+                <td width="25%"><? /*$goodsForm->show('p_exclusive_to');*/?></td>
+                <td width="25%"><? /*$goodsForm->show('p_suggested_price');*/?></td>
                 <td width="25%"><? /*$goodsForm->show('p_theme');*/?></td>
             </tr>
             <tr>

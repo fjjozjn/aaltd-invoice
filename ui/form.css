@@ -80,7 +80,7 @@ div.setfocus{
 .formtitle{
 	line-height:200%;
 	color:#0E2D5F;
-	font-weight:600;
+	font-weight:800;
 }
 
 /* field本身 */
@@ -273,14 +273,11 @@ textarea.disabled{
 }
 
 /* textarea */
-textarea{
-	width:200px;
-}
 .center2col textarea{
 	width:400px;
 }
 textarea{
-    width:400px;
+    width:300px;
 }
 div.line{
 	width:100%;

@@ -171,14 +171,16 @@ $form->begin();
 			//$where_sql .= " AND created_by in (SELECT AdminName FROM tw_admin WHERE AdminName = '".$_SESSION['logininfo']['aName']."' OR AdminLuxGroup = '".$_SESSION['logininfo']['aName']."')";
 
             //20150626 把条件in里的子查询拿出来在外面拼接好，之前可以查出数据，但是担心以后某个时间会出问题，所以也改了
-            $mysql->q('SELECT AdminName FROM tw_admin WHERE AdminName = ? OR AdminLuxGroup like ?', $_SESSION['logininfo']['aName'], '%'.$_SESSION['logininfo']['aName'].'%');
+            /*$mysql->q('SELECT AdminName FROM tw_admin WHERE AdminName = ? OR AdminLuxGroup like ?', $_SESSION['logininfo']['aName'], '%'.$_SESSION['logininfo']['aName'].'%');
             $rtn = $mysql->fetch();
             $temp_where = '';
             foreach($rtn as $v){
                 $temp_where .= "'".$v['AdminName']."',";
             }
             $temp_where = trim($temp_where, ',');
-            $where_sql .= " AND c.created_by in (".$temp_where.")";
+            $where_sql .= " AND c.created_by in (".$temp_where.")";*/
+
+            $where_sql .= " AND c.created_by = '".$_SESSION['logininfo']['aName']."'";
 		}		
 		
 		$where_sql.= ' group by c.cid ORDER BY c.cid ';

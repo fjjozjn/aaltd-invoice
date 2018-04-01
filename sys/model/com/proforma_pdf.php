@@ -26,7 +26,7 @@ class MYPDF extends TCPDF
     {
         // Logo
         $image_file = K_PATH_IMAGES . 'header.jpg';
-        $this->Image($image_file, '', '', 180, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $this->Image($image_file, '', '', 26, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
     }
 
     // Page footer

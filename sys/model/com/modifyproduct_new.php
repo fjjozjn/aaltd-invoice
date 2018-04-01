@@ -160,7 +160,7 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
                 $ccode = $_POST['p_ccode'];
                 $cost_rmb = $_POST['p_cost_rmb'];
                 $cost_remark = $_POST['p_cost_remark'];
-                $exclusive_to = $_POST['p_exclusive_to'];
+                $exclusive_to = '';//$_POST['p_exclusive_to'];
                 $sample_order_no = '';//$_POST['p_sample_order_no'];
                 $sample_order_no_remark = '';//$_POST['p_sample_order_no_remark'];
                 $show_in_catalog = isset($_POST['p_show_in_catalog'])?1:0;
@@ -354,8 +354,8 @@ if($myerror->getError()){
                 </tr>
                 <tr>
                     <td width="25%"><? $goodsForm->show('p_ccode');?></td>
-                    <td width="25%"><? $goodsForm->show('p_exclusive_to');?></td>
-                    <td width="25%"><? $goodsForm->show('p_suggested_price');//$goodsForm->show('p_in_date');?></td>
+                    <td width="25%"><? /*$goodsForm->show('p_exclusive_to');*/?></td>
+                    <td width="25%"><? /*$goodsForm->show('p_suggested_price');*//*$goodsForm->show('p_in_date');*/?></td>
                     <td width="25%"><? /*$goodsForm->show('p_theme');*/?></td>
                     <!--<td width="25%"><? /*$goodsForm->show('p_show_in_catalog');*/?></td>-->
                 </tr>

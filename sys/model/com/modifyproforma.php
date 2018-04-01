@@ -480,12 +480,12 @@ if($myerror->getWarn()){
 	
 		
 		?>
-	<h1 class="green">PROFORMA INVOICE<em>* item must be filled in</em><? show_status_new($mod_result['istatus'])?></h1>
-	<? /*
-	<fieldset> 
-	<legend class='legend'>Selected products</legend>
+	<!-- <h1 class="green">PROFORMA INVOICE<em>* item must be filled in</em><? //show_status_new($mod_result['istatus'])?></h1> -->
+
+	<!--<fieldset>
+	<legend class='legend'>Selected products</legend>-->
 	<?
-	if( isset($_SESSION['choose']) && !empty($_SESSION['choose'])){
+	/*if( isset($_SESSION['choose']) && !empty($_SESSION['choose'])){
 		foreach($_SESSION['choose'] as $v){
 			if (is_file($pic_path_com.$v) == true) { 
 				$arr = getimagesize($pic_path_com.$v);
@@ -499,19 +499,17 @@ if($myerror->getWarn()){
 		}
 	}else{
 		echo '<div style="margin-left:28px;"><b>Not Exist Checked Product</b></div>';
-	}
+	}*/
 	?>
-	</fieldset>
-	*/
-	?>
+	<!--</fieldset>-->
 	<? if(!isset($_GET['qid'])){ ?>
-	<fieldset> 
+	<!-- <fieldset> 
 	<legend class='legend'>Action</legend>
 	<div style="margin-left:28px;"><a class="button" href="model/com/proforma_pdf.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="model/com/proforma_pdf2.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF2</b></a><a class="button" href="model/com/proforma_pdf3.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF(支持中文)</b></a><a class="button" href="model/com/proforma_excel.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>EXCEL</b></a><a class="button" href="model/com/proforma_pdf_with_photo.php?pvid=<?=$_GET['modid']?>&photo" target='_blank' onclick="return pdfConfirm()"><b>PDF - with Photo</b></a><a class="button" href="model/com/proforma_pdf_with_photo2.php?pvid=<?=$_GET['modid']?>&photo" target='_blank' onclick="return pdfConfirm()"><b>PDF - with Photo(支持中文)</b></a><a class="button" href="model/com/proforma_pdf_photo_list.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo List</b></a><a class="button" href="?act=com-modifypurchase&pvid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Add to fty PO</b></a> <br /> <a class="button" href="?act=com-modifyinvoice&pvid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Add To Invoice</b></a><a class="button" href="?act=com-modifyinvoice&appendid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>ADD TO SUB-INV</b></a><a class="button" href="?act=com-modifyproforma&copypvid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Copy</b></a><a class="button" href="?act=com-shipment&page=1&pi_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Shipment</b></a><a class="button" href="?act=com-payment&page=1&pi_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Payment</b></a></div>
-	</fieldset>
+	</fieldset> -->
 	<? } ?>
-	<fieldset>
-	<legend class='legend'><? if(isset($_GET['qid'])){ echo 'Quotation To Proforma Invoice';}elseif(isset($_GET['copypvid'])){ echo 'Copy Proforma Invoice';}else{ echo 'Modify Proforma Invoice';}?></legend>
+	<!-- <fieldset>
+	<legend class='legend'><? /*if(isset($_GET['qid'])){ echo 'Quotation To Proforma Invoice';}elseif(isset($_GET['copypvid'])){ echo 'Copy Proforma Invoice';}else{ echo 'Modify Proforma Invoice';}*/?></legend> -->
 	<?php
 	$goodsForm->begin();
 	?>
@@ -551,11 +549,6 @@ if($myerror->getWarn()){
 	<div style="margin-left:28px;">
 	<label class="formtitle" for="g_cast"><font size="+1">Input Product</font><? if(isset($_GET['modid'])){ ?><a id="update_all" href="/mytools/script_update_item_info.php?value=<?=$_GET['modid']?>" style="float: right"><img title="Update all items info" src="../../../images/loop.png" alt="Update All" width="45px" /></a><? } ?><?=''//不用加提示语，因为用的POST的数据，我暂时还没发现有错误 //isset($_GET['modid'])?'<font color="#FF0000">（请先save，再修改。直接修改可能会丢失修改的内容。）</font>':''?></label>
 	<table width="100%" id="tableDnD">
-	
-	
-	
-	
-	
 		<tbody id="tbody">
 	  <tr class="formtitle nodrop nodrag">
       	<td width="3%"></td>
@@ -722,12 +715,12 @@ if($myerror->getWarn()){
 	<?
 	$goodsForm->show('submitbtn');
 	?>
-	</fieldset>
+	<!-- </fieldset> -->
 	<? if(!isset($_GET['qid'])){ ?>
-	<fieldset> 
+	<!-- <fieldset> 
 	<legend class='legend'>Action</legend>
         <div style="margin-left:28px;"><a class="button" href="model/com/proforma_pdf.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="model/com/proforma_pdf2.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF2</b></a><a class="button" href="model/com/proforma_pdf3.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF(支持中文)</b></a><a class="button" href="model/com/proforma_excel.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>EXCEL</b></a><a class="button" href="model/com/proforma_pdf_with_photo.php?pvid=<?=$_GET['modid']?>&photo" target='_blank' onclick="return pdfConfirm()"><b>PDF - with Photo</b></a><a class="button" href="model/com/proforma_pdf_with_photo2.php?pvid=<?=$_GET['modid']?>&photo" target='_blank' onclick="return pdfConfirm()"><b>PDF - with Photo(支持中文)</b></a><a class="button" href="model/com/proforma_pdf_photo_list.php?pvid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo List</b></a><a class="button" href="?act=com-modifypurchase&pvid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Add to fty PO</b></a> <br /> <a class="button" href="?act=com-modifyinvoice&pvid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Add To Invoice</b></a><a class="button" href="?act=com-modifyinvoice&appendid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>ADD TO SUB-INV</b></a><a class="button" href="?act=com-modifyproforma&copypvid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Copy</b></a><a class="button" href="?act=com-shipment&page=1&pi_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Shipment</b></a><a class="button" href="?act=com-payment&page=1&pi_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Payment</b></a></div>
-	</fieldset>
+	</fieldset> -->
 	<? } ?>
 	<?
 	$goodsForm->end();

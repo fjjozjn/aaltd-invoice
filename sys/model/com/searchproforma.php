@@ -91,9 +91,9 @@ $form->begin();
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
 ?>
-<h1 class="green">PROFORMA INVOICE<em>* indicates required fields</em></h1>
+<!-- <h1 class="green">PROFORMA INVOICE<em>* indicates required fields</em></h1> -->
 
-<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+<!-- <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 	<td align="center">	
 	<fieldset>
@@ -101,39 +101,39 @@ $form->begin();
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right">Proforma Invoice NO. : </td>
-				<td align="left"><? $form->show('pvid'); ?></td>
+				<td align="left"><? //$form->show('pvid'); ?></td>
 				<td align="right">To : </td>
-                <td align="left"><? $form->show('send_to'); ?></td>
+                <td align="left"><? //$form->show('send_to'); ?></td>
 			</tr>
             <tr>
 				<td align="right">Attention : </td>
-				<td align="left"><? $form->show('attention'); ?></td>
+				<td align="left"><? //$form->show('attention'); ?></td>
 				<td align="right">Created by :</td>
-				<td align="left"><? $form->show('printed_by'); ?></td>
+				<td align="left"><? //$form->show('printed_by'); ?></td>
 			</tr>
             <tr>
 				<td align="right">Customer PO No. : </td>
-				<td align="left"><? $form->show('reference'); ?></td>
+				<td align="left"><? //$form->show('reference'); ?></td>
 				<td align="right">Status : </td>
-				<td align="left"><? $form->show('istatus'); ?></td>
+				<td align="left"><? //$form->show('istatus'); ?></td>
 			</tr>                        	
 			<tr>
 				<td align="right">Start Date : </td>
-				<td align="left"><? $form->show('start_date'); ?></td>
+				<td align="left"><? //$form->show('start_date'); ?></td>
                 <td align="right">End Date : </td>
-				<td align="left"><? $form->show('end_date'); ?></td>
+				<td align="left"><? //$form->show('end_date'); ?></td>
 			</tr>
 			<tr>
 				<td align="right">ETD Start : </td>
-				<td align="left"><? $form->show('etd_start_date'); ?></td>
+				<td align="left"><? //$form->show('etd_start_date'); ?></td>
                 <td align="right">ETD End : </td>
-				<td align="left"><? $form->show('etd_end_date'); ?></td>
+				<td align="left"><? //$form->show('etd_end_date'); ?></td>
 			</tr>			
 			<tr><td>&nbsp;</td></tr>
 			<tr>
 				<td width="100%" colspan='4'>
 				<?
-				$form->show('submitbutton');
+				//$form->show('submitbutton');
 				// $form->show('resetbutton');
 				
 				?></td>
@@ -142,7 +142,7 @@ $form->begin();
 	</fieldset>	
 	</td>	
 	</tr>
-</table>
+</table> -->
 
 <?
 	$form->end();
