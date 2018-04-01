@@ -290,7 +290,7 @@ function umoney($num,$type="usd") {
 		$num_str = $numArray[$i];
 		//echo "<br>";
 		//小数位的处理400.21
-		if(eregi("\.",$num_str)) {
+		if(preg_match("/\./",$num_str)) {
 			$dotArray = explode(".",$num_str);
 			if($dotArray[1] != 0) {
 				$resultArray[$k++]=format3num($dotArray[0]+0);
