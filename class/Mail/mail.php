@@ -115,8 +115,6 @@ function send_mail($to, $toname, $subject, $body, $msg, $attachmentFile = '', $a
 
 function check_email($mailaddr)
 {
-    if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*/$", $mailaddr)) return false;
+    if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*$/", $mailaddr)) return false;
     return true;
 }
-
-?>
