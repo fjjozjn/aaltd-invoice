@@ -466,7 +466,17 @@ function UpdateTotal()//更新总金额
 //为product qunantity绑定blur更新total事件
 function quantityBlur(attr_id, sign){
 	$("#"+attr_id).blur(function(e){
-		var rmb_input = $(this).parent().parent().next().next().children().children();
+		var local_url = location.href;
+		//20141219 修正
+        if(/*sign == 'proforma' || sign == 'invoice'*/sign == 'purchase'){
+            var rmb_input = $(this).parent().parent().next().next().children().children();
+        }else{
+			if(local_url.indexOf('modifyproforma') > 0){
+				var rmb_input = $(this).parent().parent().next().next().children().children();
+			}else{
+				var rmb_input = $(this).parent().parent().next().children().children();
+			}
+        }
 		var sub_td = rmb_input.parent().parent().next();
 		var new_price = rmb_input.val().replace(/,/g,"");
 		sub_td.html( accMul(parseFloat(new_price), parseFloat(/* 这里面居然不能用this或是$(this)不知道为什么。。。*/$("#"+attr_id).val())) );	
@@ -477,8 +487,18 @@ function quantityBlur(attr_id, sign){
 //为product price绑定blur更新total事件
 function priceBlur(attr_id, sign){
 	$("#"+attr_id).blur(function(e){
+		var local_url = location.href;
 		//这里每一次都要先执行第一行的blur事件，再执行当前行的blur事件，暂时还不知道是为什么
-        var qut_input = $(this).parent().parent().prev().prev().children().children();
+        //20141219 修正
+        if(/*sign == 'proforma' || sign == 'invoice'*/sign == 'purchase'){
+            var qut_input = $(this).parent().parent().prev().prev().children().children();
+        }else{
+        	if(local_url.indexOf('modifyproforma') > 0){
+        		var qut_input = $(this).parent().parent().prev().prev().children().children();
+        	}else{
+        		var qut_input = $(this).parent().parent().prev().children().children();
+        	}
+        }
 		var sub_td = $(this).parent().parent().next();
 		//居然 $(this) 和 $("#"+attr_id) 代表的内容是不同的。。。。（以上兩個問題都是由於將JS代碼放在<tr></tr>中才造成的吧，現在正常了。。。）
 		$("#"+attr_id).val(formatCurrency($("#"+attr_id).val()));
