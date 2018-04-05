@@ -294,7 +294,7 @@ $goodsForm->begin();
     <td><? $goodsForm->show('q_p_quantity1');?></td>
     <? /*<td><? $goodsForm->show('pi_p_remark');?></td>*/ ?>
     <td><? $goodsForm->show('q_p_price1');$goodsForm->show('q_p_photos1'); $goodsForm->show('q_p_ccode1'); $goodsForm->show('q_p_scode1');?></td>
-    <td id="sub">&nbsp;</td>
+    <td id="sub">0</td>
     <td>&nbsp;</td>
     <? /*<td><div class="del"><input name='' type='button' value='Del' /></div></td>*/?>
 	<td><div id="his1"></div></td>
@@ -308,7 +308,7 @@ $goodsForm->begin();
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td align="center">Total: </td>
-	<td><div id="total">0</div></td>
+	<td><div style="text-align: right; padding-right: 10px;" id="total">0</div></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 	<td>&nbsp;</td>

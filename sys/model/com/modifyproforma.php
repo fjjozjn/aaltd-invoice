@@ -651,7 +651,7 @@ if($myerror->getWarn()){
           <td align="right"><div id="packinglist_num"></div></td>
           <? /*<td><? $goodsForm->show('pi_p_remark');?></td>*/ ?>
 		<td><? $goodsForm->show('q_p_price'.$i);$goodsForm->show('q_p_photos'.$i); $goodsForm->show('q_p_ccode'.$i); $goodsForm->show('q_p_scode'.$i);?></td>
-		<td id="sub">0</td>
+		<td id="sub"></td>
 		<td>&nbsp;</td>
 		<? /*<td><div class="del"><input name='' type='button' value='Del' /></div></td>*/?>
 		<td><div id="his<?=$i?>"></div></td>
@@ -669,8 +669,10 @@ if($myerror->getWarn()){
         <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td align="right">Total QTY: </td>
-            <td><div style="text-align: left; padding-left: 20px;" id="qty"><?=$total_qty?></div></td>
+            <!-- <td align="right">Total QTY: </td>
+            <td><div style="text-align: left; padding-left: 20px;" id="qty"><?=$total_qty?></div></td> -->
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td align="right">Total: </td>
             <td><div style="text-align: right; padding-right: 10px;" id="total">0</div></td>
@@ -679,7 +681,7 @@ if($myerror->getWarn()){
         </tr>
 
         <? if(isset($_GET['modid'])){ ?>
-            <tr>
+            <!-- <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -702,7 +704,7 @@ if($myerror->getWarn()){
                         ?></div></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-            </tr>
+            </tr> -->
         <? } ?>
 
 	</table>
