@@ -37,10 +37,10 @@ if(!IS_DIST){
 
 <body>
 
-<table width='100%' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#FFFFFF'>
+<!--<table width='100%' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#FFFFFF'>
 	<tr>
     	<td width="38%">&nbsp;</td>		
-		<td align='center' width="20%" class='headertitle2'><?=SITE_NAME.SITE_VER?></td>
+		<td align='center' width="20%" class='headertitle2'><?/*=SITE_NAME.SITE_VER*/?></td>
         <td width="42%">&nbsp;</td>
 	</tr>	
 	<tr>
@@ -54,18 +54,18 @@ if(!IS_DIST){
 </table>
 <BR>
 <BR>
-<BR>
+<BR>-->
 
 <?php
 if(!$myerror->getError()){
-	require_once('login.php');
+	//require_once('login.php');
 }
 ?>
 
-<BR><HR>
+<!--<BR><HR>
 <div align='center'>
-	copyright &copy 2018-<?=date("Y");?> Assential Accessories LTD All rights reserved
-</div>
+	copyright &copy 2018-<?/*=date("Y");*/?> Assential Accessories LTD All rights reserved
+</div>-->
 
 </body>
 </html>
