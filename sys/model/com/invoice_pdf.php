@@ -26,7 +26,31 @@ class MYPDF extends TCPDF
     {
         // Logo
         $image_file = K_PATH_IMAGES . 'header.jpg';
-        $this->Image($image_file, '', '', 180, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $this->Image($image_file, '', '', 26, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+
+        $this->SetY(10);
+        $this->SetFont('segoeui', 'B', 17);
+        $this->Cell(150, 10, 'Assential Accessories Limited', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(18);
+        $this->SetFont('droidsansfallback', 'B', 17);
+        $this->Cell(126, 10, '愛尚達飾品有限公司', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(10);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Tel: (852) 3596 5874        Fax: 3996 9844', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(13);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Email: francis@assentialaccessories.com', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(16);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Office: Unit 2918, Asia Trade Centre, 79 ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(19);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Lei Muk Road, Kwai Chung, NT., HK       ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
     }
 
     // Page footer
@@ -76,7 +100,7 @@ if (isset($_GET['vid']) && $_GET['vid'] != '') {
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('LUX');
+    $pdf->SetTitle('Assential Accessories Limited');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 

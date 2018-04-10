@@ -256,6 +256,7 @@ if($myerror->getWarn()){
         $rs->SetRecordCol("HISTORY", "pid", $sort, $edit,"?a=1","pid");
         $rs->SetRecordCol("MODIFY", "pid", $sort, $edit,"?act=com-modifyproduct_new","modid");
         $rs->SetRecordCol("DEL", "pid", $sort, $edit,"?act=com-modifyproduct_new","delid");
+        $rs->SetRecordCol("COPY", "pid", $sort, $edit,"?act=com-modifyproduct_new","copypid");
         $rs->SetRSSorting('?act=com-searchproduct_new');
 
         /*

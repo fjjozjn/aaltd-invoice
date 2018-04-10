@@ -252,7 +252,7 @@ $form->begin();
 		$rs->SetRecordCol("Proforma Invoice NO.", "pvid");
 		$rs->SetRecordCol("To", "send_to");
 		$rs->SetRecordCol("Customer PO No.", "reference");
-		$rs->SetRecordCol("Remark", "remark");
+		//$rs->SetRecordCol("Remark", "remark");
 		$rs->SetRecordCol("ETD", "expected_date", true);
 		$rs->SetRecordCol("Total", "total");
 		$rs->SetRecordCol("Created by", "printed_by");
@@ -267,7 +267,8 @@ $form->begin();
 		//$rs->SetRecordCol("ADD TO INVOICE", "pvid", $sort, $edit,"?act=com-modifyinvoice","pvid");
 		$rs->SetRecordCol("MODIFY", "pvid", $sort, $edit,"?act=com-modifyproforma","modid");
 		$rs->SetRecordCol("DEL", "pvid", $sort, $edit,"?act=com-modifyproforma","delid");
-		$rs->SetRSSorting('?act=com-searchproforma');
+        $rs->SetRecordCol("ADD INVOICE", "pvid", $sort, $edit,"?act=com-modifyinvoice","pvid");
+        $rs->SetRSSorting('?act=com-searchproforma');
 
 /*
 $cur_page = 0;
