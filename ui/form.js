@@ -430,6 +430,8 @@ function formRebuilder(){
 	if(location.href.indexOf('add_payment_request') < 0 && location.href.indexOf('modify_payment_request') < 0 && location.href.indexOf('sendform') < 0 && location.href.indexOf('modifyform') < 0 && location.href.indexOf('add_material_buy') < 0 && location.href.indexOf('modify_material_buy') < 0 && location.href.indexOf('add_material_in') < 0 && location.href.indexOf('modify_material_in') < 0 && location.href.indexOf('add_material_out') < 0 && location.href.indexOf('modify_material_out') < 0/* && location.href.indexOf('add_payment_new') < 0 && location.href.indexOf('modify_payment_new') < 0*/){
 		$('select').not('.special').selectbox();
 	}
+    //201804 selectbox退出历史舞台
+    //$('select').select2();
 	$('body').append('<div id="mytt"></div>').children('#mytt')
 		.click(function(){$(this).hide(); clearTimeout(tooltipClock);})
 		.hover(function () {$(this).addClass("heavy" + $(this).data('reverse'));},
