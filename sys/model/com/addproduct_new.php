@@ -18,12 +18,12 @@ $formItems = array(
     'p_pid' => array('title' => 'Product ID', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'judgexid', 'required' => 1, 'info' => '请不要使用 # & ’ " 等特殊符号'),
     'p_cat_num' => array('title' => 'CAT.NO.', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'value' => '000-000'),
     'p_theme' => array('title' => 'Theme', 'type' => 'select', 'options' => getTheme()),
-    'p_type' => array('title' => 'Type', 'type' => 'select', 'options' => get_bom_lb(3), 'required' => 1, 'info' => '请先选择Type，Product ID会自动填上'),
+    'p_type' => array('title' => 'Type', 'type' => 'select', 'options' => get_bom_lb(3), 'addon' => 'onchange="changeBomType(this)"', 'info' => '请先选择Type，Product ID会自动填上'),
 
     'p_description' => array('title' => 'Description', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 1000, 'rows' => 5, 'addon' => 'style="width:400px"'),
     'p_description_chi' => array('title' => '中文描述', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 1000, 'rows' => 5, 'addon' => 'style="width:400px"'),
 
-    'p_sid' => array('title' => 'Supplier', 'type' => 'select', 'options' => getSupplier(), 'required' => 1),
+    'p_sid' => array('title' => 'Supplier', 'type' => 'select', 'options' => getSupplier()/*, 'required' => 1*/),
     'p_scode' => array('title' => 'Supplier Product code', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'required' => 1),
     'p_ccode' => array('title' => 'Customer code', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20),
     'p_cost_rmb' => array('title' => 'Cost RMB', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'number', 'required' => 1, 'value' => 0),
@@ -261,12 +261,15 @@ if($myerror->getError()){
         //judgeXid('p_pid')
         //})
         $(function(){
-            $("#p_type").selectbox({onChange: changeBomType});
-            $("#p_exclusive_to").selectbox({onChange: changeExclusiveTo});
+            /*$("#p_type").selectbox({onChange: changeBomType});
+            $("#p_exclusive_to").selectbox({onChange: changeExclusiveTo});*/
+
+            //$("#p_type").trigger('change');
         });
 
         function changeBomType(obj){
-            var my_val = obj.selectedVal;
+            //var my_val = obj.selectedVal;
+            var my_val = obj.value;
             var p_pid = $("#p_pid");
             var p_scode = $("#p_scode");
 
