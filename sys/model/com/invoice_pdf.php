@@ -51,6 +51,12 @@ class MYPDF extends TCPDF
         $this->SetY(19);
         $this->SetFont('segoeui', '', 8);
         $this->Cell(180, 10, 'Lei Muk Road, Kwai Chung, NT., HK       ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(28);
+        $this->SetFont('times', 'B', 20);
+        $this->Cell(180, 10, 'Invoice', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->Line(15, 37, 195, 37, $style=array('width' => 0.5));
     }
 
     // Page footer
@@ -147,18 +153,18 @@ if (isset($_GET['vid']) && $_GET['vid'] != '') {
         $page_nums = (count($result2) <= 6) ? 1 : (intval((count($result2) - 6) / 8) + 2);
     }
     // create some HTML content
-    $pdf->SetFont('times', '', 20);
+    /*$pdf->SetFont('times', '', 20);
     //div的高度不可調，用span方便多了！！！
     //找到調高度的方法了
     $pdf->Ln(1);
     $html = '<span align="right"><b>Invoice</b><span/>';
     //$pdf->Line(15,99,195,99);//為了解決<hr />太高不能控制的的bug，用這個來畫表頭下面的直線了
-    $pdf->writeHTML($html, true, false, true, false, '');
+    $pdf->writeHTML($html, true, false, true, false, '');*/
     //$pdf->Ln(1);
 
     $pdf->SetFont('droidsansfallback', '', 10);
     $html = '';
-    $html .= '<hr height="2"><table align="left" cellpadding="1" cellspacing="1">
+    $html .= '<!-- <hr height="2"> --><table align="left" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="15%" rowspan="4">TO: &nbsp;</td>
 					<td width="43%" rowspan="4"><b>' . $send_to . '</b></td>
