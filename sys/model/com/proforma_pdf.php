@@ -412,7 +412,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
 				<td align="right"><b>' . formatMoney(mySub($total, $result1['discount'])) . '</b></td>
 				</tr>';
 
-    $html .= '<tr><td>&nbsp;</td></tr>';
+    //$html .= '<tr><td>&nbsp;</td></tr>';
 
     $html .= '</table>';
     $pdf->SetFont('arial', '', 10);//20120704 ie6不显示//$pdf->SetFont('arialbd', '', 10);
