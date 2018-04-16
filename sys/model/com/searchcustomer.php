@@ -70,9 +70,9 @@ $form->begin();
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
 ?>
-<h1 class="green">CUSTOMER<em>* indicates required fields</em></h1>
+<!--<h1 class="green">CUSTOMER<em>* indicates required fields</em></h1>-->
 
-<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+<!--<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 	<td align="center">
 	<fieldset>
@@ -80,36 +80,36 @@ $form->begin();
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right">Customer ID : </td>
-				<td align="left"><? $form->show('cid'); ?></td>
+				<td align="left"><?/* $form->show('cid'); */?></td>
 				<td align="right">Name : </td>
-				<td align="left"><? $form->show('name'); ?></td>
+				<td align="left"><?/* $form->show('name'); */?></td>
 			</tr>
             <tr>
 				<td align="right">Website : </td>
-				<td align="left"><? $form->show('website'); ?></td>
+				<td align="left"><?/* $form->show('website'); */?></td>
 				<td align="right">Country : </td>
-				<td align="left"><? $form->show('country'); ?></td>
+				<td align="left"><?/* $form->show('country'); */?></td>
 			</tr>
             <tr>
                 <td align="right">Existing Customer : </td>
-                <td align="left"><? $form->show('existing_customer'); ?></td>
+                <td align="left"><?/* $form->show('existing_customer'); */?></td>
                 <td align="right">Created by : </td>
-                <td align="left"><? $form->show('created_by'); ?></td>
+                <td align="left"><?/* $form->show('created_by'); */?></td>
             </tr>
 			<tr><td>&nbsp;</td></tr>
 			<tr>
 				<td width="100%" colspan='4'>
-				<?
+				<?/*
 				$form->show('submitbutton');
 				// $form->show('resetbutton');
 
-				?></td>
+				*/?></td>
 			</tr>
 		</table>
 	</fieldset>
 	</td>
 	</tr>
-</table>
+</table>-->
 
 <?
 	$form->end();
@@ -203,10 +203,10 @@ $form->begin();
         $rs->SetRecordCol("Country", "country");
 		$rs->SetRecordCol("Website", "website");
 		$rs->SetRecordCol("Remark", "remark");
-		$rs->SetRecordCol("Markup Ratio", "markup_ratio");
+		//$rs->SetRecordCol("Markup Ratio", "markup_ratio");
 		//$rs->SetRecordCol("Terms", "terms");
-		$rs->SetRecordCol("Deposit ( % )", "deposit");
-		$rs->SetRecordCol("Balance ( day )", "balance");
+		//$rs->SetRecordCol("Deposit ( % )", "deposit");
+		//$rs->SetRecordCol("Balance ( day )", "balance");
 		$rs->SetRecordCol("Created by", "created_by");
 
 		$sort = GENERAL_NO;
@@ -216,6 +216,7 @@ $form->begin();
 		//20150622
         //$rs->SetRecordCol("VIEW CONTACT", "cid", $sort, $edit,"?act=com-c_all_contact","cid");
         //20151213
+        $rs->SetRecordCol("ADD CONTACT", "cid", $sort, $edit,"?act=com-c_addcontact","cid");
         $rs->SetRecordCol("VIEW CONTACT", "cid", $sort, $edit,"?act=com-c_searchcontact&page=1","cid");
 		$rs->SetRecordCol("DEL", "cid", $sort, $edit,"?act=com-modifycustomer","delid");
 		$rs->SetRSSorting('?act=com-searchcustomer');

@@ -23,7 +23,7 @@ $formItems = array(
     'tel1' => array('title' => 'Tel 1', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50),
     'tel2' => array('title' => 'Tel 2', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50),
     'email' => array('title' => 'Email', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50, 'required' => 1),
-    'send_style_list' => array('title' => 'Send Style List', 'type' => 'radio', 'options' => array(array('Yes', '1'), array('No', '2')), 'required' => 1, 'value' => 0),
+    //'send_style_list' => array('title' => 'Send Style List', 'type' => 'radio', 'options' => array(array('Yes', '1'), array('No', '2')), 'required' => 1, 'value' => 0),
 
     'submitbtn'	=> array('type' => 'submit', 'value' => ' Submit '),
 );
@@ -41,7 +41,7 @@ if(!$myerror->getAny() && $goodsForm->check()){
     $tel1 = trim($_POST['tel1']);
     $tel2 = trim($_POST['tel2']);
     $email = trim($_POST['email']);
-    $send_style_list = trim($_POST['send_style_list']);
+    $send_style_list = 2;//trim($_POST['send_style_list']);
 
     $result = $mysql->q('insert into contact (name, family_name, title, address, position, tel1, tel2, fax, email, cid, send_style_list) values ('.moreQm(11).')', $first_name, $family_name, $title, $address, $position, $tel1, $tel2, $fax, $email, $cid, $send_style_list);
     if($result){
@@ -79,12 +79,12 @@ if($myerror->getError()){
                 <td width="25%"><? $goodsForm->show('first_name');?></td>
                 <td width="25%"><? $goodsForm->show('family_name');?></td>
             </tr>
-            <tr>
-                <td width="25%"><? $goodsForm->show('send_style_list');?></td>
+            <!--<tr>
+                <td width="25%"><?/* $goodsForm->show('send_style_list');*/?></td>
                 <td width="25%"></td>
                 <td width="25%"></td>
                 <td width="25%"></td>
-            </tr>
+            </tr>-->
             <tr>
                 <td colspan="2"><? $goodsForm->show('address');?></td>
                 <td colspan="2"><? $goodsForm->show('position');?></td>

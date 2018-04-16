@@ -41,7 +41,7 @@ if($myerror->getWarn()){
             'tel1' => array('title' => 'Tel 1', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['tel1'])?$mod_result['tel1']:''),
             'tel2' => array('title' => 'Tel 2', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['tel2'])?$mod_result['tel2']:''),
             'email' => array('title' => 'Email', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['email'])?$mod_result['email']:'', 'required' => 1),
-            'send_style_list' => array('title' => 'Send Style List', 'type' => 'radio', 'options' => array(array('Yes', '1'), array('No', '2')), 'required' => 1, 'value' => isset($mod_result['send_style_list'])?$mod_result['send_style_list']:''),
+            //'send_style_list' => array('title' => 'Send Style List', 'type' => 'radio', 'options' => array(array('Yes', '1'), array('No', '2')), 'required' => 1, 'value' => isset($mod_result['send_style_list'])?$mod_result['send_style_list']:''),
 
             'submitbtn'	=> array('type' => 'submit', 'value' => ' Save '),
         );
@@ -62,7 +62,7 @@ if($myerror->getWarn()){
             $tel1 = trim($_POST['tel1']);
             $tel2 = trim($_POST['tel2']);
             $email = trim($_POST['email']);
-            $send_style_list = trim($_POST['send_style_list']);
+            $send_style_list = 2;//trim($_POST['send_style_list']);
 
             $result = $mysql->q('update contact set name = ?, family_name = ?, title = ?, address = ?, position = ?, tel1 = ?, tel2 = ?, fax = ?, email = ?, cid = ?, send_style_list = ? where id = ?', $first_name, $family_name, $title, $address, $position, $tel1, $tel2, $fax, $email, $cid, $send_style_list, $_GET['modid']);
             if($result){
@@ -86,9 +86,9 @@ if($myerror->getWarn()){
 
 
         ?>
-        <h1 class="green">CUSTOMER CONTACT<em>* item must be filled in</em></h1>
+        <!--<h1 class="green">CUSTOMER CONTACT<em>* item must be filled in</em></h1>
         <fieldset>
-            <legend class='legend'>Modify Customer Contact</legend>
+            <legend class='legend'>Modify Customer Contact</legend>-->
             <?php
             $goodsForm->begin();
             ?>
@@ -99,12 +99,12 @@ if($myerror->getWarn()){
                     <td width="25%"><? $goodsForm->show('first_name');?></td>
                     <td width="25%"><? $goodsForm->show('family_name');?></td>
                 </tr>
-                <tr>
-                    <td width="25%"><? $goodsForm->show('send_style_list');?></td>
+                <!--<tr>
+                    <td width="25%"><?/* $goodsForm->show('send_style_list');*/?></td>
                     <td width="25%"></td>
                     <td width="25%"></td>
                     <td width="25%"></td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td colspan="2"><? $goodsForm->show('address');?></td>
                     <td colspan="2"><? $goodsForm->show('position');?></td>
@@ -120,7 +120,7 @@ if($myerror->getWarn()){
             <?
             $goodsForm->show('submitbtn');
             ?>
-        </fieldset>
+        <!--</fieldset>-->
         <?
         $goodsForm->end();
 

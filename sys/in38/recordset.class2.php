@@ -295,6 +295,8 @@ Class RecordSetControl2 {
                             }
                         }elseif( $this->col_content[$j]["title"] == 'ADD INVOICE'){
                             echo "<a title='ADD INVOICE' href='".$temp_link."'><img src='../../images/button_document-inv.png'></a>";
+                        }elseif( $this->col_content[$j]["title"] == 'ADD CONTACT'){
+                            echo "<a title='ADD CONTACT' href='".$temp_link."'><img src='../../images/button_plus.png'></a>";
                         }else{
 							echo "<a class='button' href='".$temp_link."'>".$this->col_content[$j]["title"]."</a>";
 						}
