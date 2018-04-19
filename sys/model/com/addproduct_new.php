@@ -263,8 +263,6 @@ if($myerror->getError()){
         $(function(){
             /*$("#p_type").selectbox({onChange: changeBomType});
             $("#p_exclusive_to").selectbox({onChange: changeExclusiveTo});*/
-
-            //$("#p_type").trigger('change');
         });
 
         function changeBomType(obj){

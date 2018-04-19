@@ -321,7 +321,7 @@ if($myerror->getError()){
                     <?php
                     }else{
                         ?>
-                        <td width="25%"><div class="set"><label class="formtitle">Type<br /><?=$mod_result['type']?></label></div></td>
+                        <td width="25%"><div class="set"><label class="formtitle">Type<br /><?=$mod_result['type']?$mod_result['type']:'(None)'?></label></div></td>
                     <?php
                     }
                     ?>

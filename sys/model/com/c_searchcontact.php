@@ -38,7 +38,6 @@ if($myerror->getWarn()){
         'cid' => array(
             'type' => 'text',
             'value' => @$_SESSION['search_criteria']['cid'],
-            'readonly' => (isset($_GET['cid']) && $_GET['cid'])?true:false
         ),
         'send_style_list' => array(
             'type' => 'select',
@@ -75,21 +74,21 @@ if($myerror->getWarn()){
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
     ?>
-    <!--<h1 class="green">CUSTOMER CONTACT <?/*=(isset($_GET['cid']) && $_GET['cid'])?'<font color="red">'.$_GET['cid'].'</font>':''*/?><em>* indicates required fields</em></h1>
+    <!--<h1 class="green">CUSTOMER CONTACT <?/*=(isset($_GET['cid']) && $_GET['cid'])?'<font color="red">'.$_GET['cid'].'</font>':''*/?><em>* indicates required fields</em></h1>-->
 
     <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
             <td align="center">
-                <fieldset>
-                    <legend class='legend'>Search</legend>
+                <!--<fieldset>
+                    <legend class='legend'>Search</legend>-->
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td align="right">Customer ID : </td>
-                            <td align="left"><?/* $form->show('cid'); */?></td>
-                            <td align="right">Send Style List : </td>
+                            <td align="left"><? $form->show('cid'); ?></td>
+                            <td align="right"><!--Send Style List : --></td>
                             <td align="left"><?/* $form->show('send_style_list'); */?></td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td align="right">First Name : </td>
                             <td align="left"><?/* $form->show('first_name'); */?></td>
                             <td align="right">Family Name : </td>
@@ -100,21 +99,15 @@ if($myerror->getWarn()){
                             <td align="left"><?/* $form->show('address'); */?></td>
                             <td align="right">Email : </td>
                             <td align="left"><?/* $form->show('email'); */?></td>
-                        </tr>
-                        <tr><td>&nbsp;</td></tr>
+                        </tr>-->
                         <tr>
-                            <td width="100%" colspan='4'>
-                                <?/*
-                                $form->show('submitbutton');
-                                // $form->show('resetbutton');
-
-                                */?></td>
+                            <td width="100%" colspan='4'><? $form->show('submitbutton');?></td>
                         </tr>
                     </table>
-                </fieldset>
+                <!--</fieldset>-->
             </td>
         </tr>
-    </table>-->
+    </table>
 
     <?
     $form->end();
