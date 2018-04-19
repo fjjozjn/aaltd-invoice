@@ -145,7 +145,7 @@ $form->begin();
 		if (strlen(@$_SESSION['search_criteria']['name'])){
 			$where_sql.= " AND c.name Like '%".$_SESSION['search_criteria']['name'].'%\'';
 		}
-		if (strlen(@$_SESSION['search_criteria']['website'])){
+		/*if (strlen(@$_SESSION['search_criteria']['website'])){
 			$where_sql.= " AND c.website Like '%".$_SESSION['search_criteria']['website'].'%\'';
 		}
 		if (strlen(@$_SESSION['search_criteria']['created_by'])){
@@ -158,7 +158,7 @@ $form->begin();
             $where_sql.= " AND pi.pvid is not null";
         }else if(strlen(@$_SESSION['search_criteria']['existing_customer']) && $_SESSION['search_criteria']['existing_customer'] == 'No'){
             $where_sql.= " AND pi.pvid is null";
-        }
+        }*/
 		//普通用户只能搜索到自己添加的customer
 		if (!isSysAdmin()){
             //20150601 修改为普通用户只能查看自己group的用户的信息，也就是主可以查附属的，附属的不能查主的

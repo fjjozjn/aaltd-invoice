@@ -146,7 +146,7 @@ if($myerror->getWarn()){
         if (strlen(@$_SESSION['search_criteria']['cid'])){
             $where_sql.= " AND c1.cid Like '%".$_SESSION['search_criteria']['cid'].'%\'';
         }
-        if (strlen(@$_SESSION['search_criteria']['send_style_list'])){
+        /*if (strlen(@$_SESSION['search_criteria']['send_style_list'])){
             $where_sql.= " AND c1.send_style_list = '".$_SESSION['search_criteria']['send_style_list']."'";
         }
         if (strlen(@$_SESSION['search_criteria']['first_name'])){
@@ -160,7 +160,7 @@ if($myerror->getWarn()){
         }
         if (strlen(@$_SESSION['search_criteria']['email'])){
             $where_sql.= " AND c1.email Like '%".$_SESSION['search_criteria']['email'].'%\'';
-        }
+        }*/
         //普通用户只能搜索到自己添加的contact
         if (!isSysAdmin()){
             //20150601 修改为普通用户只能查看自己group的用户的信息，也就是主可以查附属的，附属的不能查主的
