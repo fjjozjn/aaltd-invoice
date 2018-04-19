@@ -105,11 +105,11 @@ if($myerror->getWarn()){
         if(!$myerror->getAny() && $goodsForm->check()){
 
             $name = $_POST['name'];
-            $valuable = isset($_POST['valuable'])?$_POST['valuable']:2;
-            $markup_ratio = $_POST['markup_ratio'];
+            $valuable = 1;//isset($_POST['valuable'])?$_POST['valuable']:2;
+            $markup_ratio = 1;//$_POST['markup_ratio'];
             //$terms = $_POST['terms'];
-            $deposit = $_POST['deposit'];
-            $balance = $_POST['balance'];
+            $deposit = 1;//$_POST['deposit'];
+            $balance = 1;//$_POST['balance'];
             $website = $_POST['website'];
             $remark = $_POST['remark'];
             $created_by = $_POST['created_by'];
@@ -164,42 +164,42 @@ if($myerror->getWarn()){
 
 
         ?>
-        <h1 class="green">CUSTOMER<em>* item must be filled in</em></h1>
+        <!--<h1 class="green">CUSTOMER<em>* item must be filled in</em></h1>
 
         <fieldset class="center2col" style="width:60%">
             <legend class='legend'>Action</legend>
-            <div style="margin-left:28px;"><a class="button" href="?act=com-c_addcontact&cid=<?=$mod_result['cid']?>" onclick="return pdfConfirm()">Add Contact</a><a target="_blank" class="button" href="?act=com-c_searchcontact&page=1&cid=<?=$mod_result['cid']?>">View Contact</a></div>
+            <div style="margin-left:28px;"><a class="button" href="?act=com-c_addcontact&cid=<?/*=$mod_result['cid']*/?>" onclick="return pdfConfirm()">Add Contact</a><a target="_blank" class="button" href="?act=com-c_searchcontact&page=1&cid=<?/*=$mod_result['cid']*/?>">View Contact</a></div>
         </fieldset>
 
         <fieldset class="center2col" style="width:60%">
-            <legend class='legend'>Modify Customer</legend>
+            <legend class='legend'>Modify Customer</legend>-->
             <?php
             $goodsForm->begin();
             ?>
             <table width="100%">
                 <tr>
                     <td width="33%"><? $goodsForm->show('cid');?></td>
-                    <td width="33%"><? $goodsForm->show('markup_ratio');?></td>
                     <td width="33%"><? $goodsForm->show('website');?></td>
+                    <td width="33%"><? /*$goodsForm->show('markup_ratio');*/?></td>
                 </tr>
                 <tr>
                     <td colspan="2"><? $goodsForm->show('name');?></td>
-                    <td width="33%"><? $goodsForm->show('valuable');?></td>
+                    <td width="33%"><? /*$goodsForm->show('valuable');*/?></td>
                 </tr>
             </table>
-            <br />
+            <!--<br />
             <table>
                 <tr>
                 <tr class="formtitle">
                     <td width="6%">&nbsp;</td>
                     <td>Payment Terms:&nbsp;</td>
-                    <td><? $goodsForm->show('deposit');?></td>
+                    <td><?/* $goodsForm->show('deposit');*/?></td>
                     <td>&nbsp;% Deposit, Balance&nbsp;</td>
-                    <td><? $goodsForm->show('balance');?></td>
+                    <td><?/* $goodsForm->show('balance');*/?></td>
                     <td>&nbsp;days after delivery</td>
                 </tr>
                 </tr>
-            </table>
+            </table>-->
             <table>
                 <tr valign="top">
                     <td colspan="2"><? $goodsForm->show('remark');?></td>
@@ -211,28 +211,28 @@ if($myerror->getWarn()){
                 <tr valign="top">
                     <td width="33%"><? $goodsForm->show('nature');?></td>
                     <td width="33%"><? $goodsForm->show('country');?></td>
-                    <td width="33%"><? $goodsForm->show('service_required');?></td>
+                    <td width="33%"><? /*$goodsForm->show('service_required');*/?></td>
+                </tr>
+                <!--<tr valign="top">
+                    <td width="33%"><?/* $goodsForm->show('company_owner');*/?></td>
+                    <td width="33%"><?/* $goodsForm->show('brands_owned');*/?></td>
+                    <td width="33%"><?/* $goodsForm->show('number_of_staff');*/?></td>
                 </tr>
                 <tr valign="top">
-                    <td width="33%"><? $goodsForm->show('company_owner');?></td>
-                    <td width="33%"><? $goodsForm->show('brands_owned');?></td>
-                    <td width="33%"><? $goodsForm->show('number_of_staff');?></td>
+                    <td width="33%"><?/* $goodsForm->show('year_of_formation');*/?></td>
+                    <td width="33%"><?/* $goodsForm->show('expected_order_qty');*/?></td>
+                    <td width="33%"><?/* $goodsForm->show('affordable_pricing');*/?></td>
                 </tr>
                 <tr valign="top">
-                    <td width="33%"><? $goodsForm->show('year_of_formation');?></td>
-                    <td width="33%"><? $goodsForm->show('expected_order_qty');?></td>
-                    <td width="33%"><? $goodsForm->show('affordable_pricing');?></td>
+                    <td width="33%"><?/* $goodsForm->show('quality_requirement');*/?></td>
+                    <td width="33%"><?/* $goodsForm->show('business_potential');*/?></td>
+                    <td width="33%"><?/* $goodsForm->show('restricted_substance_requirement');*/?></td>
                 </tr>
                 <tr valign="top">
-                    <td width="33%"><? $goodsForm->show('quality_requirement');?></td>
-                    <td width="33%"><? $goodsForm->show('business_potential');?></td>
-                    <td width="33%"><? $goodsForm->show('restricted_substance_requirement');?></td>
-                </tr>
-                <tr valign="top">
-                    <td width="33%"><? $goodsForm->show('lab_test_required');?></td>
-                    <td width="33%"><? $goodsForm->show('factory_audit');?></td>
-                    <td width="33%"><? $goodsForm->show('business_contract_required');?></td>
-                </tr>
+                    <td width="33%"><?/* $goodsForm->show('lab_test_required');*/?></td>
+                    <td width="33%"><?/* $goodsForm->show('factory_audit');*/?></td>
+                    <td width="33%"><?/* $goodsForm->show('business_contract_required');*/?></td>
+                </tr>-->
             </table>
             <div class="line"></div>
             <table>
@@ -253,7 +253,7 @@ if($myerror->getWarn()){
             <?
             $goodsForm->show('submitbtn');
             ?>
-        </fieldset>
+        <!--</fieldset>-->
         <?
         $goodsForm->end();
 

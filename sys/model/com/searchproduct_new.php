@@ -92,56 +92,56 @@ if($myerror->getWarn()){
     ?>
     <!--<h1 class="green">PRODUCT<em>* indicates required fields</em></h1>-->
 
-    <!-- <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+     <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
             <td align="center">
-                <fieldset>
-                    <legend class='legend'>Search</legend>
+                <!--<fieldset>
+                    <legend class='legend'>Search</legend>-->
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td align="right">Product ID : </td>
-                            <td align="left"><? //$form->show('pid'); ?></td>
+                            <td align="left"><? $form->show('pid'); ?></td>
                             <td align="right">Description : </td>
-                            <td align="left"><? //$form->show('description'); ?></td>
+                            <td align="left"><? $form->show('description'); ?></td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td align="right">Supplier ID : </td>
-                            <td align="left"><? //$form->show('sid'); ?></td>
+                            <td align="left"><?/* $form->show('sid'); */?></td>
                             <td align="right">Exclusive To : </td>
-                            <td align="left"><? //$form->show('exclusive_to'); ?></td>
-                        </tr>
+                            <td align="left"><?/* $form->show('exclusive_to'); */?></td>
+                        </tr>-->
                         <tr>
                             <td align="right">Supplier code : </td>
-                            <td align="left"><? //$form->show('scode'); ?></td>
+                            <td align="left"><? $form->show('scode'); ?></td>
                             <td align="right">Customer code : </td>
-                            <td align="left"><? //$form->show('ccode'); ?></td>
+                            <td align="left"><? $form->show('ccode'); ?></td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td align="right">Start Date : </td>
-                            <td align="left"><? //$form->show('start_date'); ?></td>
+                            <td align="left"><?/* $form->show('start_date'); */?></td>
                             <td align="right">End Date : </td>
-                            <td align="left"><? //$form->show('end_date'); ?></td>
-                        </tr>
-                        <tr>
+                            <td align="left"><?/* $form->show('end_date'); */?></td>
+                        </tr>-->
+                        <!--<tr>
                             <td align="right">Show in catalog : </td>
-                            <td align="left"><? /*$form->show('show_in_catalog');*/ ?></td>
+                            <td align="left"><?/*$form->show('show_in_catalog');*/?></td>
                             <td align="right">Theme : </td>
-                            <td align="left"><? /*$form->show('theme');*/ ?></td>
-                        </tr>
+                            <td align="left"><?/*$form->show('theme');*/?></td>
+                        </tr>-->
                         <tr><td>&nbsp;</td></tr>
                         <tr>
                             <td width="100%" colspan='4'>
                                 <?
-                                //$form->show('submitbutton');
+                                $form->show('submitbutton');
                                 // $form->show('resetbutton');
 
                                 ?></td>
                         </tr>
                     </table>
-                </fieldset>
+                <!--</fieldset>-->
             </td>
         </tr>
-    </table> -->
+    </table>
 
     <?
     $form->end();

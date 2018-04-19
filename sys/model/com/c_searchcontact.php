@@ -75,7 +75,7 @@ if($myerror->getWarn()){
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
     ?>
-    <h1 class="green">CUSTOMER CONTACT <?=(isset($_GET['cid']) && $_GET['cid'])?'<font color="red">'.$_GET['cid'].'</font>':''?><em>* indicates required fields</em></h1>
+    <!--<h1 class="green">CUSTOMER CONTACT <?/*=(isset($_GET['cid']) && $_GET['cid'])?'<font color="red">'.$_GET['cid'].'</font>':''*/?><em>* indicates required fields</em></h1>
 
     <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
@@ -85,36 +85,36 @@ if($myerror->getWarn()){
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td align="right">Customer ID : </td>
-                            <td align="left"><? $form->show('cid'); ?></td>
+                            <td align="left"><?/* $form->show('cid'); */?></td>
                             <td align="right">Send Style List : </td>
-                            <td align="left"><? $form->show('send_style_list'); ?></td>
+                            <td align="left"><?/* $form->show('send_style_list'); */?></td>
                         </tr>
                         <tr>
                             <td align="right">First Name : </td>
-                            <td align="left"><? $form->show('first_name'); ?></td>
+                            <td align="left"><?/* $form->show('first_name'); */?></td>
                             <td align="right">Family Name : </td>
-                            <td align="left"><? $form->show('family_name'); ?></td>
+                            <td align="left"><?/* $form->show('family_name'); */?></td>
                         </tr>
                         <tr>
                             <td align="right">Address : </td>
-                            <td align="left"><? $form->show('address'); ?></td>
+                            <td align="left"><?/* $form->show('address'); */?></td>
                             <td align="right">Email : </td>
-                            <td align="left"><? $form->show('email'); ?></td>
+                            <td align="left"><?/* $form->show('email'); */?></td>
                         </tr>
                         <tr><td>&nbsp;</td></tr>
                         <tr>
                             <td width="100%" colspan='4'>
-                                <?
+                                <?/*
                                 $form->show('submitbutton');
                                 // $form->show('resetbutton');
 
-                                ?></td>
+                                */?></td>
                         </tr>
                     </table>
                 </fieldset>
             </td>
         </tr>
-    </table>
+    </table>-->
 
     <?
     $form->end();
@@ -216,7 +216,7 @@ if($myerror->getWarn()){
         $rs->SetRecordCol("Tel", "tel1");
         $rs->SetRecordCol("Fax", "fax");
         $rs->SetRecordCol("Email", "email");
-        $rs->SetRecordCol("Send Style List", "send_style_list");
+        //$rs->SetRecordCol("Send Style List", "send_style_list");
 
         $rs->SetRecordCol("MODIFY", "id", $sort, $edit,"?act=com-c_modifycontact&page=".$_GET['page'],"modid");
         $rs->SetRecordCol("DEL", "id", $sort, $edit,"?act=com-c_modifycontact&page=".$_GET['page'],"delid");
