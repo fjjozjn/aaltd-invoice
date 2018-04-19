@@ -13,6 +13,15 @@ if( isset($_GET['value']) && $_GET['value'] != '' && $_GET['ajax'] == 'customer'
 		    $cname_rtn .= ($result[$i]['title'].' '.$result[$i]['name'].' '.$result[$i]['family_name'].'|');
         }
 		echo trim($cname_rtn, '|');
+
+        //select2
+        /*$cname_rtn = [];
+        for($i = 0; $i < count($result); $i++){
+            $cname_rtn[$i]['id'] = $result[$i]['title'].' '.$result[$i]['name'].' '.$result[$i]['family_name'];
+            $cname_rtn[$i]['text'] = $result[$i]['title'].' '.$result[$i]['name'].' '.$result[$i]['family_name'];
+        }
+        echo json_encode($cname_rtn);*/
+
 	}else{
 		echo 'no-2';	
 	}

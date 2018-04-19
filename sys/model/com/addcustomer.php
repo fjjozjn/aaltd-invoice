@@ -15,10 +15,10 @@ $formItems = array(
     'cid' => array('title' => 'Customer ID', 'type' => 'text', 'minlen' => 1, 'maxlen' => 5, 'required' => 1),
     'name' => array('title' => 'Company Name', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 80, 'required' => 1),
     'valuable' => array('type' => 'checkbox', 'options' => array(array('Valuable', 1))),
-    'markup_ratio' => array('title' => 'Markup Ratio', 'type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 20, 'required' => 1),
+    //'markup_ratio' => array('title' => 'Markup Ratio', 'type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 20, 'required' => 1),
     //'terms' => array('title' => 'Terms', 'type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 20),
-    'deposit' => array('type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 5, 'addon' => 'style="width:50px"', 'required' => 1, 'value' => '0'),
-    'balance' => array('type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 5, 'addon' => 'style="width:50px"', 'required' => 1, 'value' => '0'),
+    //'deposit' => array('type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 5, 'addon' => 'style="width:50px"', 'required' => 1, 'value' => '0'),
+    //'balance' => array('type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 5, 'addon' => 'style="width:50px"', 'required' => 1, 'value' => '0'),
     'website' => array('title' => 'Website', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50),
     'remark' => array('title' => 'Remark', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 50),
 
@@ -61,19 +61,19 @@ if(!$myerror->getAny() && $goodsForm->check()){
     //add 20151202
     $nature = $_POST['nature'];
     $country = $_POST['country'];
-    $service_required = $_POST['service_required'];
-    $company_owner = $_POST['company_owner'];
-    $brands_owned = $_POST['brands_owned'];
-    $number_of_staff = $_POST['number_of_staff'];
-    $year_of_formation = $_POST['year_of_formation'];
-    $expected_order_qty = $_POST['expected_order_qty'];
-    $affordable_pricing = $_POST['affordable_pricing'];
-    $quality_requirement = $_POST['quality_requirement'];
-    $business_potential = $_POST['business_potential'];
-    $restricted_substance_requirement = $_POST['restricted_substance_requirement'];
-    $lab_test_required = $_POST['lab_test_required'];
-    $factory_audit = $_POST['factory_audit'];
-    $business_contract_required = $_POST['business_contract_required'];
+    $service_required = '';//$_POST['service_required'];
+    $company_owner = '';//$_POST['company_owner'];
+    $brands_owned = '';//$_POST['brands_owned'];
+    $number_of_staff = '';//$_POST['number_of_staff'];
+    $year_of_formation = '';//$_POST['year_of_formation'];
+    $expected_order_qty = '';//$_POST['expected_order_qty'];
+    $affordable_pricing = '';//$_POST['affordable_pricing'];
+    $quality_requirement = '';//$_POST['quality_requirement'];
+    $business_potential = '';//$_POST['business_potential'];
+    $restricted_substance_requirement = '';//$_POST['restricted_substance_requirement'];
+    $lab_test_required = '';//$_POST['lab_test_required'];
+    $factory_audit = '';//$_POST['factory_audit'];
+    $business_contract_required = '';//$_POST['business_contract_required'];
 
     //add 201305241334
     $production_packaging = $_POST['production_packaging'];
@@ -142,7 +142,6 @@ if($myerror->getError()){
                 <td width="33%">&nbsp;</td>
             </tr>
         </table>
-        <div class="line"></div>
         <table width="100%">
             <tr valign="top">
                 <td width="33%"><? $goodsForm->show('nature');?></td>
@@ -170,7 +169,6 @@ if($myerror->getError()){
                 <td width="33%"><?/* $goodsForm->show('business_contract_required');*/?></td>-->
             </tr>
         </table>
-        <div class="line"></div>
         <table>
             <tr>
                 <td colspan="2"><? $goodsForm->show('production_packaging');?></td>

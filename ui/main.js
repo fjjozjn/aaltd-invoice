@@ -1401,6 +1401,72 @@ function selectCustomer(pre){
 	})
 }
 
+//20180412
+function chooseCustomerNew(obj){
+    var customer_val = obj.value;
+    var attentionSelect = $("select[id$='attention']");
+    var telInput = $("input[id$='tel']");
+    var faxInput = $("input[id$='fax']");
+    var addressInput = $("input[id$='address']");
+    var qs = 'ajax=customer&act=ajax-search_contact_name&value='+escape(customer_val);
+    $.ajax({
+        type: "GET",
+        url: "index.php",
+        data: qs,
+        cache: false,
+        dataType: "json",
+        error: function () {
+            alert('系统错误，查询customer失败');
+        },
+        success: function (data) {
+            if(data.indexOf('no-') < 0){
+                attentionSelect.select2({
+                    placeholder: '- select -',
+                    data: data
+                });
+            }else{
+                //移除attention的option
+                attentionSelect.select2();
+            }
+            telInput.val("");
+            faxInput.val("");
+            addressInput.val("");
+        }
+    })
+}
+//20180412
+function chooseContactNew(obj){
+    var customerSelectText = $("select[id$='cid']").val();
+    var contact_val = obj.value;
+    var telInput = $("input[id$='tel']");
+    var faxInput = $("input[id$='fax']");
+    var addressInput = $("input[id$='address']");
+
+    var qs = 'ajax=customer&act=ajax-search_contact_info&value0='+customerSelectText+'&value='+escape(contact_val);
+    $.ajax({
+        type: "GET",
+        url: "index.php",
+        data: qs,
+        cache: false,
+        dataType: "html",
+        error: function(){
+            alert('系统错误，查询contact失败');
+        },
+        success: function(data){
+            if(data.indexOf('no-') < 0){
+                var data_array = data.split("|");
+                telInput.val(data_array[0]);
+                faxInput.val(data_array[1]);
+                addressInput.val(data_array[2]);
+            }else{
+                telInput.val("");
+                faxInput.val("");
+                addressInput.val("");
+            }
+        }
+    })
+}
+
 /* 選擇customer 的ajax */
 function selectFtyCustomer(pre){
     $("#"+pre+"cid_container li").click(function(){

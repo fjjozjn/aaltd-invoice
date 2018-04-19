@@ -64,7 +64,7 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
         'p_description' => array('title' => 'Description', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 1000, 'rows' => 5, 'value' => isset($mod_result['description'])?$mod_result['description']:'', 'addon' => 'style="width:400px"'),
         'p_description_chi' => array('title' => '中文描述', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 1000, 'rows' => 5, 'value' => isset($mod_result['description_chi'])?$mod_result['description_chi']:'', 'addon' => 'style="width:400px"'),
 
-        'p_sid' => array('title' => 'Supplier', 'type' => 'select', 'options' => getSupplier(), 'value' => isset($mod_result['sid'])?$mod_result['sid']:'', 'required' => 1),
+        'p_sid' => array('title' => 'Supplier', 'type' => 'select', 'options' => getSupplier(), 'value' => isset($mod_result['sid'])?$mod_result['sid']:''/*, 'required' => 1*/),
         'p_scode' => array('title' => 'Supplier Product code', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'value' => isset($mod_result['scode'])?$mod_result['scode']:'', 'required' => 1),
         'p_ccode' => array('title' => 'Customer code', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'value' => isset($mod_result['ccode'])?$mod_result['ccode']:''),
         'p_cost_rmb' => array('title' => 'Cost RMB', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'value' => isset($mod_result['cost_rmb'])?$mod_result['cost_rmb']:'', 'required' => 1),
@@ -321,7 +321,7 @@ if($myerror->getError()){
                     <?php
                     }else{
                         ?>
-                        <td width="25%"><div class="set"><label class="formtitle">Type<br /><?=$mod_result['type']?></label></div></td>
+                        <td width="25%"><div class="set"><label class="formtitle">Type<br /><?=$mod_result['type']?$mod_result['type']:'(None)'?></label></div></td>
                     <?php
                     }
                     ?>
@@ -384,11 +384,11 @@ if($myerror->getError()){
 ?>
 <script>
     $(function(){
-        $("#p_type").selectbox({onChange: changeBomType});
-        $("#p_exclusive_to").selectbox({onChange: changeExclusiveTo});
-    })
+        /*$("#p_type").selectbox({onChange: changeBomType});
+        $("#p_exclusive_to").selectbox({onChange: changeExclusiveTo});*/
+    });
 
-    function changeBomType(obj){
+    /*function changeBomType(obj){
         var my_val = obj.selectedVal;
         var p_pid = $("#p_pid");
         var p_scode = $("#p_scode");
@@ -418,5 +418,5 @@ if($myerror->getError()){
                 }
             }
         })
-    }
+    }*/
 </script>

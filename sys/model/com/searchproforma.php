@@ -183,7 +183,7 @@ $form->begin();
 
 		$where_sql = "";
 
-		if (strlen(@$_SESSION['search_criteria']['pvid'])){
+		/*if (strlen(@$_SESSION['search_criteria']['pvid'])){
 			$where_sql.= " AND pvid Like '%".$_SESSION['search_criteria']['pvid'].'%\'';
 		}
 		if (strlen(@$_SESSION['search_criteria']['send_to'])){
@@ -218,7 +218,7 @@ $form->begin();
 			}
 		}elseif (strlen(@$_SESSION['search_criteria']['etd_end_date'])){
 			$where_sql.= " AND expected_date < '".$_SESSION['search_criteria']['etd_end_date']." 23:59:59'";
-		}
+		}*/
 		
 		//普通用户只能搜索到自己开的单
 		if (!isSysAdmin()){

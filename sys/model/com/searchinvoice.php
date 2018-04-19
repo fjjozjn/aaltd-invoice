@@ -160,7 +160,7 @@ $form->begin();
 
 		$where_sql = "";
 
-		if (strlen(@$_SESSION['search_criteria']['vid'])){
+		/*if (strlen(@$_SESSION['search_criteria']['vid'])){
 			$where_sql.= " AND vid Like '%".$_SESSION['search_criteria']['vid'].'%\'';
 		}
 		if (strlen(@$_SESSION['search_criteria']['send_to'])){
@@ -186,7 +186,7 @@ $form->begin();
 			}
 		}elseif (strlen(@$_SESSION['search_criteria']['end_date'])){
 			$where_sql.= " AND mark_date < '".$_SESSION['search_criteria']['end_date']." 23:59:59'";
-		}	
+		}	*/
 		
 		//普通用户只能搜索到自己开的单
 		if (!isSysAdmin()){

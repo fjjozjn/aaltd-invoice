@@ -183,16 +183,16 @@ if($myerror->getWarn()){
         if (strlen(@$_SESSION['search_criteria']['description'])){
             $where_sql.= " AND description Like '%".$_SESSION['search_criteria']['description'].'%\'';
         }
-        if (strlen(@$_SESSION['search_criteria']['sid'])){
+        /*if (strlen(@$_SESSION['search_criteria']['sid'])){
             $where_sql.= " AND sid Like '%".$_SESSION['search_criteria']['sid'].'%\'';
-        }
+        }*/
         if (strlen(@$_SESSION['search_criteria']['scode'])){
             $where_sql.= " AND scode Like '%".$_SESSION['search_criteria']['scode'].'%\'';
         }
         if (strlen(@$_SESSION['search_criteria']['ccode'])){
             $where_sql.= " AND ccode Like '%".$_SESSION['search_criteria']['ccode'].'%\'';
         }
-        if (strlen(@$_SESSION['search_criteria']['exclusive_to'])){
+        /*if (strlen(@$_SESSION['search_criteria']['exclusive_to'])){
             $where_sql.= " AND exclusive_to Like '%".$_SESSION['search_criteria']['exclusive_to'].'%\'';
         }
         if (strlen(@$_SESSION['search_criteria']['start_date'])){
@@ -209,7 +209,7 @@ if($myerror->getWarn()){
         }
         if (strlen(@$_SESSION['search_criteria']['theme'])){
             $where_sql .= " AND theme = ".$_SESSION['search_criteria']['theme'];
-        }
+        }*/
         // echo $where_sql;
 
         //普通用户只能看到exclusive_to是自己的用户
