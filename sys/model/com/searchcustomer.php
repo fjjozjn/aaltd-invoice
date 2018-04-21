@@ -72,19 +72,19 @@ $form->begin();
 ?>
 <!--<h1 class="green">CUSTOMER<em>* indicates required fields</em></h1>-->
 
-<!--<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 	<td align="center">
-	<fieldset>
-	<legend class='legend'>Search</legend>
+	<!--<fieldset>
+	<legend class='legend'>Search</legend>-->
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right">Customer ID : </td>
-				<td align="left"><?/* $form->show('cid'); */?></td>
+				<td align="left"><? $form->show('cid');?></td>
 				<td align="right">Name : </td>
-				<td align="left"><?/* $form->show('name'); */?></td>
+				<td align="left"><? $form->show('name'); ?></td>
 			</tr>
-            <tr>
+            <!--<tr>
 				<td align="right">Website : </td>
 				<td align="left"><?/* $form->show('website'); */?></td>
 				<td align="right">Country : </td>
@@ -95,21 +95,15 @@ $form->begin();
                 <td align="left"><?/* $form->show('existing_customer'); */?></td>
                 <td align="right">Created by : </td>
                 <td align="left"><?/* $form->show('created_by'); */?></td>
-            </tr>
-			<tr><td>&nbsp;</td></tr>
+            </tr>-->
 			<tr>
-				<td width="100%" colspan='4'>
-				<?/*
-				$form->show('submitbutton');
-				// $form->show('resetbutton');
-
-				*/?></td>
+				<td width="100%" colspan='4'><? $form->show('submitbutton');?></td>
 			</tr>
 		</table>
-	</fieldset>
+	<!--</fieldset>-->
 	</td>
 	</tr>
-</table>-->
+</table>
 
 <?
 	$form->end();
@@ -151,7 +145,7 @@ $form->begin();
 		if (strlen(@$_SESSION['search_criteria']['name'])){
 			$where_sql.= " AND c.name Like '%".$_SESSION['search_criteria']['name'].'%\'';
 		}
-		if (strlen(@$_SESSION['search_criteria']['website'])){
+		/*if (strlen(@$_SESSION['search_criteria']['website'])){
 			$where_sql.= " AND c.website Like '%".$_SESSION['search_criteria']['website'].'%\'';
 		}
 		if (strlen(@$_SESSION['search_criteria']['created_by'])){
@@ -164,7 +158,7 @@ $form->begin();
             $where_sql.= " AND pi.pvid is not null";
         }else if(strlen(@$_SESSION['search_criteria']['existing_customer']) && $_SESSION['search_criteria']['existing_customer'] == 'No'){
             $where_sql.= " AND pi.pvid is null";
-        }
+        }*/
 		//普通用户只能搜索到自己添加的customer
 		if (!isSysAdmin()){
             //20150601 修改为普通用户只能查看自己group的用户的信息，也就是主可以查附属的，附属的不能查主的

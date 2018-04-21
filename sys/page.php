@@ -19,13 +19,13 @@ if(!defined('BEEN_INCLUDE') || !is_object($myerror))exit('Welcome to The Matrix'
     <link rel="stylesheet" type="text/css" href="/ui/main.css" />
     <link rel="stylesheet" type="text/css" href="/ui/form.css" />
     <link rel="stylesheet" type="text/css" href="/ui/selectbox.css" />
-    <!--<link rel="stylesheet" type="text/css" href="/ui/select2/select2.min.css" />-->
+    <link rel="stylesheet" type="text/css" href="/ui/select2/select2.min.css" />
     <link href="/ui/stylesheet.css" rel="stylesheet" type="text/css">
     <link href="/ui/nav.css" rel="stylesheet" type="text/css">
     <link href="/ui/artDialog.css" rel="stylesheet" />
         <script language="javascript" type="text/javascript" src="/ui/jquery.js"></script>
         <script language="javascript" type="text/javascript" src="/ui/selectbox.js"></script>
-        <!--<script language="javascript" type="text/javascript" src="/ui/select2/select2.min.js"></script>-->
+        <script language="javascript" type="text/javascript" src="/ui/select2/select2.min.js"></script>
         <script language="javascript" type="text/javascript" src="/ui/form.js"></script>
         <script language="javascript" type="text/javascript" src="/ui/main.js"></script>
         <script language="javascript" type="text/javascript" src="/ui/nav.js"></script>

@@ -16,9 +16,9 @@ $goodsForm = new My_Forms();
 $formItems = array(
 
 		//'pi_pvid' => array('title' => 'Proforma NO.', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20/*, 'restrict' => 'judgexid'*/, 'required' => 1),
-		'pi_cid' => array('title' => 'Customer', 'type' => 'select', 'options' => get_customer(), 'required' => 1),
+		'pi_cid' => array('title' => 'Customer', 'type' => 'select', 'options' => get_customer()/*, 'addon' => 'onchange="chooseCustomerNew(this)"'*/, 'required' => 1),
 		//'pi_send_to' => array('title' => 'To', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20),
-		'pi_attention' => array('title' => 'Attention', 'type' => 'select', 'options' => '', 'required' => 1),
+		'pi_attention' => array('title' => 'Attention', 'type' => 'select', 'options' => ''/*, 'addon' => 'onchange="chooseContactNew(this)"'*/, 'required' => 1),
 		'pi_reference' => array('title' => 'Customer PO No.', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20),
 		'pi_reference_num' => array('title' => 'Ref NO.', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20),
 		'pi_tel' => array('title' => 'Tel', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20),

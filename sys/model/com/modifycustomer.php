@@ -69,10 +69,10 @@ if($myerror->getWarn()){
             'created_by' => array('title' => 'Created by', 'type' => 'select', 'required' => 1, 'options' => $user, 'value' => isset($mod_result['created_by'])?$mod_result['created_by']:''),
             'name' => array('title' => 'Company Name', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 80, 'required' => 1, 'value' => isset($mod_result['name'])?$mod_result['name']:''),
             'valuable' => array('type' => 'checkbox', 'options' => array(array('Valuable', 1)), 'value' => isset($mod_result['valuable'])?$mod_result['valuable']:''),
-            'markup_ratio' => array('title' => 'Markup Ratio', 'type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 20, 'required' => 1, 'value' => isset($mod_result['markup_ratio'])?$mod_result['markup_ratio']:''),
+            //'markup_ratio' => array('title' => 'Markup Ratio', 'type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 20, 'required' => 1, 'value' => isset($mod_result['markup_ratio'])?$mod_result['markup_ratio']:''),
             //'terms' => array('title' => 'Terms', 'type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 20, 'value' => isset($mod_result['terms'])?$mod_result['terms']:''),
-            'deposit' => array('type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 5, 'value' => isset($mod_result['deposit'])?$mod_result['deposit']:'0', 'addon' => 'style="width:50px"', 'required' => 1),
-            'balance' => array('type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 5, 'value' => isset($mod_result['balance'])?$mod_result['balance']:'0', 'addon' => 'style="width:50px"', 'required' => 1),
+            //'deposit' => array('type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 5, 'value' => isset($mod_result['deposit'])?$mod_result['deposit']:'0', 'addon' => 'style="width:50px"', 'required' => 1),
+            //'balance' => array('type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 5, 'value' => isset($mod_result['balance'])?$mod_result['balance']:'0', 'addon' => 'style="width:50px"', 'required' => 1),
             'website' => array('title' => 'Website', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['website'])?$mod_result['website']:''),
             'remark' => array('title' => 'Remark', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['remark'])?$mod_result['remark']:''),
 
@@ -117,19 +117,19 @@ if($myerror->getWarn()){
             //add 20151202
             $nature = $_POST['nature'];
             $country = $_POST['country'];
-            $service_required = $_POST['service_required'];
-            $company_owner = $_POST['company_owner'];
-            $brands_owned = $_POST['brands_owned'];
-            $number_of_staff = $_POST['number_of_staff'];
-            $year_of_formation = $_POST['year_of_formation'];
-            $expected_order_qty = $_POST['expected_order_qty'];
-            $affordable_pricing = $_POST['affordable_pricing'];
-            $quality_requirement = $_POST['quality_requirement'];
-            $business_potential = $_POST['business_potential'];
-            $restricted_substance_requirement = $_POST['restricted_substance_requirement'];
-            $lab_test_required = $_POST['lab_test_required'];
-            $factory_audit = $_POST['factory_audit'];
-            $business_contract_required = $_POST['business_contract_required'];
+            $service_required = '';//$_POST['service_required'];
+            $company_owner = '';//$_POST['company_owner'];
+            $brands_owned = '';//$_POST['brands_owned'];
+            $number_of_staff = '';//$_POST['number_of_staff'];
+            $year_of_formation = '';//$_POST['year_of_formation'];
+            $expected_order_qty = '';//$_POST['expected_order_qty'];
+            $affordable_pricing = '';//$_POST['affordable_pricing'];
+            $quality_requirement = '';//$_POST['quality_requirement'];
+            $business_potential = '';//$_POST['business_potential'];
+            $restricted_substance_requirement = '';//$_POST['restricted_substance_requirement'];
+            $lab_test_required = '';//$_POST['lab_test_required'];
+            $factory_audit = '';//$_POST['factory_audit'];
+            $business_contract_required = '';//$_POST['business_contract_required'];
 
             //add 201305241334
             $production_packaging = $_POST['production_packaging'];
@@ -203,10 +203,9 @@ if($myerror->getWarn()){
             <table>
                 <tr valign="top">
                     <td colspan="2"><? $goodsForm->show('remark');?></td>
-                    <td width="33%"><? $goodsForm->show('created_by');?></td>
+                    <td width="33%"> </td>
                 </tr>
             </table>
-            <div class="line"></div>
             <table width="100%">
                 <tr valign="top">
                     <td width="33%"><? $goodsForm->show('nature');?></td>
@@ -234,7 +233,6 @@ if($myerror->getWarn()){
                     <td width="33%"><?/* $goodsForm->show('business_contract_required');*/?></td>
                 </tr>-->
             </table>
-            <div class="line"></div>
             <table>
                 <tr>
                     <td colspan="2"><? $goodsForm->show('production_packaging');?></td>
@@ -246,6 +244,11 @@ if($myerror->getWarn()){
                 </tr>
                 <tr>
                     <td colspan="2"><? $goodsForm->show('production_remarks');?></td>
+                    <td width="33%">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="33%"><? $goodsForm->show('created_by');?></td>
+                    <td width="33%">&nbsp;</td>
                     <td width="33%">&nbsp;</td>
                 </tr>
             </table>
