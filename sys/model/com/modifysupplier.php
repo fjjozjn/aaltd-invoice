@@ -88,15 +88,15 @@ if($myerror->getError()){
 
 	
 	?>	
-<h1 class="green">SUPPLIER<em>* item must be filled in</em></h1>
+<!--<h1 class="green">SUPPLIER<em>* item must be filled in</em></h1>
 
 <fieldset class="center2col" style="width:70%"> 
 <legend class='legend'>Action</legend>
-<div style="margin-left:28px;"><a class="button" href="?act=com-addcontact&sid=<?=$mod_result['sid']?>" onclick="return pdfConfirm()">Add Contact</a></div>
-</fieldset>
+<div style="margin-left:28px;"><a class="button" href="?act=com-addcontact&sid=<?/*=$mod_result['sid']*/?>" onclick="return pdfConfirm()">Add Contact</a></div>
+</fieldset>-->
 
-<fieldset class="center2col" style="width:70%"> 
-<legend class='legend'>Modify Supplier</legend>
+<!--<fieldset class="center2col" style="width:70%">
+<legend class='legend'>Modify Supplier</legend>-->
 <?php
 $goodsForm->begin();
 ?>
@@ -132,7 +132,7 @@ $goodsForm->begin();
 <?
 $goodsForm->show('submitbtn');
 ?>
-</fieldset>
+<!--</fieldset>-->
 <?
 $goodsForm->end();
 

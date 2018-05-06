@@ -93,9 +93,9 @@ if($myerror->getWarn()){
 
 
         ?>
-        <h1 class="green">SUPPLIER CONTACT<em>* item must be filled in</em></h1>
+        <!--<h1 class="green">SUPPLIER CONTACT<em>* item must be filled in</em></h1>
         <fieldset>
-            <legend class='legend'>Modify Supplier Contact</legend>
+            <legend class='legend'>Modify Supplier Contact</legend>-->
             <?php
             $goodsForm->begin();
             ?>
@@ -132,7 +132,7 @@ if($myerror->getWarn()){
             <?
             $goodsForm->show('submitbtn');
             ?>
-        </fieldset>
+        <!--</fieldset>-->
         <?
         $goodsForm->end();
 

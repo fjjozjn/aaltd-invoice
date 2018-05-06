@@ -64,9 +64,9 @@ if($myerror->getError()){
 
 	
 	?>
-<h1 class="green">SUPPLIER<em>* item must be filled in</em></h1>
+<!--<h1 class="green">SUPPLIER<em>* item must be filled in</em></h1>
 <fieldset class="center2col" style="width:70%">
-<legend class='legend'>Add Supplier</legend>
+<legend class='legend'>Add Supplier</legend>-->
 
 <?php
 $goodsForm->begin();
@@ -105,7 +105,7 @@ $goodsForm->begin();
 $goodsForm->show('submitbtn');
 ?>
 
-</fieldset>
+<!--</fieldset>-->
 <?
 $goodsForm->end();
 }

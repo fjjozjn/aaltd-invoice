@@ -128,7 +128,7 @@ if($myerror->getWarn()){
                             <td align="right">Theme : </td>
                             <td align="left"><?/*$form->show('theme');*/?></td>
                         </tr>-->
-                        <tr><td>&nbsp;</td></tr>
+                        <!--<tr><td>&nbsp;</td></tr>-->
                         <tr>
                             <td width="100%" colspan='4'>
                                 <?

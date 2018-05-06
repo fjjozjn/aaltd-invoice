@@ -64,13 +64,13 @@ if($myerror->getWarn()){
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
     ?>
-    <h1 class="green">SUPPLIER CONTACT<em>* indicates required fields</em></h1>
+    <!--<h1 class="green">SUPPLIER CONTACT<em>* indicates required fields</em></h1>-->
 
     <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
             <td align="center">
-                <fieldset>
-                    <legend class='legend'>Search</legend>
+                <!--<fieldset>
+                    <legend class='legend'>Search</legend>-->
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td align="right">Supplier ID : </td>
@@ -78,19 +78,19 @@ if($myerror->getWarn()){
                             <td align="right"></td>
                             <td align="left"></td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td align="right">First Name : </td>
-                            <td align="left"><? $form->show('first_name'); ?></td>
+                            <td align="left"><?/* $form->show('first_name'); */?></td>
                             <td align="right">Family Name : </td>
-                            <td align="left"><? $form->show('family_name'); ?></td>
+                            <td align="left"><?/* $form->show('family_name'); */?></td>
                         </tr>
                         <tr>
                             <td align="right">Address : </td>
-                            <td align="left"><? $form->show('address'); ?></td>
+                            <td align="left"><?/* $form->show('address'); */?></td>
                             <td align="right">Email : </td>
-                            <td align="left"><? $form->show('email'); ?></td>
+                            <td align="left"><?/* $form->show('email'); */?></td>
                         </tr>
-                        <tr><td>&nbsp;</td></tr>
+                        <tr><td>&nbsp;</td></tr>-->
                         <tr>
                             <td width="100%" colspan='4'>
                                 <?
@@ -100,7 +100,7 @@ if($myerror->getWarn()){
                                 ?></td>
                         </tr>
                     </table>
-                </fieldset>
+                <!--</fieldset>-->
             </td>
         </tr>
     </table>

@@ -56,13 +56,13 @@ $form->begin();
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
 ?>
-<h1 class="green">SUPPLIER<em>* indicates required fields</em></h1>
+<!--<h1 class="green">SUPPLIER<em>* indicates required fields</em></h1>-->
 
 <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 	<td align="center">	
-	<fieldset>
-	<legend class='legend'>Search</legend>
+	<!--<fieldset>
+	<legend class='legend'>Search</legend>-->
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right">Supplier ID : </td>
@@ -70,13 +70,13 @@ $form->begin();
 				<td align="right">Name : </td>
 				<td align="left"><? $form->show('name'); ?></td>
 			</tr>
-            <tr>
+            <!--<tr>
 				<td align="right">Website : </td>
-				<td align="left"><? $form->show('website'); ?></td>
+				<td align="left"><?/* $form->show('website'); */?></td>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
-			</tr>           	
-			<tr><td>&nbsp;</td></tr>
+			</tr>
+			<tr><td>&nbsp;</td></tr>-->
 			<tr>
 				<td width="100%" colspan='4'>
 				<?
@@ -86,7 +86,7 @@ $form->begin();
 				?></td>
 			</tr>				
 		</table>
-	</fieldset>	
+	<!--</fieldset>-->
 	</td>	
 	</tr>
 </table>
@@ -154,13 +154,14 @@ $form->begin();
 		$rs->SetRecordCol("Name", "name");
 		$rs->SetRecordCol("Name(EN)", "name_en");
 		$rs->SetRecordCol("Address", "address");
-		$rs->SetRecordCol("Tel", "tel");
-		$rs->SetRecordCol("Website", "website");
+		//$rs->SetRecordCol("Tel", "tel");
+		//$rs->SetRecordCol("Website", "website");
 
 		$sort = GENERAL_NO;
 		$edit = GENERAL_YES;
 		$rs->SetRecordCol("MODIFY", "sid", $sort, $edit,"?act=com-modifysupplier","modid");
-		$rs->SetRecordCol("ADD", "sid", $sort, $edit,"?act=com-s_addcontact","sid");
+		$rs->SetRecordCol("ADD CONTACT", "sid", $sort, $edit,"?act=com-s_addcontact","sid");
+		$rs->SetRecordCol("VIEW CONTACT", "sid", $sort, $edit,"?act=com-s_searchcontact&page=1","sid");
 		$rs->SetRecordCol("DEL", "sid", $sort, $edit,"?act=com-modifysupplier","delid");
 		$rs->SetRSSorting('?act=com-searchsupplier');
 
