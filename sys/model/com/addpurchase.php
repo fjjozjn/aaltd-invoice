@@ -191,9 +191,9 @@ if($myerror->getError()){
 
 	
 	?>
-<h1 class="green">Factory PO<em>* item must be filled in</em></h1>
+<!--<h1 class="green">Factory PO<em>* item must be filled in</em></h1>
 <fieldset> 
-<legend class='legend'>Add Factory PO</legend>
+<legend class='legend'>Add Factory PO</legend>-->
 
 <? /*
 <fieldset> 
@@ -321,7 +321,7 @@ $goodsForm->begin();
 <?
 $goodsForm->show('submitbtn');
 ?>
-</fieldset>
+<!--</fieldset>-->
 <?
 $goodsForm->end();
 

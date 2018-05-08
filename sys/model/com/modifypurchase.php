@@ -500,7 +500,7 @@ if($myerror->getWarn()){
 
 
         ?>
-        <h1 class="green">Factory PO<em>* item must be filled in</em><? show_status_new($mod_result['istatus']);?></h1>
+        <!--<h1 class="green">Factory PO<em>* item must be filled in</em><?/* show_status_new($mod_result['istatus']);*/?></h1>-->
         <? /*
 	<fieldset> 
 	<legend class='legend'>Selected products</legend>
@@ -526,22 +526,22 @@ if($myerror->getWarn()){
 	*/
         ?>
         <? if(!isset($_GET['pvid'])){ ?>
-            <fieldset>
+            <!--<fieldset>
                 <legend class='legend'>Action</legend>
                 <div style="margin-left:28px;">
-                    <?
+                    <?/*
                     if (isSysAdmin()){
-                        ?>
-                        <a class="button" href="?act=com-modifypurchase&approve_po_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b><?=($mod_result['istatus']=='(D)')?'Approve':'Disapprove'?></b></a>
-                    <?
+                        */?>
+                        <a class="button" href="?act=com-modifypurchase&approve_po_no=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b><?/*=($mod_result['istatus']=='(D)')?'Approve':'Disapprove'*/?></b></a>
+                    <?/*
                     }
-                    ?>
-                    <a class="button" href="model/com/purchase_pdf2.php?pcid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="?act=com-modifypurchase&copypcid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Copy</b></a><a class="button" href="?act=com-overheads&page=1&po_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Overheads</b></a><a class="button" href="?act=com-settlement&page=1&po_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Settlement</b></a><a class="button" href="?act=com-search_qc_report&page=1&pcid=<?=$_GET['modid']?>" ><b>QC REPORT</b></a><!--<a class="button" href="javascript:if(confirm('This operation will lead to the deletion of the data could not be resumed, confirmed to delete?'))window.location='?act=com-modifypurchase&delid=<?/*=$_GET['modid']*/?>'"><b>DEL</b></a>--></div>
-            </fieldset>
+                    */?>
+                    <a class="button" href="model/com/purchase_pdf2.php?pcid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="?act=com-modifypurchase&copypcid=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b>Copy</b></a><a class="button" href="?act=com-overheads&page=1&po_no=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b>Overheads</b></a><a class="button" href="?act=com-settlement&page=1&po_no=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b>Settlement</b></a><a class="button" href="?act=com-search_qc_report&page=1&pcid=<?/*=$_GET['modid']*/?>" ><b>QC REPORT</b></a></div>
+            </fieldset>-->
         <? } ?>
 
-        <fieldset>
-        <legend class='legend'><? if(isset($_GET['pvid'])){ echo 'Proforma To Purchase';}elseif(isset($_GET['copypcid'])){ echo 'Copy Factory PO';}else{ echo 'Modify Factory PO';} ?></legend>
+        <!--<fieldset>
+        <legend class='legend'><?/* if(isset($_GET['pvid'])){ echo 'Proforma To Purchase';}elseif(isset($_GET['copypcid'])){ echo 'Copy Factory PO';}else{ echo 'Modify Factory PO';} */?></legend>-->
         <?php
         $goodsForm->begin();
         ?>
@@ -574,19 +574,19 @@ if($myerror->getWarn()){
         </table>
 
         <?php if(isset($_GET['modid']) && $_GET['modid'] != ''){ ?>
-            <div class="line"></div>
+            <!--<div class="line"></div>
             <br />
             <div style="margin-left: 28px;"><label class="formtitle" for="g_cast"><font size="+1">生产计划</font></label></div>
             <table width="100%" id="table">
                 <tr class="formtitle">
-                    <td width="20%"><div class="set"><label class="formtitle">起板期</label><br /><?=(isset($pp_result['pc_date1'])?$pp_result['pc_date1']:'(None)')?></div></td>
-                    <td width="20%"><div class="set"><label class="formtitle">半成品期</label><br /><?=(isset($pp_result['pc_date2'])?$pp_result['pc_date2']:'(None)')?></div></td>
-                    <td width="20%"><div class="set"><label class="formtitle">成品期</label><br /><?=(isset($pp_result['pc_date3'])?$pp_result['pc_date3']:'(None)')?></div></td>
-                    <td width="20%"><div class="set"><label class="formtitle">QC日期</label><br /><?=(isset($pp_result['pc_date4'])?$pp_result['pc_date4']:'(None)')?></div></td>
-                    <td width="20%"><div class="set"><label class="formtitle">出货日期</label><br /><?=(isset($pp_result['pc_date5'])?$pp_result['pc_date5']:'(None)')?></div></td>
+                    <td width="20%"><div class="set"><label class="formtitle">起板期</label><br /><?/*=(isset($pp_result['pc_date1'])?$pp_result['pc_date1']:'(None)')*/?></div></td>
+                    <td width="20%"><div class="set"><label class="formtitle">半成品期</label><br /><?/*=(isset($pp_result['pc_date2'])?$pp_result['pc_date2']:'(None)')*/?></div></td>
+                    <td width="20%"><div class="set"><label class="formtitle">成品期</label><br /><?/*=(isset($pp_result['pc_date3'])?$pp_result['pc_date3']:'(None)')*/?></div></td>
+                    <td width="20%"><div class="set"><label class="formtitle">QC日期</label><br /><?/*=(isset($pp_result['pc_date4'])?$pp_result['pc_date4']:'(None)')*/?></div></td>
+                    <td width="20%"><div class="set"><label class="formtitle">出货日期</label><br /><?/*=(isset($pp_result['pc_date5'])?$pp_result['pc_date5']:'(None)')*/?></div></td>
                 </tr>
             </table>
-            <br />
+            <br />-->
 
         <?php } ?>
 
@@ -727,7 +727,7 @@ if($myerror->getWarn()){
                     <td>&nbsp;</td>
                 </tr>
                 <? if(isset($_GET['modid'])){ ?>
-                    <tr>
+                    <!--<tr>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -735,9 +735,9 @@ if($myerror->getWarn()){
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td style="text-align: right">Overheads : </td>
-                        <td><div class="total" id="overhead"><?=formatMoney($overheads)?></div></td>
+                        <td><div class="total" id="overhead"><?/*=formatMoney($overheads)*/?></div></td>
                         <td style="text-align: center">[<a
-                                href="?act=com-overheads&page=1&po_no=<?=$_GET['modid']?>&po_date=<?=date('Y-m-d')?>">+</a>]</td>
+                                href="?act=com-overheads&page=1&po_no=<?/*=$_GET['modid']*/?>&po_date=<?/*=date('Y-m-d')*/?>">+</a>]</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
@@ -747,9 +747,9 @@ if($myerror->getWarn()){
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td style="text-align: right">Paid : </td>
-                        <td><div class="total" id="paid"><?=formatMoney($paid)?></div></td>
+                        <td><div class="total" id="paid"><?/*=formatMoney($paid)*/?></div></td>
                         <td style="text-align: center">[<a
-                                href="?act=com-settlement&page=1&po_no=<?=$_GET['modid']?>&st_date=<?=date('Y-m-d')?>">+</a>]</td>
+                                href="?act=com-settlement&page=1&po_no=<?/*=$_GET['modid']*/?>&st_date=<?/*=date('Y-m-d')*/?>">+</a>]</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
@@ -759,9 +759,9 @@ if($myerror->getWarn()){
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td style="text-align: right">Balance : </td>
-                        <td><div class="total" id="balance"><?=formatMoney($balance)?></div></td>
+                        <td><div class="total" id="balance"><?/*=formatMoney($balance)*/?></div></td>
                         <td>&nbsp;</td>
-                    </tr>
+                    </tr>-->
                 <? } ?>
             </table>
 
@@ -783,20 +783,20 @@ if($myerror->getWarn()){
         <?
         $goodsForm->show('submitbtn');
         ?>
-        </fieldset>
+        <!--</fieldset>-->
         <? if(!isset($_GET['pvid'])){ ?>
-            <fieldset>
+            <!--<fieldset>
                 <legend class='legend'>Action</legend>
                 <div style="margin-left:28px;">
-                    <?
+                    <?/*
                     if (isSysAdmin()){
-                        ?>
-                        <a class="button" href="?act=com-modifypurchase&approve_po_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b><?=($mod_result['istatus']=='(D)')?'Approve':'Disapprove'?></b></a>
-                    <?
+                        */?>
+                        <a class="button" href="?act=com-modifypurchase&approve_po_no=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b><?/*=($mod_result['istatus']=='(D)')?'Approve':'Disapprove'*/?></b></a>
+                    <?/*
                     }
-                    ?>
-                    <a class="button" href="model/com/purchase_pdf2.php?pcid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="?act=com-modifypurchase&copypcid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Copy</b></a><a class="button" href="?act=com-overheads&page=1&po_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Overheads</b></a><a class="button" href="?act=com-settlement&page=1&po_no=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Settlement</b></a><a class="button" href="?act=com-search_qc_report&page=1&pcid=<?=$_GET['modid']?>" ><b>QC REPORT</b></a><!--<a class="button" href="javascript:if(confirm('This operation will lead to the deletion of the data could not be resumed, confirmed to delete?'))window.location='?act=com-modifypurchase&delid=<?/*=$_GET['modid']*/?>'"><b>DEL</b></a>--></div>
-            </fieldset>
+                    */?>
+                    <a class="button" href="model/com/purchase_pdf2.php?pcid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="?act=com-modifypurchase&copypcid=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b>Copy</b></a><a class="button" href="?act=com-overheads&page=1&po_no=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b>Overheads</b></a><a class="button" href="?act=com-settlement&page=1&po_no=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b>Settlement</b></a><a class="button" href="?act=com-search_qc_report&page=1&pcid=<?/*=$_GET['modid']*/?>" ><b>QC REPORT</b></a></div>
+            </fieldset>-->
         <? } ?>
         <?
         $goodsForm->end();

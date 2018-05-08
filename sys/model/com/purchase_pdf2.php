@@ -26,7 +26,37 @@ class MYPDF extends TCPDF
     {
         // Logo
         $image_file = K_PATH_IMAGES . 'header.jpg';
-        $this->Image($image_file, '', '', 180, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $this->Image($image_file, '', '', 26, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+
+        $this->SetY(10);
+        $this->SetFont('segoeui', 'B', 17);
+        $this->Cell(150, 10, 'Assential Accessories Limited', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(18);
+        $this->SetFont('droidsansfallback', 'B', 17);
+        $this->Cell(126, 10, '愛尚達飾品有限公司', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(10);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Tel: (852) 3596 5874        Fax: 3996 9844', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(13);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Email: francis@assentialaccessories.com', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(16);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Office: Unit 2918, Asia Trade Centre, 79 ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(19);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Lei Muk Road, Kwai Chung, NT., HK       ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(28);
+        $this->SetFont('droidsansfallback', 'B', 20);
+        $this->Cell(180, 10, '採購訂單', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->Line(15, 37, 195, 37, $style=array('width' => 0.5));
     }
 
     // Page footer
@@ -126,19 +156,19 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
     }
 
     // create some HTML content
-    $pdf->SetFont('droidsansfallback', '', 20);
+    //$pdf->SetFont('droidsansfallback', '', 20);
     //div的高度不可調，用span方便多了！！！
     //找到調高度的方法了
-    $pdf->Ln(1);
-    $html = '<span align="right"><b>採購訂單</b><span/>';
+    //$pdf->Ln(1);
+    //$html = '<span align="right"><b>採購訂單</b><span/>';
     //畫線用了新的GetY方法，就能動態畫線了，此句已經移到下面了
     //$pdf->Line(15,$pdf->GetY(),195,$pdf->GetY());//為了解決<hr />太高不能控制的的bug，用這個來畫表頭下面的直線了
-    $pdf->writeHTML($html, true, false, true, false, '');
+    //$pdf->writeHTML($html, true, false, true, false, '');
     //$pdf->Ln(1);
 
     $pdf->SetFont('droidsansfallback', '', 10);
     $html = '';
-    $html .= '<hr height="2"><table align="left" cellpadding="1" cellspacing="1">
+    $html .= '<!--<hr height="2">--><table align="left" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="15%">致: &nbsp;</td>
 					<td width="35%" rowspan="4"><b>' . $send_to . '</b></td>
@@ -322,8 +352,8 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
     */
 
     $html = '';
-    $html .= '<table cellpadding="1" cellspacing="1"><hr />
-				<tr>
+    $html .= '<table cellpadding="1" cellspacing="1">';
+    /*$html .= '<hr /><tr>
 				<td width="5%">&nbsp;</td>
 				<td width="13%">&nbsp;</td>
 				<td width="16%">&nbsp;</td>
@@ -333,7 +363,7 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
 				<td width="12%" align="right"><b>' . $total . '</b></td>
 				<td width="20%">&nbsp;</td>
 				</tr>
-				<tr><td>&nbsp;</td></tr>';
+				<tr><td>&nbsp;</td></tr>';*/
     /*
     if($result1['discount'] != '' && $result1['discount'] != 0){
         $html .= '<tr>
@@ -345,7 +375,7 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
         $html .= '<tr><td>&nbsp;</td></tr>';
     }
     */
-    $html .= '<hr><tr>
+    $html .= '<hr /><tr>
 				<td colspan="6" align="right">出廠價總和 (RMB):</td>
 				<td width="12%" align="right"><b>' . $total/*mySub($total, $result1['discount'])*/ . '</b></td>
 				<td width="20%">&nbsp;</td>
