@@ -57,7 +57,7 @@ echo $url.'<br />';*/
 // plN5twRtkBnzwHup_UYoSC5n8c2o
 
 //发票开具(无用户抬头)
-$post_data = [
+/*$post_data = [
     'app_id'=>Demo1::$wxappid,
     'order_id'=>"$timestamp",
     'money'=>10.01,
@@ -80,6 +80,34 @@ $post_data = [
     ],
 ];
 $url = $host . '/authorize/collect-invoice-title?signature='.Demo1::generate_sign($post_data, $timestamp).'&timestamp='.$timestamp.'&sn='.$timestamp.$timestamp.'&appkey='.Demo1::$appkey;
+echo $url.'<br />';*/
+
+//发票开具(有用户抬头)
+$post_data = [
+    'app_id'=>Demo1::$wxappid,
+    'order_id'=>"$timestamp",
+    'money'=>10.01,
+    'timestamp'=>"$timestamp",
+    'type'=>0,
+    'source'=>'wap',
+    "callback_url"=>"http://www.snsshop.com",
+    "taxpayer_num"=>"9144030007437956X1",
+    "tax_name"=>"盛灿科技",
+    "buyer_title"=>"张先生",
+    "buyer_title_type"=>1,
+    "card_id"=>"plN5twRtkBnzwHup_UYoSC5n8c2o",
+    "goods_info"=>[
+        [
+            "name"=>"商品1",
+            "tax_code"=>"1020202000000000000",
+            "total_price"=>10.01,
+            "total"=>2,
+            "tax_rate"=>0.13,
+            "tax_amount"=>1.30,
+        ]
+    ],
+];
+$url = $host . '/authorize/authurl-invoice-card?signature='.Demo1::generate_sign($post_data, $timestamp).'&timestamp='.$timestamp.'&sn='.$timestamp.$timestamp.'&appkey='.Demo1::$appkey;
 echo $url.'<br />';
 
 $res = CurlHelper::http_post($url, $post_data, 'json');
