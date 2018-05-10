@@ -46,7 +46,7 @@ $host = 'http://182.254.219.106:8400';
 
 //创建微信卡券模板
 /*$post_data = [
-    'app_id'=>Demo1::$wxappid,
+    'appid'=>Demo1::$wxappid,
     'full_name'=>'深圳盛灿科技股份有限公司',
     'short_name'=>'盛灿科技',
 ];
@@ -58,7 +58,7 @@ echo $url.'<br />';*/
 
 //发票开具(无用户抬头)
 /*$post_data = [
-    'app_id'=>Demo1::$wxappid,
+    'appid'=>Demo1::$wxappid,
     'order_id'=>"$timestamp",
     'money'=>10.01,
     'timestamp'=>"$timestamp",
@@ -84,8 +84,8 @@ echo $url.'<br />';*/
 
 //发票开具(有用户抬头)
 $post_data = [
-    'app_id'=>Demo1::$wxappid,
-    'order_id'=>"$timestamp$timestamp",
+    'appid'=>Demo1::$wxappid,
+    'order_id'=>"$timestamp$timestamp",//订单号位数要大于15位，文档里的不对
     'money'=>10.01,
     'timestamp'=>"$timestamp",
     'type'=>0,
