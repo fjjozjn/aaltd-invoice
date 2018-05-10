@@ -59,26 +59,24 @@ echo $url.'<br />';*/
 $post_data = [
     'app_id'=>Demo1::$wxappid,
     'order_id'=>"$timestamp",
-    'money'=>0.01,
-    'timestamp'=>$timestamp,
+    'money'=>10.01,
+    'timestamp'=>"$timestamp",
     'type'=>1,
     'source'=>'web',
     "callback_url"=>"http://www.snsshop.com",
     "taxpayer_num"=>"9144030007437956X1",
+    "tax_name"=>"盛灿科技",
+    "card_id"=>"plN5twRtkBnzwHup_UYoSC5n8c2o",
     "goods_info"=>[
         [
             "name"=>"商品1",
-            "tax_rate"=>"0.13",
-            "models"=>"XYZ",
-            "unit"=>"个",
-            "total_price"=>"10",
-            "tax_amount"=>"1.3",
+            "tax_code"=>"1020202000000000000",
+            "total_price"=>10.01,
             "total"=>2,
-            "include_tax_flag"=>"1",
-            "tax_code"=>"1020202000000000000"
+            "tax_rate"=>0.13,
+            "tax_amount"=>1.30,
         ]
     ],
-    "card_id"=>"plN5twRtkBnzwHup_UYoSC5n8c2o"
 ];
 $url = $host . '/authorize/collect-invoice-title?signature='.Demo1::generate_sign($post_data, $timestamp).'&timestamp='.$timestamp.'&sn='.$timestamp.$timestamp.'&appkey='.Demo1::$appkey;
 echo $url.'<br />';
