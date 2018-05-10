@@ -25,7 +25,8 @@ class Demo1
         $content = "";
         foreach ($params as $key => $val) {
             if (is_array($val)) {
-                $val = json_encode($val, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES);
+                //$val = json_encode($val, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES);
+                $val = json_encode($val);
             }
             $content .= "$key" . "=" . "$val" . "&";
         }
