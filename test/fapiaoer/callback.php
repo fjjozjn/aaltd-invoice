@@ -5,4 +5,6 @@
  * Time: 16:02
  */
 
-file_put_contents('log.txt', $_POST."\r\n", FILE_APPEND);
+$postData = file_get_contents('php://input');
+file_put_contents('log.txt', $postData."\r\n", FILE_APPEND);
+echo '{"code":0,"msg":"ok"}';
