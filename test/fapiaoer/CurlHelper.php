@@ -54,7 +54,11 @@ class CurlHelper
         curl_setopt($oCurl, CURLOPT_POST,true);
         curl_setopt($oCurl, CURLOPT_POSTFIELDS,$strPOST);
         $sContent = curl_exec($oCurl);
+        var_dump($sContent);
+        echo '<br />';
         $aStatus = curl_getinfo($oCurl);
+        var_dump($aStatus);
+        echo '<br />';
         curl_close($oCurl);
         if(intval($aStatus["http_code"])==200){
             return $sContent;

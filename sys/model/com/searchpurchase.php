@@ -315,7 +315,7 @@ if($myerror->getWarn()){
         $edit = GENERAL_YES;
 
         //20130217 不能在这里用 isSysAdmin 因为里面有select语句，会替代了上面的 backend_list_withfield 找出的数据，导致数据都不见了
-        if ($_SESSION['logininfo']['aName'] == 'ZJN' || $_SESSION['logininfo']['aName'] == 'KEVIN'){
+        if ($_SESSION['logininfo']['aName'] == 'admin'){
             $rs->SetRecordCol("APPROVE", "pcid", $sort, $edit,"?act=com-modifypurchase","approve_po_no");
         }
         $rs->SetRecordCol("Approved by", "approved_by");

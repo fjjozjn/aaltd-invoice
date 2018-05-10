@@ -64,9 +64,9 @@ if($myerror->getWarn()){
 
                 //20150412
                 //send email to fty
-                require_once(ROOT_DIR.'class/Mail/mail.php');
-
+                //require_once(ROOT_DIR.'class/Mail/mail.php');
                 $notice = '';
+                //$notice = ' (';
                 /*$rs = $mysql->q('select AdminName, AdminEmail from tw_admin where FtyName = ? and AdminEmail <> ?', $rtn['sid'], '');
                 if($rs){
                     $rtn_user = $mysql->fetch();
@@ -83,7 +83,7 @@ if($myerror->getWarn()){
                 }*/
 
                 //20150423 只发邮件给purchase里的attention的人
-                $user_rtn = $mysql->qone('select email from contact where concat(title, ?, name, ?, family_name) like ? and email <> ?', ' ', ' ', '%'.trim($rtn['attention']).'%', '');
+                /*$user_rtn = $mysql->qone('select email from contact where concat(title, ?, name, ?, family_name) like ? and email <> ?', ' ', ' ', '%'.trim($rtn['attention']).'%', '');
                 if($user_rtn){
                     $notice .= 'send mail to ';
                     $account_info = array('date' => date('Y-m-d'));
@@ -93,9 +93,10 @@ if($myerror->getWarn()){
 
                     send_mail($user_rtn['email'], '', "新的工廠訂廠 - ".$_GET['approve_po_no']." (ETD: ".$rtn['expected_date'].")", $info, $account_info);
                     $notice .= trim($rtn['attention']).' ';
-                }
+                }*/
+                //$notice = ')';
 
-                $myerror->ok('The Status of Factory PO changed from (D) to (I)! ( <span style="color:red">'.$notice.'</span> )',
+                $myerror->ok('The Status of Factory PO changed from (D) to (I)! <span style="color:red">'.$notice.'</span>',
                     'com-searchpurchase&page=1');
             }
         }elseif($rtn['istatus'] == '(I)'){

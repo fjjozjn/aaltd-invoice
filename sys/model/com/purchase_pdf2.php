@@ -103,7 +103,7 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('LUX');
+    $pdf->SetTitle('Assential Accessories Limited');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 
@@ -438,7 +438,7 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
 
     if ($result1['istatus'] != '' && $result1['istatus'] != '(D)') {
         //mod 20121126 非D状态加approve的公司印章和时间
-        $pdf->Image('../../images/approve_stamp.jpg', $pdf->GetX() + 26, $pdf->GetY() - 38, 22, 22, '', '', '', false, 300, '', false, false, 0, false, false, false);
+        $pdf->Image('../../images/approve_stamp.jpg', $pdf->GetX() + 26, $pdf->GetY() - 38, 25, 20, '', '', '', false, 300, '', false, false, 0, false, false, false);
         $pdf->SetXY($pdf->GetX() + 15, $pdf->GetY() - 7.3);
         $pdf->Cell(0, 0, date('Y-m-d'), 0, 1, 'L', 0, '', 0);
     }
