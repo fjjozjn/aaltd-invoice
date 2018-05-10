@@ -5,4 +5,4 @@
  * Time: 16:02
  */
 
-file_put_contents('log.txt', var_dump($_POST)."\r\n", FILE_APPEND);
+file_put_contents('log.txt', $_POST."\r\n", FILE_APPEND);
