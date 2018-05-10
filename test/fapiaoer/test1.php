@@ -52,6 +52,7 @@ $post_data = [
     'short_name'=>'a',
 ];
 $url = $host . '/card/create-template?signature='.Demo1::generate_sign($post_data, $timestamp).'&timestamp='.$timestamp.'&sn='.$timestamp.$timestamp.'&appkey='.Demo1::$appkey;
+echo $url.'<br />';
 
 //发票开具(无用户抬头)
 /*$post_data = [
@@ -82,5 +83,7 @@ $url = $host . '/authorize/collect-invoice-title?signature='.Demo1::generate_sig
 
 $res = CurlHelper::http_post($url, $post_data, 'json');
 var_dump($res);
+echo '<br />';
 $res = json_decode($res,true);
 var_dump($res);
+echo '<br />';
