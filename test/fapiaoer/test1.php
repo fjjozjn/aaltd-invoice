@@ -46,13 +46,14 @@ $host = 'http://182.254.219.106:8400';
 //创建微信卡券模板
 $post_data = [
     'app_id'=>Demo1::$wxappid,
-    //'full_name'=>'深圳盛灿科技股份有限公司',
-    'full_name'=>'aaa',
-    //'short_name'=>'盛灿科技',
-    'short_name'=>'a',
+    'full_name'=>'深圳盛灿科技股份有限公司',
+    'short_name'=>'盛灿科技',
 ];
 $url = $host . '/card/create-template?signature='.Demo1::generate_sign($post_data, $timestamp).'&timestamp='.$timestamp.'&sn='.$timestamp.$timestamp.'&appkey='.Demo1::$appkey;
 echo $url.'<br />';
+
+// 接口/card/create-template返回的card_id
+
 
 //发票开具(无用户抬头)
 /*$post_data = [
