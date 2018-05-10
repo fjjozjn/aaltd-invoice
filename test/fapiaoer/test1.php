@@ -86,7 +86,7 @@ echo $url.'<br />';*/
 $post_data = [
     'appid'=>Demo1::$wxappid,
     'order_id'=>"$timestamp$timestamp",//订单号位数要大于15位，文档里的不对
-    'money'=>10.01,
+    'money'=>11.01,
     'timestamp'=>"$timestamp",
     'type'=>0,
     'source'=>'wap',
@@ -100,10 +100,10 @@ $post_data = [
         [
             "name"=>"商品1",
             "tax_code"=>"1020202000000000000",
-            "total_price"=>10.01,
-            "total"=>2,
-            "tax_rate"=>0.13,
-            "tax_amount"=>1.30,
+            "total_price"=>12.01,
+            "total"=>3,
+            "tax_rate"=>0.15,
+            "tax_amount"=>1.50,
         ]
     ],
 ];
