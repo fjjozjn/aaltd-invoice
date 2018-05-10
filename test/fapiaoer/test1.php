@@ -85,7 +85,7 @@ echo $url.'<br />';*/
 //发票开具(有用户抬头)
 $post_data = [
     'app_id'=>Demo1::$wxappid,
-    'order_id'=>"$timestamp.$timestamp",
+    'order_id'=>"$timestamp$timestamp",
     'money'=>10.01,
     'timestamp'=>"$timestamp",
     'type'=>0,
