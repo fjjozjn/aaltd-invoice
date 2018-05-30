@@ -267,7 +267,6 @@ $form->begin();
 		//$rs->SetRecordCol("ADD TO INVOICE", "pvid", $sort, $edit,"?act=com-modifyinvoice","pvid");
 		$rs->SetRecordCol("MODIFY", "pvid", $sort, $edit,"?act=com-modifyproforma","modid");
 		$rs->SetRecordCol("DEL", "pvid", $sort, $edit,"?act=com-modifyproforma","delid");
-        $rs->SetRecordCol("ADD INVOICE", "pvid", $sort, $edit,"?act=com-modifyinvoice","pvid");
         $rs->SetRSSorting('?act=com-searchproforma');
 
 /*
