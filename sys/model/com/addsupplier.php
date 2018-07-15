@@ -21,7 +21,9 @@ $formItems = array(
 		'category' => array('title' => 'Category', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20),
 		'website' => array('title' => 'Website', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50),
 		'remark' => array('title' => 'Remark', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 50),
-		
+        'attention' => array('title' => 'Attention', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50),
+		'attention_address' => array('title' => 'Attention Address', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 50),
+
 		'submitbtn'	=> array('type' => 'submit', 'value' => ' Submit '),
 		);
 $goodsForm->init($formItems);
@@ -36,8 +38,10 @@ if(!$myerror->getAny() && $goodsForm->check()){
 	$category = $_POST['category'];
 	$website = $_POST['website'];
 	$remark = $_POST['remark'];
-	
-	$result = $mysql->q('insert into supplier set sid = ?, name = ?, name_en = ?, address = ?, tel = ?, website = ?, remark = ?, type = ?, category = ?', $sid, $name, $name_en, $address, $tel, $website, $remark, $type, $category);
+	$attention = $_POST['attention'];
+	$attention_address = $_POST['attention_address'];
+
+	$result = $mysql->q('insert into supplier set sid = ?, name = ?, name_en = ?, address = ?, tel = ?, website = ?, remark = ?, type = ?, category = ?, attention = ?, attention_address = ?', $sid, $name, $name_en, $address, $tel, $website, $remark, $type, $category, $attention, $attention_address);
 	if($result){
 
         //add action log
@@ -97,7 +101,12 @@ $goodsForm->begin();
     	<td colspan="2"><? $goodsForm->show('remark');?></td>
         <td width="25%">&nbsp;</td>
         <td width="25%">&nbsp;</td>
-    </tr>          
+    </tr>
+    <tr valign="top">
+        <td width="25%"><? $goodsForm->show('attention');?></td>
+        <td colspan="2"><? $goodsForm->show('attention_address');?></td>
+        <td width="25%">&nbsp;</td>
+    </tr>
 </table>
 <div class="line"></div>
 <?

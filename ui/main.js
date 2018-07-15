@@ -1543,70 +1543,105 @@ function selectFtyCustomer(pre){
 
 /* 選擇supplier 的ajax */
 function selectSupplier(pre){
-	$("#"+pre+"sid_container li").click(function(){
+    $("#"+pre+"sid_container li").click(function(){
         //20150122
-		//var selectText = $("#"+pre+"sid_container li").parent().parent().prev().val();
+        //var selectText = $("#"+pre+"sid_container li").parent().parent().prev().val();
         var selectText = $("#"+pre+"sid").val();
-		var attentionSelect = $("#"+pre+"attention");
-		var qs = 'ajax=supplier&act=ajax-search_contact_name&value='+escape(selectText);//ajax傳中文在除firefox以外的瀏覽器都亂碼
-		$.ajax({
-			type: "GET",
-			url: "index.php",
-			data: qs,
-			cache: false,
-			dataType: "html",
-			error: function(){
-				alert('系统错误，查询supplier失败');
-			},
-			success: function(data){
-				if(data.indexOf('no-') < 0){
-					//先移除所有select的option
-					attentionSelect.removeOption(/./);
-					var data_array = data.split("|");
-					//myOption = '{';
-					for(i in data_array){
-						//最後一個參數，使默認每個選項都不選中
-						attentionSelect.addOption(data_array[i], data_array[i], false);
-					}
-					//這一步是將select的option轉為<ul><li>的形式！！！
-					attentionSelect.not('.special').selectbox();
-					
-					$("#"+pre+"attention_container li").click(function(){
-						var attentionSelectText = $("#"+pre+"attention_container li").parent().parent().prev().val();
-						var qs2 = 'ajax=supplier&act=ajax-search_contact_info&value0='+selectText+'&value='+escape(attentionSelectText);
-						$.ajax({
-							type: "GET",
-							url: "index.php",
-							data: qs2,
-							cache: false,
-							dataType: "html",
-							error: function(){
-								alert('系统错误，查询supplier失败(2)');
-							},
-							success: function(data){
-								if(data.indexOf('no-') < 0){
-									var data_array = data.split("|");
-									$("#"+pre+"tel").val(data_array[0]);
-									$("#"+pre+"fax").val(data_array[1]);
-									$("#"+pre+"address").val(data_array[2]);
-								}else{
-									$("#"+pre+"tel").val("");
-									$("#"+pre+"fax").val("");
-									$("#"+pre+"address").val("");
-								}
-							}
-						})
-					})
-				}else{
-					//移除所有select的option
-					attentionSelect.removeOption(/./);
-					attentionSelect.not('.special').selectbox();
-				}
-			}
-		})
-	})	
+        var attentionSelect = $("#"+pre+"attention");
+        var qs = 'ajax=supplier&act=ajax-search_contact_name&value='+escape(selectText);//ajax傳中文在除firefox以外的瀏覽器都亂碼
+        $.ajax({
+            type: "GET",
+            url: "index.php",
+            data: qs,
+            cache: false,
+            dataType: "html",
+            error: function(){
+                alert('系统错误，查询supplier失败');
+            },
+            success: function(data){
+                if(data.indexOf('no-') < 0){
+                    //先移除所有select的option
+                    attentionSelect.removeOption(/./);
+                    var data_array = data.split("|");
+                    //myOption = '{';
+                    for(i in data_array){
+                        //最後一個參數，使默認每個選項都不選中
+                        attentionSelect.addOption(data_array[i], data_array[i], false);
+                    }
+                    //這一步是將select的option轉為<ul><li>的形式！！！
+                    attentionSelect.not('.special').selectbox();
+
+                    $("#"+pre+"attention_container li").click(function(){
+                        var attentionSelectText = $("#"+pre+"attention_container li").parent().parent().prev().val();
+                        var qs2 = 'ajax=supplier&act=ajax-search_contact_info&value0='+selectText+'&value='+escape(attentionSelectText);
+                        $.ajax({
+                            type: "GET",
+                            url: "index.php",
+                            data: qs2,
+                            cache: false,
+                            dataType: "html",
+                            error: function(){
+                                alert('系统错误，查询supplier失败(2)');
+                            },
+                            success: function(data){
+                                if(data.indexOf('no-') < 0){
+                                    var data_array = data.split("|");
+                                    $("#"+pre+"tel").val(data_array[0]);
+                                    $("#"+pre+"fax").val(data_array[1]);
+                                    $("#"+pre+"address").val(data_array[2]);
+                                }else{
+                                    $("#"+pre+"tel").val("");
+                                    $("#"+pre+"fax").val("");
+                                    $("#"+pre+"address").val("");
+                                }
+                            }
+                        })
+                    })
+                }else{
+                    //移除所有select的option
+                    attentionSelect.removeOption(/./);
+                    attentionSelect.not('.special').selectbox();
+                }
+            }
+        })
+    })
 }
 
+/* 選擇supplier 的ajax */
+function selectSupplierNew(pre){
+    $("#"+pre+"sid_container li").click(function(){
+        var selectText = $("#"+pre+"sid").val();
+        var attentionSelect = $("#"+pre+"attention");
+        var attentionAddressSelect = $("#"+pre+"address");
+        var qs = 'ajax=supplier&act=ajax-search_supplier_attention&value='+selectText;
+        $.ajax({
+            type: "GET",
+            url: "index.php",
+            data: qs,
+            cache: false,
+            dataType: "html",
+            error: function(){
+                alert('系统错误，查询supplier失败');
+            },
+            success: function(data){
+                if(data.indexOf('no-') < 0){
+                    //先移除所有select的option
+                    attentionSelect.removeOption(/./);
+                    var data_array = data.split("|");
+                    attentionSelect.addOption(data_array[0], data_array[0]);
+                    //這一步是將select的option轉為<ul><li>的形式！！！
+                    attentionSelect.not('.special').selectbox();
+                    attentionAddressSelect.val(data_array[1]);
+                }else{
+                    //移除所有select的option
+                    attentionSelect.removeOption(/./);
+                    attentionSelect.not('.special').selectbox();
+                    attentionAddressSelect.val('');
+                }
+            }
+        })
+    })
+}
 
 /* 選擇sample order po 的ajax */
 function selectSampleOrder(pre){

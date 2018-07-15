@@ -41,7 +41,9 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
 		'category' => array('title' => 'Category', 'type' => 'text', 'restrict' => 'number', 'minlen' => 1, 'maxlen' => 20, 'value' => isset($mod_result['category'])?$mod_result['category']:''),
 		'website' => array('title' => 'Website', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['website'])?$mod_result['website']:''),
 		'remark' => array('title' => 'Remark', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['remark'])?$mod_result['remark']:''),
-			
+        'attention' => array('title' => 'Attention', 'type' => 'text', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['attention'])?$mod_result['attention']:''),
+        'attention_address' => array('title' => 'Attention Address', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['attention_address'])?$mod_result['attention_address']:''),
+
 		'submitbtn'	=> array('type' => 'submit', 'value' => ' Save '),
 		);
 			
@@ -59,8 +61,10 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
 		$category = $_POST['category'];
 		$website = $_POST['website'];
 		$remark = $_POST['remark'];
-		
-		$result = $mysql->q('update supplier set name = ?, name_en = ?, address = ?, tel = ?, type = ?, category = ?, website = ?, remark = ? where sid = ?', $name,  $name_en, $address, $tel, $type, $category, $website, $remark, $_GET['modid']);
+		$attention = $_POST['attention'];
+		$attention_address = $_POST['attention_address'];
+
+		$result = $mysql->q('update supplier set name = ?, name_en = ?, address = ?, tel = ?, type = ?, category = ?, website = ?, remark = ?, attention = ?, attention_address = ? where sid = ?', $name,  $name_en, $address, $tel, $type, $category, $website, $remark, $attention, $attention_address, $_GET['modid']);
 		if($result){
 
             //add action log
@@ -126,7 +130,12 @@ $goodsForm->begin();
     	<td colspan="2"><? $goodsForm->show('remark');?></td>
         <td width="25%">&nbsp;</td>
         <td width="25%">&nbsp;</td>
-    </tr>          
+    </tr>
+    <tr valign="top">
+        <td width="25%"><? $goodsForm->show('attention');?></td>
+        <td colspan="2"><? $goodsForm->show('attention_address');?></td>
+        <td width="25%">&nbsp;</td>
+    </tr>
 </table>
 <div class="line"></div>
 <?

@@ -810,7 +810,7 @@ if($myerror->getWarn()){
             //load頁面就更新total值
             UpdateTotal();
             $(".template").hide();
-            selectSupplier("pc_");
+            selectSupplierNew("pc_");
             //***先加載當前屏幕的img，好像沒有效果。。。
             /*
              $("img").lazyload({
