@@ -17,7 +17,7 @@ $formItems = array(
     'vid' => array('type' => 'select', 'options' => get_invoice_no()),
     'ship_to' => array('type' => 'textarea', 'minlen' => 1, 'maxlen' => 150, 'rows' => 2, 'required' => 1, 'nostar' => true, 'addon' => 'style="width:200px"'),
     'tel' => array('type' => 'text', 'minlen' => 1, 'maxlen' => 20),
-    'wh_id' => array('type' => 'select', 'options' => get_warehouse_info(1), 'required' => 1, 'nostar' => true),
+    //'wh_id' => array('type' => 'select', 'options' => get_warehouse_info(1), 'required' => 1, 'nostar' => true),
     'delivery_date' => array('type' => 'text', 'restrict' => 'date', 'value' => date('Y-m-d'), 'required' => 1, 'nostar' => true),
     'unit' => array('type' => 'select', 'options' => $unit, 'value' => 'PCS'),
     'reference' => array('type' => 'text', 'minlen' => 1, 'maxlen' => 50),
@@ -43,12 +43,13 @@ if(!$myerror->getAny() && $goodsForm->check()){
     //20140604 加了 warehouse，现在是9了
     //20140622 加了 delivery date ，现在是10了
     //20140628 加了 cof awb cost costremark，现在是14了
-    $num_except_item = 14;
+    //20181005 去掉 warehouse，现在是13了
+    $num_except_item = 13;
     //'9'这个值随js里item的post个数改变而改变
     //ref输入框去掉了，所以现在是8了
     $num_item = 8;
     //这个只是item前的post个数
-    $item_first = 12;
+    $item_first = 11;
 
 
     //item_num 是 item 的个数
@@ -92,7 +93,7 @@ if(!$myerror->getAny() && $goodsForm->check()){
     if(!$rs){
         //$rs = $mysql->q('insert into packing_list values ('.moreQm(22).')', $pl_id, $_POST['ship_to'], '', $_POST['tel'], $_POST['wh_id'], $_POST['delivery_date'], $_POST['reference'], $_POST['unit'], $_POST['courier_or_forwarder'], $_POST['awb'], $_POST['cost'], $_POST['cost_remark'], count($cartno), '', '', '', dateMore(), '', '', $_SESSION['logininfo']['aName'], '', $_POST['remark']);
         //20150120
-        $rs = $mysql->q('insert into packing_list (pl_id, ship_to, wh_id, delivery_date, po_no, tel, reference_no, unit, courier_or_forwarder, awb, cost, cost_remark, total_cart, total_qty, total_weight, total_cbm, in_date, mod_date, printed_date, created_by, mod_by, remark) values ('.moreQm(22).')', $pl_id, $_POST['ship_to'], $_POST['wh_id'], $_POST['delivery_date'], '', $_POST['tel'], $_POST['reference'], $_POST['unit'], $_POST['courier_or_forwarder'], $_POST['awb'], $_POST['cost'], $_POST['cost_remark'], count($cartno), '', '', '', $now, $now, '', $_SESSION['logininfo']['aName'], '', $_POST['remark']);
+        $rs = $mysql->q('insert into packing_list (pl_id, ship_to, delivery_date, po_no, tel, reference_no, unit, courier_or_forwarder, awb, cost, cost_remark, total_cart, total_qty, total_weight, total_cbm, in_date, mod_date, printed_date, created_by, mod_by, remark) values ('.moreQm(21).')', $pl_id, $_POST['ship_to'], /*$_POST['wh_id'], */$_POST['delivery_date'], '', $_POST['tel'], $_POST['reference'], $_POST['unit'], $_POST['courier_or_forwarder'], $_POST['awb'], $_POST['cost'], $_POST['cost_remark'], count($cartno), 0, 0, 0, $now, $now, $now, $_SESSION['logininfo']['aName'], '', $_POST['remark']);
         if($rs){
 
             //合计
@@ -172,7 +173,7 @@ if(!$myerror->getAny() && $goodsForm->check()){
                 $param['pi_no'] = $key;
                 $param['awb'] = $_POST['awb'];;
                 $param['s_date'] = $_POST['delivery_date'];
-                $param['cost'] = '';
+                $param['cost'] = 0;
                 $param['cost_remark'] = '';
                 $param['s_status'] = $shipment_status;
                 $param['courier_or_forwarder'] = $_POST['courier_or_forwarder'];
@@ -212,17 +213,8 @@ if($myerror->getError()){
     if($myerror->getWarn()){
         require_once(ROOT_DIR.'model/inside_warn.php');
     }
-
-
-    ?>
-    <!--h1 class="green">PRODUCT<em>* indicates required fields</em></h1-->
-
-
-
-    <?php
     $goodsForm->begin();
     ?>
-
     <table width="85%" align="center">
         <tr align="center">
             <td colspan="4" class='headertitle'>Add Packing List</td>
@@ -243,8 +235,8 @@ if($myerror->getError()){
             <td width="25%"><? $goodsForm->show('tel');?></td>
         </tr>
         <tr class="formtitle" valign="top">
-            <td width="25%" align="right">From Warehouse :<h6 class="required">*</h6></td>
-            <td width="25%"><? $goodsForm->show('wh_id');?></td>
+            <!--<td width="25%" align="right">From Warehouse :<h6 class="required">*</h6></td>
+            <td width="25%"><?/* $goodsForm->show('wh_id');*/?></td>-->
             <td width="25%" align="right">Delivery Date :<h6 class="required">*</h6></td>
             <td width="25%"><? $goodsForm->show('delivery_date');?></td>
         </tr>

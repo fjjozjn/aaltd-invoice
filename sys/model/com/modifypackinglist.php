@@ -104,7 +104,7 @@ if($myerror->getWarn()){
             //'vid' => array('type' => 'select', 'options' => get_invoice_no()),
             'ship_to' => array('type' => 'textarea', 'minlen' => 1, 'maxlen' => 150, 'rows' => 2, 'required' => 1, 'value' => isset($mod_result['ship_to'])?$mod_result['ship_to']:'', 'nostar' => true),
             'tel' => array('type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'value' => isset($mod_result['tel'])?$mod_result['tel']:''),
-            'wh_id' => array('type' => 'select', 'options' => get_warehouse_info(1), 'required' => 1, 'value' => isset($mod_result['wh_id'])?$mod_result['wh_id']:'', 'nostar' => true),
+            //'wh_id' => array('type' => 'select', 'options' => get_warehouse_info(1), 'required' => 1, 'value' => isset($mod_result['wh_id'])?$mod_result['wh_id']:'', 'nostar' => true),
             'delivery_date' => array('type' => 'text', 'restrict' => 'date', 'required' => 1, 'value' => isset($mod_result['delivery_date'])?substr($mod_result['delivery_date'], 0, 10):'', 'nostar' => true),
             'unit' => array('type' => 'select', 'options' => $unit, 'value' => isset($mod_result['unit'])?$mod_result['unit']:''),
             'reference' => array('type' => 'text', 'minlen' => 1, 'maxlen' => 50, 'value' => isset($mod_result['reference_no'])?$mod_result['reference_no']:''),
@@ -146,11 +146,12 @@ if($myerror->getWarn()){
             //加了remark，所以现在是9了
             //20140623 加了 wh_id 和 delivery date 所以现在是11了
             //20140628 加了 cof awb cost costremark，现在是15了
-            $num_except_item = 15;
+            //20181005 去掉 wh_id ，现在是14了
+            $num_except_item = 14;
             //'8'这个值随item的post个数改变而改变
             $num_item = 8;
             //这个只是item前的post个数
-            $item_first = 13;
+            $item_first = 12;
 
             //item_num 是 item 的个数
             $item_num = (count($_POST) - $num_except_item) / $num_item;
@@ -188,7 +189,7 @@ if($myerror->getWarn()){
 
             //fb($_POST);fb($item);die();
 
-            $result = $mysql->q('update packing_list set ship_to = ?, tel = ?, wh_id = ?, delivery_date = ?, reference_no = ?, total_cart = ?, unit = ?, courier_or_forwarder = ?, awb = ?, cost = ?, cost_remark = ?, mod_date = ?, mod_by = ?, remark = ? where pl_id = ?', $_POST['ship_to'], $_POST['tel'], $_POST['wh_id'],$_POST['delivery_date'], $_POST['reference'], count($cartno), $_POST['unit'], $_POST['courier_or_forwarder'], $_POST['awb'], $_POST['cost'], $_POST['cost_remark'],
+            $result = $mysql->q('update packing_list set ship_to = ?, tel = ?, delivery_date = ?, reference_no = ?, total_cart = ?, unit = ?, courier_or_forwarder = ?, awb = ?, cost = ?, cost_remark = ?, mod_date = ?, mod_by = ?, remark = ? where pl_id = ?', $_POST['ship_to'], $_POST['tel']/*, $_POST['wh_id']*/,$_POST['delivery_date'], $_POST['reference'], count($cartno), $_POST['unit'], $_POST['courier_or_forwarder'], $_POST['awb'], $_POST['cost'], $_POST['cost_remark'],
                 $now,
                 $_SESSION['logininfo']['aName'],
                 $_POST['remark'],
@@ -283,7 +284,7 @@ if($myerror->getWarn()){
                         $param['pi_no'] = $key;
                         $param['awb'] = $_POST['awb'];
                         $param['s_date'] = $_POST['delivery_date'];
-                        $param['cost'] = '';
+                        $param['cost'] = 0;
                         $param['cost_remark'] = '';
                         $param['s_status'] = $shipment_status;
                         $param['courier_or_forwarder'] = $_POST['courier_or_forwarder'];
@@ -305,7 +306,7 @@ if($myerror->getWarn()){
                                 $param['pi_no'] = $key;
                                 $param['awb'] = $_POST['awb'];
                                 $param['s_date'] = $_POST['delivery_date'];
-                                $param['cost'] = '';
+                                $param['cost'] = 0;
                                 $param['cost_remark'] = '';
                                 $param['s_status'] = $shipment_status;
                                 $param['courier_or_forwarder'] = $_POST['courier_or_forwarder'];
@@ -384,8 +385,8 @@ if($myerror->getWarn()){
                 <td width="25%"><? $goodsForm->show('tel');?></td>
             </tr>
             <tr class="formtitle" valign="top">
-                <td width="25%" align="right">From Warehouse :<h6 class="required">*</h6></td>
-                <td width="25%"><? $goodsForm->show('wh_id');?></td>
+                <!--<td width="25%" align="right">From Warehouse :<h6 class="required">*</h6></td>
+                <td width="25%"><?/* $goodsForm->show('wh_id');*/?></td>-->
                 <td width="25%" align="right">Delivery Date :<h6 class="required">*</h6></td>
                 <td width="25%"><? $goodsForm->show('delivery_date');?></td>
             </tr>

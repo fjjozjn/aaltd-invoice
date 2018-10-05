@@ -25,8 +25,8 @@ class MYPDF extends TCPDF
     public function Header()
     {
         // Logo
-        $image_file = K_PATH_IMAGES . 'header.jpg';
-        $this->Image($image_file, '', '', 26, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $image_file = K_PATH_IMAGES . 'header.png';
+        $this->Image($image_file, '', '', 26, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 
         $this->SetY(10);
         $this->SetFont('segoeui', 'B', 17);

@@ -50,9 +50,9 @@ $form->begin();
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
 ?>
-<h1 class="green">Packing List<em>* indicates required fields</em></h1>
+<!--<h1 class="green">Packing List<em>* indicates required fields</em></h1>-->
 
-<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+<!--<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 	<td align="center">	
 	<fieldset>
@@ -60,24 +60,24 @@ $form->begin();
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right">Packing List No. : </td>
-				<td align="left"><? $form->show('pl_id'); ?></td>
+				<td align="left"><?/* $form->show('pl_id'); */?></td>
 				<td align="right">Invoice No. : </td>
-				<td align="left"><? $form->show('vid'); ?></td>
+				<td align="left"><?/* $form->show('vid'); */?></td>
 			</tr>                       
 			<tr><td>&nbsp;</td></tr>
 			<tr>
 				<td width="100%" colspan='4'>
-				<?
+				<?/*
 				$form->show('submitbutton');
 				// $form->show('resetbutton');
 				
-				?></td>
+				*/?></td>
 			</tr>				
 		</table>
 	</fieldset>	
 	</td>	
 	</tr>
-</table>
+</table>-->
 
 <?
 	$form->end();

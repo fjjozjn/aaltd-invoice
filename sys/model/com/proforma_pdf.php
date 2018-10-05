@@ -11,7 +11,7 @@
 require($_SERVER['DOCUMENT_ROOT'] . '/in7/global_pdf.php');
 //以防未登入就直接访问 
 if (!isset($_SESSION['logininfo'])) {
-    die();
+    //die('Need Login');
 }
 
 require($_SERVER['DOCUMENT_ROOT'] . '/sys/in38/global_admin.php');
@@ -25,8 +25,8 @@ class MYPDF extends TCPDF
     public function Header()
     {
         // Logo
-        $image_file = K_PATH_IMAGES . 'header.jpg';
-        $this->Image($image_file, '', '', 26, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $image_file = K_PATH_IMAGES . 'header.png';
+        $this->Image($image_file, '', '', 26, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 
         $this->SetY(10);
         $this->SetFont('segoeui', 'B', 17);
@@ -77,7 +77,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
         $rtn = $mysql->qone("select printed_by from proforma where pvid = ?", $_GET['pvid']);
         if ($rtn['printed_by'] != $_SESSION['logininfo']['aName']) {
             if (!judgeUserPermGroup($rtn['printed_by'])) {
-                die('Without Permission To Access');
+                //die('Without Permission To Access');
             }
         }
     }

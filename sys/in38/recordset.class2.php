@@ -280,7 +280,7 @@ Class RecordSetControl2 {
 						}elseif( $this->col_content[$j]["title"] == 'TRANSFER'){
                             echo "<a title='Transfer' href='".$temp_link."'><img src='../../images/button_transfer.png'></a>";
                         }elseif( $this->col_content[$j]["title"] == 'EXCEL'){
-                            echo "<a title='EXCEL' href='".$temp_link."'><img src='../../images/button_document-excel.png'></a>";
+                            echo "<a target='_blank' title='EXCEL' href='".$temp_link."'><img src='../../images/button_document-excel.png'></a>";
                         }elseif( $this->col_content[$j]["title"] == 'VIEW CONTACT'){
                             echo "<a title='VIEW CONTACT' href='".$temp_link."'><img src='../../images/button_info2.png'></a>";
                         }elseif( $this->col_content[$j]["title"] == 'BOM'){
