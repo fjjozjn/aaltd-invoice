@@ -219,7 +219,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
 				</table><div></div>';
     $pdf->writeHTML($html, false, false, true, false, '');
 
-    $pdf->SetFont('arial', '', 10);
+    //$pdf->SetFont('droidsansfallback', '', 10);
     $html = '';
     //cellpadding="1" cellspacing="1" 這兩個真是好東西，我的表格內容再也不會擠到一塊了！
     $html .= '<table align="center" cellpadding="1" cellspacing="1">
@@ -233,13 +233,12 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
 					<th width="16%" align="right">NET PRICE</th>
 					<th width="12%" align="right">AMOUNT</th>
 				</tr></table>';
-    $pdf->SetFont('arial', '', 10);//20120704 ie6不显示//$pdf->SetFont('arialbd', '', 10);
     $pdf->writeHTML($html, false, false, true, false, '');
     $pdf->Line(15, $pdf->GetY(), 195, $pdf->GetY());
 
     $html = '';
 
-    $pdf->SetFont('arial', '', 10);
+    //$pdf->SetFont('droidsansfallback', '', 10);
 // 新方法
     $total = 0;
 //product 的個數
@@ -316,14 +315,10 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
 					<th width="16%" align="right">NET PRICE</th>
 					<th width="12%" align="right">AMOUNT</th>
 				</tr></table>';
-                $pdf->SetFont('arial', '', 10);//20120704 ie6不显示//$pdf->SetFont('arialbd', '', 10);
                 $pdf->writeHTML($html, false, false, true, false, '');
                 $pdf->Line(15, $pdf->GetY(), 195, $pdf->GetY());
                 $html = '';
             }
-
-            $pdf->SetFont('arial', '', 10);
-
             $html .= '<table align="center" cellpadding="1" cellspacing="1">
 		<tr>
 			<td width="5%" align="left">' . ($i + 1) . '</td>
@@ -421,7 +416,6 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
     $html .= '<tr><td>&nbsp;</td></tr>';
 
     $html .= '</table>';
-    $pdf->SetFont('arial', '', 10);//20120704 ie6不显示//$pdf->SetFont('arialbd', '', 10);
     $pdf->writeHTML($html, false, false, true, false, '');
 
     $html = '';
@@ -443,7 +437,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
     }
     $html .= '<div align="left">SAY EX-FACTORY: (' . $result1['currency'] . ') &nbsp;' . umoney(mySub($total, $result1['discount'])) . '</div>';
     $html .= '<div align="left">REMARKS: ' . $remarks . '</div>';
-    $pdf->SetFont('arial', '', 10);
+    //$pdf->SetFont('arial', '', 10);
 
     // output the HTML content
     $pdf->writeHTML($html, false, false, true, false, '');
