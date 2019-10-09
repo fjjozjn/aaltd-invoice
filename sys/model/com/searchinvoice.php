@@ -79,52 +79,51 @@ $form->begin();
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
 ?>
-<!--<h1 class="green">INVOICE<em>* indicates required fields</em></h1>
+<!--<h1 class="green">INVOICE<em>* indicates required fields</em></h1>-->
 
 <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 	<td align="center">	
-	<fieldset>
-	<legend class='legend'>Search</legend>
+	<!--<fieldset>
+	<legend class='legend'>Search</legend>-->
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right">Invoice NO. : </td>
-				<td align="left"><?/* $form->show('vid'); */?></td>
-				<td align="right">To : </td>
-				<td align="left"><?/* $form->show('send_to'); */?></td>
+				<td align="left"><? $form->show('vid'); ?></td>
+                <td align="right">Customer PO No. : </td>
+                <td align="left"><? $form->show('reference');?></td>
 			</tr>
-            <tr>
+            <!--<tr>
+                <td align="right">To : </td>
+                <td align="left"><?/* $form->show('send_to'); */?></td>
 				<td align="right">Attention : </td>
 				<td align="left"><?/* $form->show('attention'); */?></td>
-				<td align="right">Created by :</td>
-				<td align="left"><?/* $form->show('printed_by'); */?></td>
 			</tr> 
             <tr>
-				<td align="right">Customer PO No. : </td>
-				<td align="left"><?/* $form->show('reference'); */?></td>
+                <td align="right">Created by :</td>
+                <td align="left"><?/* $form->show('printed_by'); */?></td>
 				<td align="right">Status : </td>
 				<td align="left"><?/* $form->show('istatus'); */?></td>
-			</tr>                       	
+			</tr>-->
 			<tr>
 				<td align="right">Start Date : </td>
-				<td align="left"><?/* $form->show('start_date'); */?></td>
+				<td align="left"><? $form->show('start_date'); ?></td>
                 <td align="right">End Date : </td>
-				<td align="left"><?/* $form->show('end_date'); */?></td>
+				<td align="left"><? $form->show('end_date'); ?></td>
 			</tr>
-			<tr><td>&nbsp;</td></tr>
+			<!--<tr><td>&nbsp;</td></tr>-->
 			<tr>
 				<td width="100%" colspan='4'>
-				<?/*
+				<?
 				$form->show('submitbutton');
 				// $form->show('resetbutton');
-				
-				*/?></td>
+				?></td>
 			</tr>				
 		</table>
-	</fieldset>	
+	<!--</fieldset>-->
 	</td>	
 	</tr>
-</table>-->
+</table>
 
 <?
 	$form->end();
@@ -160,7 +159,7 @@ $form->begin();
 
 		$where_sql = "";
 
-		/*if (strlen(@$_SESSION['search_criteria']['vid'])){
+		if (strlen(@$_SESSION['search_criteria']['vid'])){
 			$where_sql.= " AND vid Like '%".$_SESSION['search_criteria']['vid'].'%\'';
 		}
 		if (strlen(@$_SESSION['search_criteria']['send_to'])){
@@ -171,13 +170,13 @@ $form->begin();
 		}	
 		if (strlen(@$_SESSION['search_criteria']['printed_by'])){
 			$where_sql.= " AND printed_by Like '%".$_SESSION['search_criteria']['printed_by'].'%\'';
-		}	
+		}
 		if (strlen(@$_SESSION['search_criteria']['reference'])){
 			$where_sql.= " AND reference Like '%".$_SESSION['search_criteria']['reference'].'%\'';
-		}	
+		}
 		if (strlen(@$_SESSION['search_criteria']['istatus'])){
 			$where_sql.= " AND istatus Like '%".$_SESSION['search_criteria']['istatus'].'%\'';
-		}				
+		}
 		if (strlen(@$_SESSION['search_criteria']['start_date'])){
 			if (strlen(@$_SESSION['search_criteria']['end_date'])){
 				$where_sql.= " AND mark_date between '".$_SESSION['search_criteria']['start_date']." 00:00:00' AND '".$_SESSION['search_criteria']['end_date']." 23:59:59'";
@@ -186,7 +185,7 @@ $form->begin();
 			}
 		}elseif (strlen(@$_SESSION['search_criteria']['end_date'])){
 			$where_sql.= " AND mark_date < '".$_SESSION['search_criteria']['end_date']." 23:59:59'";
-		}	*/
+		}
 		
 		//普通用户只能搜索到自己开的单
 		if (!isSysAdmin()){

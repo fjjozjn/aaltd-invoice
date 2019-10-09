@@ -109,33 +109,33 @@ if($myerror->getWarn()){
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
     ?>
-    <!--<h1 class="green">Factory PO<em>* indicates required fields</em></h1>
+    <!--<h1 class="green">Factory PO<em>* indicates required fields</em></h1>-->
 
     <table width="850" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
             <td align="center">
-                <fieldset>
-                    <legend class='legend'>Search</legend>
+                <!--<fieldset>
+                    <legend class='legend'>Search</legend>-->
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td align="right">Factory PO No. : </td>
-                            <td align="left"><?/* $form->show('pcid'); */?></td>
+                            <td align="left"><? $form->show('pcid'); ?></td>
+                            <td align="right">Proforma Invoice # : </td>
+                            <td align="left"><? $form->show('reference'); ?></td>
+                        </tr>
+                        <!--<tr>
                             <td align="right">To : </td>
                             <td align="left"><?/* $form->show('send_to'); */?></td>
-                        </tr>
-                        <tr>
                             <td align="right">Attention : </td>
                             <td align="left"><?/* $form->show('attention'); */?></td>
-                            <td align="right">Created by : </td>
-                            <td align="left"><?/* $form->show('created_by'); */?></td>
-                        </tr>
+                        </tr>-->
                         <tr>
                             <td align="right">Creation Date From : </td>
-                            <td align="left"><?/* $form->show('created_start_date'); */?></td>
+                            <td align="left"><? $form->show('created_start_date'); ?></td>
                             <td align="right">Creation Date To : </td>
-                            <td align="left"><?/* $form->show('created_end_date'); */?></td>
+                            <td align="left"><? $form->show('created_end_date'); ?></td>
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td align="right">ETD From : </td>
                             <td align="left"><?/* $form->show('etd_start_date'); */?></td>
                             <td align="right">ETD To : </td>
@@ -148,8 +148,8 @@ if($myerror->getWarn()){
                             <td align="left"><?/* $form->show('end_date'); */?></td>
                         </tr>
                         <tr>
-                            <td align="right">Proforma Invoice # : </td>
-                            <td align="left"><?/* $form->show('reference'); */?></td>
+                            <td align="right">Created by : </td>
+                            <td align="left"><?/* $form->show('created_by'); */?></td>
                             <td align="right">Status : </td>
                             <td align="left"><?/* $form->show('istatus'); */?></td>
                         </tr>
@@ -158,20 +158,20 @@ if($myerror->getWarn()){
                             <td align="left"><?/* $form->show('customer'); */?></td>
                             <td align="right">Supplier : </td>
                             <td align="left"><?/* $form->show('supplier'); */?></td>
-                        </tr>
-                        <tr><td>&nbsp;</td></tr>
+                        </tr>-->
+                        <!--<tr><td>&nbsp;</td></tr>-->
                         <tr>
                             <td width="100%" colspan='4'>
-                                <?/*
+                                <?
                                 $form->show('submitbutton');
                                 // $form->show('resetbutton');
-                                */?></td>
+                                ?></td>
                         </tr>
                     </table>
-                </fieldset>
+                <!--</fieldset>-->
             </td>
         </tr>
-    </table>-->
+    </table>
 
     <?
     $form->end();

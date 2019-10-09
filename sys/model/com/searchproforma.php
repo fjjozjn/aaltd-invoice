@@ -93,56 +93,55 @@ $form->begin();
 ?>
 <!-- <h1 class="green">PROFORMA INVOICE<em>* indicates required fields</em></h1> -->
 
-<!-- <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 	<td align="center">	
-	<fieldset>
-	<legend class='legend'>Search</legend>
+	<!--<fieldset>
+	<legend class='legend'>Search</legend>-->
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right">Proforma Invoice NO. : </td>
-				<td align="left"><? //$form->show('pvid'); ?></td>
-				<td align="right">To : </td>
-                <td align="left"><? //$form->show('send_to'); ?></td>
+				<td align="left"><? $form->show('pvid'); ?></td>
+                <td align="right">Customer PO No. : </td>
+                <td align="left"><? $form->show('reference'); ?></td>
 			</tr>
-            <tr>
+            <!--<tr>
+                <td align="right">To : </td>
+                <td align="left"><?/* $form->show('send_to'); */?></td>
 				<td align="right">Attention : </td>
-				<td align="left"><? //$form->show('attention'); ?></td>
-				<td align="right">Created by :</td>
-				<td align="left"><? //$form->show('printed_by'); ?></td>
+				<td align="left"><?/* $form->show('attention'); */?></td>
 			</tr>
             <tr>
-				<td align="right">Customer PO No. : </td>
-				<td align="left"><? //$form->show('reference'); ?></td>
+                <td align="right">Created by :</td>
+                <td align="left"><?/* $form->show('printed_by'); */?></td>
 				<td align="right">Status : </td>
-				<td align="left"><? //$form->show('istatus'); ?></td>
-			</tr>                        	
+				<td align="left"><?/* $form->show('istatus'); */?></td>
+			</tr>-->
 			<tr>
 				<td align="right">Start Date : </td>
-				<td align="left"><? //$form->show('start_date'); ?></td>
+				<td align="left"><? $form->show('start_date'); ?></td>
                 <td align="right">End Date : </td>
-				<td align="left"><? //$form->show('end_date'); ?></td>
+				<td align="left"><? $form->show('end_date'); ?></td>
 			</tr>
-			<tr>
+			<!--<tr>
 				<td align="right">ETD Start : </td>
-				<td align="left"><? //$form->show('etd_start_date'); ?></td>
+				<td align="left"><?/* $form->show('etd_start_date'); */?></td>
                 <td align="right">ETD End : </td>
-				<td align="left"><? //$form->show('etd_end_date'); ?></td>
-			</tr>			
-			<tr><td>&nbsp;</td></tr>
+				<td align="left"><?/* $form->show('etd_end_date'); */?></td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>-->
 			<tr>
 				<td width="100%" colspan='4'>
 				<?
-				//$form->show('submitbutton');
+				$form->show('submitbutton');
 				// $form->show('resetbutton');
-				
 				?></td>
 			</tr>				
 		</table>
-	</fieldset>	
-	</td>	
+	<!--</fieldset>-->
+	</td>
 	</tr>
-</table> -->
+</table>
 
 <?
 	$form->end();
@@ -183,7 +182,7 @@ $form->begin();
 
 		$where_sql = "";
 
-		/*if (strlen(@$_SESSION['search_criteria']['pvid'])){
+		if (strlen(@$_SESSION['search_criteria']['pvid'])){
 			$where_sql.= " AND pvid Like '%".$_SESSION['search_criteria']['pvid'].'%\'';
 		}
 		if (strlen(@$_SESSION['search_criteria']['send_to'])){
@@ -200,7 +199,7 @@ $form->begin();
 		}
 		if (strlen(@$_SESSION['search_criteria']['istatus'])){
 			$where_sql.= " AND istatus Like '%".$_SESSION['search_criteria']['istatus'].'%\'';
-		}				
+		}
 		if (strlen(@$_SESSION['search_criteria']['start_date'])){
 			if (strlen(@$_SESSION['search_criteria']['end_date'])){
 				$where_sql.= " AND mark_date between '".$_SESSION['search_criteria']['start_date']." 00:00:00' AND '".$_SESSION['search_criteria']['end_date']." 23:59:59'";
@@ -218,7 +217,7 @@ $form->begin();
 			}
 		}elseif (strlen(@$_SESSION['search_criteria']['etd_end_date'])){
 			$where_sql.= " AND expected_date < '".$_SESSION['search_criteria']['etd_end_date']." 23:59:59'";
-		}*/
+		}
 		
 		//普通用户只能搜索到自己开的单
 		if (!isSysAdmin()){
