@@ -34,7 +34,7 @@ $formItems = array(
     'p_sample_order_no' => array('title' => 'Sample Order No.', 'type' => 'select', 'options' => get_sample_order_no()/*, 'required' => 1*/),
     'p_sample_order_no_remark' => array('title' => 'Sample Order No. Remark', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'info' => '臨時的sample order,將會刪除'),
     'p_show_in_catalog' => array('title' => 'Show in catalog', 'type' => 'checkbox', 'options' => array('show')),
-    'p_suggested_price' => array('title' => 'Suggested Price', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'number', 'readonly' => 'readonly'),
+    'p_suggested_price' => array('title' => 'Suggested Price', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'number'/*, 'readonly' => 'readonly'*/),
 
     //暂时设定不可以自由修改时间，如果修改了product的信息，就自动为其插入现在的日期
     //'p_in_date' => array('title' => 'In Date', 'type' => 'text', 'restrict' => 'date'),
@@ -130,7 +130,7 @@ if(!$myerror->getAny() && $goodsForm->check()){
                     $sample_order_no = '';//$_POST['p_sample_order_no'];
                     $sample_order_no_remark = '';//$_POST['p_sample_order_no_remark'];
                     $show_in_catalog = isset($_POST['p_show_in_catalog']) ? 1 : 0;
-                    $suggested_price = 0.00;//$_POST['p_suggested_price'];
+                    $suggested_price = $_POST['p_suggested_price'];
                     $product_file = $file_target;
 
                     //判断是否输入的pid已存在，因为存在的话由于数据库限制，就会新增失败
@@ -235,7 +235,7 @@ if($myerror->getError()){
             <tr valign="top">
                 <td width="25%"><? $goodsForm->show('p_ccode');?></td>
                 <td width="25%"><? /*$goodsForm->show('p_exclusive_to');*/?></td>
-                <td width="25%"><? /*$goodsForm->show('p_suggested_price');*/?></td>
+                <td width="25%"><? $goodsForm->show('p_suggested_price'); ?></td>
                 <td width="25%"><? /*$goodsForm->show('p_theme');*/?></td>
             </tr>
             <tr>

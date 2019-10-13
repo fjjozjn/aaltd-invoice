@@ -654,10 +654,8 @@ MADE IN CHINA';
         <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <!--<td align="right">Total QTY: </td>
-            <td><div style="text-align: left; padding-left: 20px;" id="qty"><?/*=$total_qty*/?></div></td>-->
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td align="right">Total QTY: </td>
+            <td><div style="text-align: left; padding-left: 20px;" id="qty"><?=$total_qty?></div></td>
             <td>&nbsp;</td>
             <td align="right">Total: </td>
             <td><div class="total" id="total">0</div></td>

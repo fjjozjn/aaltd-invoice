@@ -1479,7 +1479,7 @@ function get_fty_color($pcid){
 }
 //20140218 get unit
 function get_unit(){
-    $unit = '';
+    $unit = [];
     $rs = mysql_q('select * from unit');
     if($rs){
         $rows = mysql_fetch();
@@ -1491,7 +1491,7 @@ function get_unit(){
 }
 //20140303 用户整合到一个表后 获取用户
 function get_user($user_type){
-    $user = '';
+    $user = [];
     if (isSysAdmin()){
         $rs = mysql_q('select AdminName from tw_admin where AdminName <> ? and AdminEnabled = 1 and AdminPlatform like ?', 'ZJN', '%'.$user_type.'%');
     }else{
@@ -1508,7 +1508,7 @@ function get_user($user_type){
 }
 //20140501
 function get_supplier(){
-    $supplier = '';
+    $supplier = [];
     $rs = mysql_q('select sid, name from supplier');
     if($rs){
         $rows = mysql_fetch();
@@ -1520,7 +1520,7 @@ function get_supplier(){
 }
 //20141212
 function get_supplier_fty(){
-    $supplier = '';
+    $supplier = [];
     if (isFtyAdmin()){
         $rs = mysql_q('select sid, name from supplier');
     }else{

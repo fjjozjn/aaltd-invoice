@@ -876,9 +876,10 @@ function searchProduct(num, i){
         //20131020 add 的时候没有 delivery_num 因为要有pcid才行，add的时候没有pcid
         if(local_url.indexOf('modifypurchase') > 0){
             //add scode 20130325
-            var scode_td = pid_input.parent().parent().next().children();
+            //scode change to ccode 20191012
+            var ccode_td = pid_input.parent().parent().next().children();
             //Description輸入框
-            var des_input = scode_td.parent().next().children().children();
+            var des_input = ccode_td.parent().next().children().children();
             //Quantity輸入框
             var qut_input = des_input.parent().parent().next().children().children();
             //20131020 add Delivery num 显示处
@@ -1096,9 +1097,12 @@ function searchProduct(num, i){
 
                             if(local_url.indexOf('addpurchase') > 0){
                                 //add scode 20130325
-                                scode_td.html(data_array[5]).end();
+								//scode change to ccode 20191012
+                                ccode_td.html(data_array[4]).end();
                             }else if(local_url.indexOf('modifypurchase') > 0){
                                 delivery_num_td.html(data_array[6]).end();
+                                //scode change to ccode 20191012
+                                ccode_td.html(data_array[4]).end();
                             }else if(local_url.indexOf('modifyinvoice') > 0){
                                 packinglist_num_td.html(data_array[6]).end();
                             }

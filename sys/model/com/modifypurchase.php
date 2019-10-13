@@ -599,7 +599,7 @@ if($myerror->getWarn()){
                 <tr class="formtitle nodrop nodrag">
                     <td width="3%"></td>
                     <td width="13%">Product ID</td>
-                    <td width="8%" align="center">S Code</td>
+                    <td width="8%" align="center">Customer Code</td>
                     <td width="25%">Description(Chi)</td>
                     <td width="9%">Quantity</td>
                     <td width="9%">Fty Shipped</td>
@@ -615,7 +615,7 @@ if($myerror->getWarn()){
                 <tr class="template repeat" valign="top" onmouseover="product_itme_mouseover(this)" onmouseout="product_item_mouseout(this)" onmouseup="product_item_mouseup(this)">
                     <td class="dragHandle"></td>
                     <td><? $goodsForm->show('q_pid');?></td>
-                    <td align="center"><div id="scode"></div></td>
+                    <td align="center"><div id="ccode"></div></td>
                     <td><? $goodsForm->show('q_p_description');?></td>
                     <td><? $goodsForm->show('q_p_quantity');?></td>
                     <td align="right"><div id="delivery_num"></div></td>
@@ -664,7 +664,7 @@ if($myerror->getWarn()){
                     <tr class="repeat" valign="top" onmouseover="product_itme_mouseover(this)" onmouseout="product_item_mouseout(this)" onmouseup="product_item_mouseup(this)">
                         <td id="index" class="dragHandle"><?=$i+1?></td>
                         <td><? $goodsForm->show('q_pid'.$i);?></td>
-                        <td align="center"><div id="scode"><?=$pc_item_rtn[$i]['scode']?></div></td>
+                        <td align="center"><div id="ccode"><?=$pc_item_rtn[$i]['ccode']?></div></td>
                         <td><? $goodsForm->show('q_p_description'.$i);?></td>
                         <td><? $goodsForm->show('q_p_quantity'.$i);?></td>
                         <td align="right"><div id="delivery_num"><?=@$pc_item_rtn[$i]['delivery_num']?></div></td>
@@ -694,7 +694,7 @@ if($myerror->getWarn()){
                 <tr class="repeat" valign="top" onmouseover="product_itme_mouseover(this)" onmouseout="product_item_mouseout(this)" onmouseup="product_item_mouseup(this)">
                     <td class="dragHandle"></td>
                     <td><? $goodsForm->show('q_pid'.$i);?></td>
-                    <td align="center"><div id="scode"></div></td>
+                    <td align="center"><div id="ccode"></div></td>
                     <td><? $goodsForm->show('q_p_description'.$i);?></td>
                     <td><? $goodsForm->show('q_p_quantity'.$i);?></td>
                     <td align="right"><div id="delivery_num"></div></td>

@@ -164,7 +164,7 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
                 $sample_order_no = '';//$_POST['p_sample_order_no'];
                 $sample_order_no_remark = '';//$_POST['p_sample_order_no_remark'];
                 $show_in_catalog = isset($_POST['p_show_in_catalog'])?1:0;
-                $suggested_price = 0.00;//$_POST['p_suggested_price'];
+                $suggested_price = $_POST['p_suggested_price'];
 
                 if(isset($_GET['copypid'])){
                     //判断是否输入的pid已存在，因为存在的话由于数据库限制，就会新增失败
@@ -355,7 +355,7 @@ if($myerror->getError()){
                 <tr>
                     <td width="25%"><? $goodsForm->show('p_ccode');?></td>
                     <td width="25%"><? /*$goodsForm->show('p_exclusive_to');*/?></td>
-                    <td width="25%"><? /*$goodsForm->show('p_suggested_price');*//*$goodsForm->show('p_in_date');*/?></td>
+                    <td width="25%"><? $goodsForm->show('p_suggested_price');/*$goodsForm->show('p_in_date');*/?></td>
                     <td width="25%"><? /*$goodsForm->show('p_theme');*/?></td>
                     <!--<td width="25%"><? /*$goodsForm->show('p_show_in_catalog');*/?></td>-->
                 </tr>

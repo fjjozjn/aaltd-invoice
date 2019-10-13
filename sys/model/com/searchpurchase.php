@@ -152,13 +152,13 @@ if($myerror->getWarn()){
                             <td align="left"><?/* $form->show('created_by'); */?></td>
                             <td align="right">Status : </td>
                             <td align="left"><?/* $form->show('istatus'); */?></td>
-                        </tr>
-                        <tr>
-                            <td align="right">Customer : </td>
-                            <td align="left"><?/* $form->show('customer'); */?></td>
-                            <td align="right">Supplier : </td>
-                            <td align="left"><?/* $form->show('supplier'); */?></td>
                         </tr>-->
+                        <tr>
+                            <td align="right">Supplier : </td>
+                            <td align="left"><? $form->show('supplier'); ?></td>
+                            <!--<td align="right">Customer : </td>
+                            <td align="left"><?/* $form->show('customer'); */?></td>-->
+                        </tr>
                         <!--<tr><td>&nbsp;</td></tr>-->
                         <tr>
                             <td width="100%" colspan='4'>
