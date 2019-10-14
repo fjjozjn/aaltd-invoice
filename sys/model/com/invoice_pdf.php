@@ -236,11 +236,12 @@ if (isset($_GET['vid']) && $_GET['vid'] != '') {
     $html = '';
 
     //$pdf->SetFont('arial', '', 10);
-// 新方法
+    // 新方法
     $total = 0;
-//product 的個數
+    //product 的個數
     $rtn_num = count($result2);
-
+    //商品总数量
+    $total_qty = 0;
 
     for ($i = 0; $i < count($result2); $i++) {
         //為了將description數據庫中存儲的 \r\n 轉為<br />
@@ -315,6 +316,7 @@ if (isset($_GET['vid']) && $_GET['vid'] != '') {
             $pdf->writeHTML($html, false, false, true, false, '');
             $html = '';
         }
+        $total_qty += intval($result2[$i]['quantity']);
         $total += intval($result2[$i]['quantity']) * sprintf("%01.2f", round(floatval($result2[$i]['price']), 2));
     }
     $total = formatMoney($total);
@@ -367,8 +369,10 @@ if (isset($_GET['vid']) && $_GET['vid'] != '') {
     $html = '';
     $html .= '<table cellpadding="1" cellspacing="1"><hr />
 				<tr>
-				<td align="right" colspan="7"><b>TOTAL: </b></td>
-				<td align="right"><b>' . $total . '</b></td>
+				<td width="66%" align="right" colspan="5"><b>TOTAL QTY: </b></td>
+				<td width="6%" align="right"><b>' . $total_qty . '</b></td>
+				<td width="16%" align="right"><b>TOTAL: </b></td>
+				<td width="12%" align="right"><b>' . $total . '</b></td>
 				</tr>';
 
     if ($result1['discount'] != '' && $result1['discount'] != 0) {

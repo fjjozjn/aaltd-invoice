@@ -234,11 +234,12 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
     $pdf->Line(15, $pdf->GetY(), 195, $pdf->GetY());
     $html = '';
 
-// 新方法
+    // 新方法
     $total = 0;
-//product 的個數
+    //product 的個數
     $rtn_num = count($result2);
-
+    //商品总数量
+    $total_qty = 0;
 
     for ($i = 0; $i < count($result2); $i++) {
         //為了將description數據庫中存儲的 \r\n 轉為<br />
@@ -301,7 +302,7 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
             $pdf->Line(15, $pdf->GetY(), 195, $pdf->GetY());
         }
         //$pdf->writeHTMLCell('','','','',$html);
-
+        $total_qty += intval($result2[$i]['quantity']);
         $total += intval($result2[$i]['quantity']) * sprintf("%01.2f", round(floatval($result2[$i]['price']), 2));
     }
     $total = formatMoney($total);
@@ -376,7 +377,9 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
     }
     */
     $html .= '<hr /><tr>
-				<td colspan="6" align="right">出廠價總和 (RMB):</td>
+                <td width="50%" align="right" colspan="4"><b>數量總和:</b></td>
+				<td width="6%" align="right"><b>' . $total_qty . '</b></td>
+				<td width="12%" align="right">出廠價總和 (RMB):</td>
 				<td width="12%" align="right"><b>' . $total/*mySub($total, $result1['discount'])*/ . '</b></td>
 				<td width="20%">&nbsp;</td>
 				</tr>';
