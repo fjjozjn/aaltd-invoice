@@ -50,26 +50,26 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
     if (isset($result2)) {
         $page_nums = (count($result2) <= 6) ? 1 : (intval((count($result2) - 6) / 8) + 2);
     }
-    $html = '<h1 align="center">Proforma Invoice</h1>';
+    $html = '<table><tr><td rowspan="16"><img src="http://aaltd-invoice.test/images/excel-header.png"></td></tr></table>';
 
-    $html .= '<hr height="2"><table align="left" cellpadding="1" cellspacing="1">
+    $html .= '<table align="left" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="15%" rowspan="4" valign="top">TO: &nbsp;</td>
 					<td width="43%" rowspan="4"><b>' . $send_to . '</b></td>
-					<td width="20%">INVOICE NO.: &nbsp;</td>
-					<td width="22%"><b>' . $result1['pvid'] . '</b></td>
+					<td width="20%" rowspan="1">INVOICE NO.: &nbsp;</td>
+					<td width="22%" rowspan="1"><b>' . $result1['pvid'] . '</b></td>
 				</tr>
 				<tr>
-					<td width="20%">DATE: &nbsp;</td>
-					<td width="22%"><b>' . $make_date . '</b></td>
+					<td width="20%" rowspan="1">DATE: &nbsp;</td>
+					<td width="22%" rowspan="1"><b>' . $make_date . '</b></td>
 				</tr>
 				<tr>
-					<td width="20%">REFERENCE NO.: &nbsp;</td>
-					<td width="22%"><b>' . $result1['reference_num'] . '</b></td>
+					<td width="20%" rowspan="1">REFERENCE NO.: &nbsp;</td>
+					<td width="22%" rowspan="1"><b>' . $result1['reference_num'] . '</b></td>
 				</tr>
 				<tr>
-					<td width="20%">PACKING NO.: &nbsp;</td>
-					<td width="22%"><b>' . $result1['packing_num'] . '</b></td>
+					<td width="20%" rowspan="1">PACKING NO.: &nbsp;</td>
+					<td width="22%" rowspan="1"><b>' . $result1['packing_num'] . '</b></td>
 				</tr>		
 				<tr>
 					<td width="15%">ATTENTION: &nbsp;</td>
@@ -100,8 +100,8 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
 					<td width="43%" rowspan="2"><b>' . $result1['remark'] . '</b></td>
 					<td width="20%">PRINTED DATE: &nbsp;</td>
 					<td width="22%"><b>' . $printed_date . '</b></td>
-				</tr>																																
-				</table><div></div>';
+				</tr>
+				</table><hr height="2">';
 
     //cellpadding="1" cellspacing="1" 這兩個真是好東西，我的表格內容再也不會擠到一塊了！
     $html .= '<table align="center" cellpadding="1" cellspacing="1">
@@ -120,7 +120,8 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
     $total = 0;
 //product 的個數
     $rtn_num = count($result2);
-
+//商品总数量
+    $total_qty = 0;
 
     for ($i = 0; $i < count($result2); $i++) {
         //為了將description數據庫中存儲的 \r\n 轉為<br />
@@ -174,14 +175,16 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
         if ($i != count($result2) - 1) {
 
         }
-
+        $total_qty += intval($result2[$i]['quantity']);
         $total += intval($result2[$i]['quantity']) * sprintf("%01.2f", round(floatval($result2[$i]['price']), 2));
     }
     $total = formatMoney($total);
 
-    $html .= '<table cellpadding="1" cellspacing="1"><hr />
+    $html .= '<table cellpadding="1" cellspacing="1">
 				<tr>
-				<td align="right" colspan="7"><b>TOTAL: </b></td>
+				<td align="right" colspan="5"><b>TOTAL QTY: </b></td>
+				<td align="right"><b>' . $total_qty . '</b></td>
+				<td align="right"><b>TOTAL: </b></td>
 				<td align="right"><b>' . $total . '</b></td>
 				</tr>';
 

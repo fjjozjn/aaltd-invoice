@@ -274,9 +274,9 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
             }
         }
 
-
+        $firstPageNum = 6;
         $html = '';
-        if ($i < 6) {
+        if ($i < $firstPageNum) {
             $html .= '<table align="center" cellpadding="1" cellspacing="1">';
             $html .= '<tr>
 					<td width="5%" align="left">' . ($i + 1) . '</td>
@@ -302,7 +302,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
         } else {
             $html = '';
             //為在新的一頁加表頭
-            if (($i - 6) % 8 == 0) {
+            if (($i - $firstPageNum) % 8 == 0) {
                 $j = 0; //标记第二也起每页的product个数，8个满，输出html
                 $pdf->AddPage();
                 $html .= '<div></div><table align="center" cellpadding="1" cellspacing="1">

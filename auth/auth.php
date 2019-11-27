@@ -10,7 +10,7 @@ if(isset($_GET['session_id'])){
 	session_id($_GET['session_id']);
 	session_start();
 }else{
-	// http://aaltd-invoice.cxm/auth/auth.php?aAdminEmail=francis309@hotmail.com&aFtyName=&aID=84&aLogin=admin&aName=admin&aNameChi=admin
+	// http://aaltd-invoice.test/auth/auth.php?aAdminEmail=francis309@hotmail.com&aFtyName=&aID=84&aLogin=admin&aName=admin&aNameChi=admin
 	if(session_id() == '') {
 	    session_start();
 	}

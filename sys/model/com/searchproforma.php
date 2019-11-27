@@ -261,6 +261,7 @@ $form->begin();
 		$sort = GENERAL_NO;
 		$edit = GENERAL_YES;
 		$rs->SetRecordCol("PDF", "pvid", $sort, $edit,"model/com/proforma_pdf.php?pdf=1","pvid");
+		$rs->SetRecordCol("EXCEL", "pvid", $sort, $edit,"model/com/proforma_excel.php?excel=1","pvid");
 		//有時太方便反而令人手容易錯
 		//$rs->SetRecordCol("ADD TO PURCHASE", "pvid", $sort, $edit,"?act=com-modifypurchase","pvid");
 		//$rs->SetRecordCol("ADD TO INVOICE", "pvid", $sort, $edit,"?act=com-modifyinvoice","pvid");
