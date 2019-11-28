@@ -320,6 +320,7 @@ if($myerror->getWarn()){
         }
         $rs->SetRecordCol("Approved by", "approved_by");
         $rs->SetRecordCol("PDF", "pcid", $sort, $edit,"model/com/purchase_pdf2.php?pdf=1","pcid");
+        $rs->SetRecordCol("EXCEL", "pcid", $sort, $edit,"model/com/purchase_excel.php?excel=1","pcid");
         //$rs->SetRecordCol("ADD TO PROFORMA", "pcid", $sort, $edit,"#","pcid");
         $rs->SetRecordCol("MODIFY", "pcid", $sort, $edit,"?act=com-modifypurchase","modid");
         $rs->SetRecordCol("DEL", "pcid", $sort, $edit,"?act=com-modifypurchase","delid");

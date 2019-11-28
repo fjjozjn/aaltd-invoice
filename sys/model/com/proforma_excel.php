@@ -50,9 +50,9 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
     if (isset($result2)) {
         $page_nums = (count($result2) <= 6) ? 1 : (intval((count($result2) - 6) / 8) + 2);
     }
-    $html = '<table><tr><td rowspan="16"><img src="http://aaltd-invoice.test/images/excel-header.png"></td></tr></table>';
+    $html = '<table><tr><td rowspan="16"><img src="http://'.$host.'/images/pi-excel-header.png"></td></tr></table>';
 
-    $html .= '<table align="left" cellpadding="1" cellspacing="1">
+    $html .= '<hr><table align="left" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="15%" rowspan="4" valign="top">TO: &nbsp;</td>
 					<td width="43%" rowspan="4"><b>' . $send_to . '</b></td>
@@ -101,7 +101,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
 					<td width="20%">PRINTED DATE: &nbsp;</td>
 					<td width="22%"><b>' . $printed_date . '</b></td>
 				</tr>
-				</table><hr height="2">';
+				</table><hr>';
 
     //cellpadding="1" cellspacing="1" 這兩個真是好東西，我的表格內容再也不會擠到一塊了！
     $html .= '<table align="center" cellpadding="1" cellspacing="1">
