@@ -95,6 +95,10 @@ if($myerror->getWarn()){
             'options' => get_supplier(),
             'value' => @$_SESSION['search_criteria']['supplier'],
         ),
+        'customer_po' => array(
+            'type' => 'text',
+            'value' => @$_SESSION['search_criteria']['customer_po'],
+        ),
         'submitbutton' => array(
             'type' => 'submit',
             'value' => 'Search',
@@ -156,6 +160,8 @@ if($myerror->getWarn()){
                         <tr>
                             <td align="right">Supplier : </td>
                             <td align="left"><? $form->show('supplier'); ?></td>
+                            <td align="right">Customer PO No. : </td>
+                            <td align="left"><? $form->show('customer_po'); ?></td>
                             <!--<td align="right">Customer : </td>
                             <td align="left"><?/* $form->show('customer'); */?></td>-->
                         </tr>
@@ -265,6 +271,9 @@ if($myerror->getWarn()){
         if (strlen(@$_SESSION['search_criteria']['supplier'])){
             $where_sql.= " AND p.sid = '".$_SESSION['search_criteria']['supplier']."'";
         }
+        if (strlen(@$_SESSION['search_criteria']['customer_po'])){
+            $where_sql.= " AND p.customer_po Like '%".$_SESSION['search_criteria']['customer_po']."%'";
+        }
 
         //普通用户只能搜索到自己开的单
         if (!isSysAdmin()){
@@ -288,7 +297,7 @@ if($myerror->getWarn()){
         //$temp_table = ' purchase p left join proforma f on p.reference = f.pvid';
         $temp_table = ' purchase p';
         //$list_field = ' SQL_CALC_FOUND_ROWS p.pcid, p.send_to, p.created_by, p.mark_date, p.istatus, p.reference, p.total, p.expected_date, f.cid ';
-        $list_field = ' SQL_CALC_FOUND_ROWS p.pcid, p.send_to, p.created_by, p.in_date, p.mark_date, p.istatus, p.reference, p.total, p.expected_date, p.customer, p.sid, p.approved_by ';
+        $list_field = ' SQL_CALC_FOUND_ROWS p.pcid, p.send_to, p.created_by, p.in_date, p.mark_date, p.istatus, p.reference, p.total, p.expected_date, p.customer, p.sid, p.approved_by, p.customer_po ';
 
         //get the row count for this seaching criteria
         //$row_count = $mysql->sp('CALL backend_list_count(?, ?)', $temp_table,$where_sql);
@@ -302,6 +311,7 @@ if($myerror->getWarn()){
         $rs->SetRecordCol("Factory PO No.", "pcid");
         $rs->SetRecordCol("To", "send_to");
         $rs->SetRecordCol("Proforma Invoice #", "reference");
+        $rs->SetRecordCol("Customer PO #", "customer_po");
         $rs->SetRecordCol("Customer", "customer");
         $rs->SetRecordCol("Supplier", "sid");
         $rs->SetRecordCol("Total", "total");
