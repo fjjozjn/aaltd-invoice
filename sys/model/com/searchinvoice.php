@@ -222,6 +222,7 @@ $form->begin();
 		$sort = GENERAL_NO;
 		$edit = GENERAL_YES;
 		$rs->SetRecordCol("PDF", "vid", $sort, $edit,"model/com/invoice_pdf.php?pdf=1","vid");
+		$rs->SetRecordCol("EXCEL", "vid", $sort, $edit,"model/com/invoice_excel.php?excel=1","vid");
 		$rs->SetRecordCol("MODIFY", "vid", $sort, $edit,"?act=com-modifyinvoice","modid");
 		$rs->SetRecordCol("DEL", "vid", $sort, $edit,"?act=com-modifyinvoice","delid");
 		$rs->SetRSSorting('?act=com-searchinvoice');

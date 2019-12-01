@@ -50,9 +50,9 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
 
     }
 
-    $html = '<table><tr><td rowspan="16"><img src="http://'.$host.'/images/po-excel-header.png"></td></tr></table>';
+    $html = '<table><tr><td rowspan="9"><img src="http://'.$host.'/images/po-excel-header-900.png"></td></tr></table>';
 
-    $html .= '<hr><table align="left" cellpadding="1" cellspacing="1">
+    $html .= '<table align="left" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="15%">致: &nbsp;</td>
 					<td width="35%" rowspan="4"><b>' . $send_to . '</b></td>
@@ -162,7 +162,7 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
 				<td width="6%" align="right">' . intval($result2[$i]['quantity']) . '</td>
 				<td width="12%" align="right">' . formatMoney($result2[$i]['price']) . '</td>
 				<td width="12%" align="right"><b>' . formatMoney(intval($result2[$i]['quantity']) * sprintf("%01.2f", round(floatval($result2[$i]['price']), 2))) . '</b></td>
-				<td width="20%" rowspan="2">' . $img_html . '</td>
+				<td width="20%" rowspan="8">' . $img_html . '</td>
 			</tr>
 			<tr>
 				<td height="62" width="5%">&nbsp;</td>
