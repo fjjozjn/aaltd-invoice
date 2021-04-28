@@ -213,7 +213,7 @@ if($myerror->getError()){
 	
 	?>
 	
-<h1 class="green">QUOTATION<em>* item must be filled in</em></h1>
+<!--<h1 class="green">QUOTATION<em>* item must be filled in</em></h1>-->
 <? /*
 <fieldset> 
 <legend class='legend'>Selected products</legend>
@@ -237,12 +237,18 @@ if( isset($_SESSION['choose']) && !empty($_SESSION['choose'])){
 </fieldset>
 */
 ?>
-<fieldset> 
+    <!--<fieldset>
 <legend class='legend'>Action</legend>
-<div style="margin-left:28px;"><a class="button" href="model/com/quotation_pdf.php?qid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="model/com/quotation_pdf_photo_list.php?qid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo List</b></a><a class="button" href="model/com/quotation_pdf_photo_price.php?qid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo Price</b></a><a class="button" href="?act=com-modifyproforma&qid=<?=$_GET['modid']?>" onclick="return pdfConfirm()"><b>Add To Proforma</b></a></div>
-</fieldset>
-<fieldset> 
-<legend class='legend'>Modify Quotation</legend>
+<div style="margin-left:28px;"><a class="button" href="model/com/quotation_pdf.php?qid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="model/com/quotation_pdf_photo_list.php?qid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo List</b></a><a class="button" href="model/com/quotation_pdf_photo_price.php?qid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo Price</b></a><a class="button" href="?act=com-modifyproforma&qid=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b>Add To Proforma</b></a></div>
+</fieldset>-->
+
+    <!--不确定需不需要这个 <div style="margin-left:28px;">
+        <a class="button" href="?act=com-modifyproforma&qid=<?/*=$_GET['modid']*/?>" onclick="return pdfConfirm()"><b>Add Proforma</b></a>
+    </div>
+    <div class="line"></div>-->
+
+<!--<fieldset> -->
+<!--<legend class='legend'>Modify Quotation</legend>-->
 <?php
 $goodsForm->begin();
 ?>
@@ -392,12 +398,12 @@ $goodsForm->show('q_remarks');
 <?
 $goodsForm->show('submitbtn');
 ?>
-</fieldset>
+<!--</fieldset>-->
 
-<fieldset> 
+<!--<fieldset>
 <legend class='legend'>Action</legend>
-<div style="margin-left:28px;"><a class="button" href="model/com/quotation_pdf.php?qid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="model/com/quotation_pdf_photo_list.php?qid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo List</b></a><a class="button" href="model/com/quotation_pdf_photo_price.php?qid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo Price</b></a><a class="button" href="?act=com-modifyproforma&qid=<?=$_GET['modid']?>" target='_blank' onclick="return pdfConfirm()"><b>Add To Proforma</b></a></div>
-</fieldset>
+<div style="margin-left:28px;"><a class="button" href="model/com/quotation_pdf.php?qid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>PDF</b></a><a class="button" href="model/com/quotation_pdf_photo_list.php?qid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo List</b></a><a class="button" href="model/com/quotation_pdf_photo_price.php?qid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>PDF - Photo Price</b></a><a class="button" href="?act=com-modifyproforma&qid=<?/*=$_GET['modid']*/?>" target='_blank' onclick="return pdfConfirm()"><b>Add To Proforma</b></a></div>
+</fieldset>-->
 <?
 $goodsForm->end();
 

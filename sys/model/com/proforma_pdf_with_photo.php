@@ -26,8 +26,38 @@ class MYPDF extends TCPDF
     public function Header()
     {
         // Logo
-        $image_file = K_PATH_IMAGES . 'header.jpg';
-        $this->Image($image_file, '', '', 180, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $image_file = K_PATH_IMAGES . 'header.png';
+        $this->Image($image_file, '', '', 26, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+
+        $this->SetY(10);
+        $this->SetFont('segoeui', 'B', 17);
+        $this->Cell(150, 10, 'Assential Accessories Limited', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(18);
+        $this->SetFont('droidsansfallback', 'B', 17);
+        $this->Cell(126, 10, '愛尚達飾品有限公司', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(10);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Tel: (852) 3596 5874        Fax: 3996 9844', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(13);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Email: francis@assentialaccessories.com', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(16);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Office: Unit 2918, Asia Trade Centre, 79 ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(19);
+        $this->SetFont('segoeui', '', 8);
+        $this->Cell(180, 10, 'Lei Muk Road, Kwai Chung, NT., HK       ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->SetY(28);
+        $this->SetFont('times', 'B', 20);
+        $this->Cell(180, 10, 'Proforma Invoice', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+
+        $this->Line(15, 37, 195, 37, $style=array('width' => 0.5));
     }
 
     // Page footer
@@ -125,20 +155,20 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
         $page_nums = (count($result2) <= 6) ? 1 : (intval((count($result2) - 6) / 8) + 2);
     }
     // create some HTML content
-    $pdf->SetFont('times', '', 20);
+    /*$pdf->SetFont('times', '', 20);
     //div的高度不可調，用span方便多了！！！
     //找到調高度的方法了
     $pdf->Ln(1);
     $html = '<span align="right"><b>Proforma Invoice</b><span/>';
     //$pdf->Line(15,99,195,99);//為了解決<hr />太高不能控制的的bug，用這個來畫表頭下面的直線了
-    $pdf->writeHTML($html, true, false, true, false, '');
+    $pdf->writeHTML($html, true, false, true, false, '');*/
     //$pdf->Ln(1);
 
     //20130724 地址中有中文，所以换字体了
     $pdf->SetFont('droidsansfallback', '', 10);
     //$pdf->SetFont('arial', '', 10);
     $html = '';
-    $html .= '<hr height="2"><table align="left" cellpadding="1" cellspacing="1">
+    $html .= '<!--<hr height="2">--><table align="left" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="15%" rowspan="4">TO: &nbsp;</td>
 					<td width="43%" rowspan="4">' . $send_to . '</td>
@@ -190,7 +220,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
 				</table><div></div>';
     $pdf->writeHTML($html, false, false, true, false, '');
 
-    $pdf->SetFont('arial', '', 10);
+    //$pdf->SetFont('arial', '', 10);
     $html = '';
     //cellpadding="1" cellspacing="1" 這兩個真是好東西，我的表格內容再也不會擠到一塊了！
     $html .= '<table align="center" cellpadding="1" cellspacing="1">
@@ -204,13 +234,13 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
 					<th width="16%" align="right">NET PRICE</th>
 					<th width="12%" align="right">AMOUNT</th>
 				</tr></table>';
-    $pdf->SetFont('arial', '', 10);//20120704 ie6不显示//$pdf->SetFont('arialbd', '', 10);
+    //$pdf->SetFont('arial', '', 10);//20120704 ie6不显示//$pdf->SetFont('arialbd', '', 10);
     $pdf->writeHTML($html, false, false, true, false, '');
     $pdf->Line(15, $pdf->GetY(), 195, $pdf->GetY());
 
     $html = '';
 
-    $pdf->SetFont('arial', '', 10);
+    //$pdf->SetFont('arial', '', 10);
 // 新方法
     $total = 0;
 //product 的個數
@@ -353,7 +383,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
     $html .= '<tr><td>&nbsp;</td></tr>';
 
     $html .= '</table>';
-    $pdf->SetFont('arial', '', 10);//20120704 ie6不显示//$pdf->SetFont('arialbd', '', 10);
+    //$pdf->SetFont('arial', '', 10);//20120704 ie6不显示//$pdf->SetFont('arialbd', '', 10);
     $pdf->writeHTML($html, false, false, true, false, '');
 
     $html = '';
@@ -374,7 +404,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
     }
     $html .= '<div align="left">SAY EX-FACTORY: (' . $result1['currency'] . ') &nbsp;' . umoney(mySub($total, $result1['discount'])) . '</div>';
     $html .= '<div align="left">REMARKS: ' . $remarks . '</div>';
-    $pdf->SetFont('arial', '', 10);
+    //$pdf->SetFont('arial', '', 10);
 
     // output the HTML content
     $pdf->writeHTML($html, false, false, true, false, '');

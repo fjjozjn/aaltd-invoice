@@ -231,11 +231,11 @@ Class RecordSetControl2 {
 								*/
 								echo "<a title='Modify' href='".$temp_link."'><img src='../../images/button_write.png'></a>";
 							//}
-						}elseif( $this->col_content[$j]["title"] == 'PDF'){
-							//加了個，能彈出新頁面的連接
-							//echo "<a class='button' target='_blank' href='".$temp_link."'>".$this->col_content[$j]["title"]."</a>";
-							echo "<a target='_blank' title='PDF' href='".$temp_link."'><img src='../../images/button_document-pdf.png'></a>";
-						}elseif( $this->col_content[$j]["title"] == '出货清单'){
+						}elseif( strpos($this->col_content[$j]["title"], 'PDF') !== false){
+                            //加了個，能彈出新頁面的連接
+                            //echo "<a class='button' target='_blank' href='".$temp_link."'>".$this->col_content[$j]["title"]."</a>";
+                            echo "<a target='_blank' title='".$this->col_content[$j]["title"]."' href='".$temp_link."'><img src='../../images/button_document-pdf.png'></a>";
+                        }elseif( $this->col_content[$j]["title"] == '出货清单'){
                             //加了個，能彈出新頁面的連接
                             echo "<a target='_blank' href='".$temp_link."'><img title='出货清单' src='../../images/button_document-pdf.png'></a>";
                         }elseif( $this->col_content[$j]["title"] == '出货发票'){

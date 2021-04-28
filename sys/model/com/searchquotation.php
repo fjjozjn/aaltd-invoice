@@ -70,13 +70,13 @@ $form->begin();
 // print_r_pre($_GET);
 // print_r_pre($GLOBALS);
 ?>
-<h1 class="green">QUOTATION<em>* indicates required fields</em></h1>
+<!--<h1 class="green">QUOTATION<em>* indicates required fields</em></h1>-->
 
 <table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 	<td align="center">	
-	<fieldset>
-	<legend class='legend'>Search</legend>
+	<!--<fieldset>
+	<legend class='legend'>Search</legend>-->
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right">Quotation NO. : </td>
@@ -84,12 +84,12 @@ $form->begin();
 				<td align="right">To : </td>
 				<td align="left"><? $form->show('send_to'); ?></td>
 			</tr>
-            <tr>
+            <!--<tr>
 				<td align="right">Attention : </td>
-				<td align="left"><? $form->show('attention'); ?></td>
+				<td align="left"><?/* $form->show('attention'); */?></td>
 				<td align="right">Created by : </td>
-				<td align="left"><? $form->show('created_by'); ?></td>
-			</tr>           	
+				<td align="left"><?/* $form->show('created_by'); */?></td>
+			</tr>-->
 			<tr>
 				<td align="right">Start Date : </td>
 				<td align="left"><? $form->show('start_date'); ?></td>
@@ -106,7 +106,7 @@ $form->begin();
 				?></td>
 			</tr>				
 		</table>
-	</fieldset>	
+<!--	</fieldset>	-->
 	</td>	
 	</tr>
 </table>

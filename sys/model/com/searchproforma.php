@@ -105,13 +105,13 @@ $form->begin();
                 <td align="right">Customer PO No. : </td>
                 <td align="left"><? $form->show('reference'); ?></td>
 			</tr>
-            <!--<tr>
-                <td align="right">To : </td>
-                <td align="left"><?/* $form->show('send_to'); */?></td>
-				<td align="right">Attention : </td>
-				<td align="left"><?/* $form->show('attention'); */?></td>
-			</tr>
             <tr>
+                <td align="right">To : </td>
+                <td align="left"><? $form->show('send_to'); ?></td>
+                <!--<td align="right">Attention : </td>
+				<td align="left"><?/* $form->show('attention'); */?></td>-->
+            </tr>
+            <!--<tr>
                 <td align="right">Created by :</td>
                 <td align="left"><?/* $form->show('printed_by'); */?></td>
 				<td align="right">Status : </td>
@@ -261,6 +261,7 @@ $form->begin();
 		$sort = GENERAL_NO;
 		$edit = GENERAL_YES;
 		$rs->SetRecordCol("PDF", "pvid", $sort, $edit,"model/com/proforma_pdf.php?pdf=1","pvid");
+        $rs->SetRecordCol("PDF - with Photo", "pvid", $sort, $edit,"model/com/proforma_pdf_with_photo.php?pdf=1&photo","pvid");
 		$rs->SetRecordCol("EXCEL", "pvid", $sort, $edit,"model/com/proforma_excel.php?excel=1","pvid");
 		//有時太方便反而令人手容易錯
 		//$rs->SetRecordCol("ADD TO PURCHASE", "pvid", $sort, $edit,"?act=com-modifypurchase","pvid");

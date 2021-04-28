@@ -164,9 +164,9 @@ if($myerror->getError()){
 
 	
 	?>
-<h1 class="green">QUOTATION<em>* item must be filled in</em></h1>
-<fieldset> 
-<legend class='legend'>Add Quotation</legend>
+<!--<h1 class="green">QUOTATION<em>* item must be filled in</em></h1>
+<fieldset>
+<legend class='legend'>Add Quotation</legend>-->
 
 <? /*
 <fieldset> 
@@ -288,7 +288,7 @@ $goodsForm->show('q_remarks');
 <?
 $goodsForm->show('submitbtn');
 ?>
-</fieldset>
+<!--</fieldset>-->
 <?
 $goodsForm->end();
 

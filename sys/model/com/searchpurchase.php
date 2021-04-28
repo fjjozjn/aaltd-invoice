@@ -127,12 +127,12 @@ if($myerror->getWarn()){
                             <td align="right">Proforma Invoice # : </td>
                             <td align="left"><? $form->show('reference'); ?></td>
                         </tr>
-                        <!--<tr>
+                        <tr>
                             <td align="right">To : </td>
-                            <td align="left"><?/* $form->show('send_to'); */?></td>
-                            <td align="right">Attention : </td>
-                            <td align="left"><?/* $form->show('attention'); */?></td>
-                        </tr>-->
+                            <td align="left"><? $form->show('send_to'); ?></td>
+                            <!--<td align="right">Attention : </td>
+                            <td align="left"><?/* $form->show('attention'); */?></td>-->
+                        </tr>
                         <tr>
                             <td align="right">Creation Date From : </td>
                             <td align="left"><? $form->show('created_start_date'); ?></td>
