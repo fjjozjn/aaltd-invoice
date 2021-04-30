@@ -38,7 +38,7 @@ $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('ZJN');
-$pdf->SetTitle('LUX');
+$pdf->SetTitle('Assential Accessories Limited');
 $pdf->SetSubject('TCPDF');
 $pdf->SetKeywords('TCPDF');
 

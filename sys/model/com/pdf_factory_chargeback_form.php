@@ -66,7 +66,7 @@ and fcb.staff = t.AdminName and fcb_id = ?', $_GET['fcb_id']);
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('LUX');
+    $pdf->SetTitle('Assential Accessories Limited');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 

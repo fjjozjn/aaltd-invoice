@@ -78,7 +78,7 @@ if (isset($_GET['cn_no']) && $_GET['cn_no'] != '') {
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('LUX');
+    $pdf->SetTitle('Assential Accessories Limited');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 
