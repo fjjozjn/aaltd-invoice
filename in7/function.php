@@ -1247,7 +1247,9 @@ function get_currency_type(){
 //20130731 get customer ，$customer变量用到的地方太多了，不知道都改完了没有
 function get_customer(){
     $customer = array();
-    if (!isSysAdmin()){
+    // 20210508 aaltd选customer不需要权限
+    if (false) {
+    //if (!isSysAdmin()){
         // mod 4.4 只显示当前用户group创建的customer，因customer在公司内部属于机密内容，涉及员工利益
         // mod 20120723 customer应该是公用的，不能用新的规则
         // 20120723 下午 旧的当group中有多个名字的时候也不适用
