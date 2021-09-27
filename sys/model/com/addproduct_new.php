@@ -15,10 +15,10 @@ if(!defined('BEEN_INCLUDE') || !is_object($myerror))exit('Welcome to The Matrix'
 $goodsForm = new My_Forms(array('multipart'=>true));
 $formItems = array(
 
-    'p_pid' => array('title' => 'Product ID', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'judgexid', 'required' => 1, 'info' => '请不要使用 # & ’ " 等特殊符号'),
+    'p_pid' => array('title' => 'Product ID', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'judgexid', 'required' => 1, 'info' => '請不要使用 # & ’ " 等特殊符號'),
     'p_cat_num' => array('title' => 'CAT.NO.', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'value' => '000-000'),
     'p_theme' => array('title' => 'Theme', 'type' => 'select', 'options' => getTheme()),
-    'p_type' => array('title' => 'Type', 'type' => 'select', 'options' => get_bom_lb(3), 'addon' => 'onchange="changeBomType(this)"', 'info' => '请先选择Type，Product ID会自动填上'),
+    'p_type' => array('title' => 'Type', 'type' => 'select', 'options' => get_bom_lb(3), 'addon' => 'onchange="changeBomType(this)"', 'info' => '請先選擇Type，Product ID會自動填上'),
 
     'p_description' => array('title' => 'Description', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 1000, 'rows' => 5, 'addon' => 'style="width:400px"'),
     'p_description_chi' => array('title' => '中文描述', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 1000, 'rows' => 5, 'addon' => 'style="width:400px"'),
@@ -28,7 +28,7 @@ $formItems = array(
     'p_ccode' => array('title' => 'Customer code', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20),
     'p_cost_rmb' => array('title' => 'Cost RMB', 'type' => 'text', 'minlen' => 1, 'maxlen' => 20, 'restrict' => 'number', 'required' => 1, 'value' => 0),
     'p_cost_remark' => array('title' => 'Cost remark', 'type' => 'textarea', 'minlen' => 1, 'maxlen' => 200, 'addon' => 'style="width:200px"'),
-    'p_exclusive_to' => array('title' => 'Exclusive to', 'type' => 'select', 'options' => get_customer(), 'info' => '此项选择后才可以填写Suggested Price'),
+    'p_exclusive_to' => array('title' => 'Exclusive to', 'type' => 'select', 'options' => get_customer(), 'info' => '此項選擇後才可以填寫Suggested Price'),
     //20130715 加 select sample_order_no 改原来的 sample_order_no 为 sample_order_no_remark
     //20170826 加required
     'p_sample_order_no' => array('title' => 'Sample Order No.', 'type' => 'select', 'options' => get_sample_order_no()/*, 'required' => 1*/),
@@ -155,11 +155,11 @@ if(!$myerror->getAny() && $goodsForm->check()){
                     }
                 }
             }else{
-                $myerror->error('上传文件 失败! 请选择PDF格式的文件上传! 且文件大小不要超过 10 MB!', 'BACK');
+                $myerror->error('上傳文件 失敗! 請選擇PDF格式的文件上傳! 且文件大小不要超過 10 MB!', 'BACK');
             }
         }
     }else{
-        $myerror->error('上传图片 失败! 请选择JPG、PNG或者GIF格式的图片上传! 且图片大小不要超过 500 KB!', 'BACK');
+        $myerror->error('上傳圖片 失敗! 請選擇JPG、PNG或者GIF格式的圖片上傳! 且圖片大小不要超過 500 KB!', 'BACK');
     }
 }
 
@@ -279,11 +279,11 @@ if($myerror->getError()){
                 cache: false,
                 dataType: "html",
                 error: function(){
-                    alert('系统错误，查询product id失败');
+                    alert('系統錯誤，查詢product id失敗');
                 },
                 success: function(data){
                     if (data.indexOf('no-') >= 0) {
-                        alert('系统错误！查询product id失败');
+                        alert('系統錯誤！查詢product id失敗');
                         obj.val('');//id已存在则清空输入框
                         $('#p_type').val('');
                     } else {

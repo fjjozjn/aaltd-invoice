@@ -140,13 +140,13 @@ if(!$myerror->getAny() && $goodsForm->check()){
 
                 $myerror->ok('新增 Quotation 成功!', 'com-searchquotation&page=1');
             }else{
-                $myerror->error('新增 Quotation 失败', 'BACK');
+                $myerror->error('新增 Quotation 失敗', 'BACK');
             }
         }else{
-            $myerror->error('输入的 Quotation NO.已存在，新增 Quotation 失败', 'BACK');
+            $myerror->error('輸入的 Quotation NO.已存在，新增 Quotation 失敗', 'BACK');
         }
     }else{
-        $myerror->error('不允许在一个单中添加相同的 Product Item ，新增 Quotation 失败', 'BACK');
+        $myerror->error('不允許在一個單中添加相同的 Product Item ，新增 Quotation 失敗', 'BACK');
     }
 }
 

@@ -191,10 +191,10 @@ if(isset($_GET['delid']) && $_GET['delid'] != ''){
 
                 $myerror->ok('修改 Quotation 成功!', 'BACK');
             }else{
-                $myerror->error('修改 Quotation 失败', 'BACK');
+                $myerror->error('修改 Quotation 失敗', 'BACK');
             }
         }else{
-            $myerror->error('不允许在一个单中添加相同的 Product Item ，新增或修改 Quotation 失败', 'BACK');
+            $myerror->error('不允許在一個單中添加相同的 Product Item ，新增或修改 Quotation 失敗', 'BACK');
         }
 	}
 }
