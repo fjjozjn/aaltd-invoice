@@ -78,7 +78,7 @@ if (isset($_GET['pvid']) && $_GET['pvid'] != '') {
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('Assential Accessories Limited');
+    $pdf->SetTitle('Sparkling Bright Ltd.');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 

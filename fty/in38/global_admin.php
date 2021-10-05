@@ -1,7 +1,7 @@
 <?
 
 if(!defined('BEEN_INCLUDE'))exit('Welcome to The Matrix');
-define('SITE_NAME', 'Assential Accessories LTD供應鏈管理系統');
+define('SITE_NAME', 'Sparkling Bright Ltd.供應鏈管理系統');
 define('SITE_VER', '');
 
 //specify functions for admin system

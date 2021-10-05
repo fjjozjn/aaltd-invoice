@@ -803,7 +803,7 @@ if(strpos($act, 'menu') === 0){
     <HR>
 <? }*/ ?>
 <!-- <div align='center'>
-    copyright &copy 2018-<?=/*date("Y")*/"";?> Assential Accessories LTD ALL RIGHTS RESERVED
+    copyright &copy 2021-<?=/*date("Y")*/"";?> Sparkling Bright Ltd. ALL RIGHTS RESERVED
 </div> -->
 
 </body>

@@ -60,7 +60,7 @@ if(isset($_GET['pcid']) && $_GET['pcid'] != ''){
 	// set document information
 	$pdf->SetCreator(PDF_CREATOR);
 	$pdf->SetAuthor('ZJN');
-	$pdf->SetTitle('Assential Accessories Limited');
+	$pdf->SetTitle('Sparkling Bright Ltd.');
 	$pdf->SetSubject('TCPDF');
 	$pdf->SetKeywords('TCPDF');
 	
@@ -416,7 +416,7 @@ echo umoney($num,"rmb");
 	/*
 	$html .= '<table width="100%" style= "border:1px solid black" cellpadding="3" cellspacing="3">
 				<tr align="left">
-					<td width="50%"><font size="+2">審核(Assential Accessories LTD):</font></td>
+					<td width="50%"><font size="+2">審核(Sparkling Bright Ltd.):</font></td>
 					<td width="50%"><font size="+2">確認(工廠):</font></td>
 				</tr>
 				<br />

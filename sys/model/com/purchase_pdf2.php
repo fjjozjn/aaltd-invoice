@@ -30,27 +30,27 @@ class MYPDF extends TCPDF
 
         $this->SetY(10);
         $this->SetFont('segoeui', 'B', 17);
-        $this->Cell(150, 10, 'Assential Accessories Limited', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+        $this->Cell(150, 10, 'Sparkling Bright Ltd.', 0, false, 'C', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(18);
         $this->SetFont('droidsansfallback', 'B', 17);
-        $this->Cell(126, 10, '愛尚達飾品有限公司', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+        $this->Cell(126, 10, '', 0, false, 'C', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(10);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Tel: (852) 3596 5874        Fax: 3996 9844', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Tel: (852) 2485 3638', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(13);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Email: francis@assentialaccessories.com', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Email: marketing@sparklingbright.com.hk', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(16);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Office: Unit 2918, Asia Trade Centre, 79 ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Flat/Rm 4019 40/F One Midtown, 11 Hoi ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(19);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Lei Muk Road, Kwai Chung, NT., HK       ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Shing Road, Tsuen Wan, N.T. HK', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(28);
         $this->SetFont('droidsansfallback', 'B', 20);
@@ -103,7 +103,7 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('Assential Accessories Limited');
+    $pdf->SetTitle('Sparkling Bright Ltd.');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 
@@ -416,7 +416,7 @@ if (isset($_GET['pcid']) && $_GET['pcid'] != '') {
     /*
     $html .= '<table width="100%" style= "border:1px solid black" cellpadding="3" cellspacing="3">
                 <tr align="left">
-                    <td width="50%"><font size="+2">審核(Assential Accessories LTD):</font></td>
+                    <td width="50%"><font size="+2">審核(Sparkling Bright Ltd.):</font></td>
                     <td width="50%"><font size="+2">確認(工廠):</font></td>
                 </tr>
                 <br />

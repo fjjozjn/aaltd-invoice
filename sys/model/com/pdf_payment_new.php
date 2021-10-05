@@ -70,7 +70,7 @@ if(isset($_GET['py_no']) && $_GET['py_no'] != ''){
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('Assential Accessories Limited');
+    $pdf->SetTitle('Sparkling Bright Ltd.');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 

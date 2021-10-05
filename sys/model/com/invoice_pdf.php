@@ -30,27 +30,27 @@ class MYPDF extends TCPDF
 
         $this->SetY(10);
         $this->SetFont('segoeui', 'B', 17);
-        $this->Cell(150, 10, 'Assential Accessories Limited', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+        $this->Cell(150, 10, 'Sparkling Bright Ltd.', 0, false, 'C', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(18);
         $this->SetFont('droidsansfallback', 'B', 17);
-        $this->Cell(126, 10, '愛尚達飾品有限公司', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+        $this->Cell(126, 10, '', 0, false, 'C', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(10);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Tel: (852) 3596 5874        Fax: 3996 9844', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Tel: (852) 2485 3638', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(13);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Email: francis@assentialaccessories.com', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Email: marketing@sparklingbright.com.hk', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(16);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Office: Unit 2918, Asia Trade Centre, 79 ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Flat/Rm 4019 40/F One Midtown, 11 Hoi ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(19);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Lei Muk Road, Kwai Chung, NT., HK       ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Shing Road, Tsuen Wan, N.T. HK', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(28);
         $this->SetFont('times', 'B', 20);
@@ -106,7 +106,7 @@ if (isset($_GET['vid']) && $_GET['vid'] != '') {
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('Assential Accessories Limited');
+    $pdf->SetTitle('Sparkling Bright Ltd.');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 

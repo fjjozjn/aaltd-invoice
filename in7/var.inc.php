@@ -2,8 +2,8 @@
 
 if(!defined('BEEN_INCLUDE'))exit('Welcome to The Matrix');
 
-$host = '47.75.6.38';
-$company_name = 'Assential Accessories LTD';
+$host = '47.242.56.37';
+$company_name = 'Sparkling Bright Ltd.';
 
 // 上傳設置
 $pic_path_ht        = '../files/titleimg/'; //后台图片路径

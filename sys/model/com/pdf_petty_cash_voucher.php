@@ -64,7 +64,7 @@ if(isset($_GET['pcv_id']) && $_GET['pcv_id'] != ''){
     // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('ZJN');
-    $pdf->SetTitle('Assential Accessories Limited');
+    $pdf->SetTitle('Sparkling Bright Ltd.');
     $pdf->SetSubject('TCPDF');
     $pdf->SetKeywords('TCPDF');
 
@@ -128,7 +128,7 @@ if(isset($_GET['pcv_id']) && $_GET['pcv_id'] != ''){
     $html .= '<table align="center" cellpadding="1" cellspacing="1">
 				<tr>
 					<td width="25%"></td>
-					<td width="35%">Assential Accessories LTD</td>
+					<td width="35%">Sparkling Bright Ltd.</td>
 					<td width="12%"></td>
 					<td width="12%"></td>
 					<td width="16%"></td>
