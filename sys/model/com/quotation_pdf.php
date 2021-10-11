@@ -24,7 +24,7 @@ class MYPDF extends TCPDF {
 	public function Header() {
 		// Logo
 		$image_file = K_PATH_IMAGES . 'header.png';
-		$this->Image($image_file, '', '', 26, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+		$this->Image($image_file, '', 10, 40, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 
 		$this->SetY(10);
 		$this->SetFont('segoeui', 'B', 17);
@@ -36,7 +36,7 @@ class MYPDF extends TCPDF {
 
 		$this->SetY(10);
 		$this->SetFont('segoeui', '', 8);
-		$this->Cell(180, 10, 'Tel: (852) 2485 3638', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+		$this->Cell(180, 10, 'Tel: (852) 2485 3638                                   ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
 		$this->SetY(13);
 		$this->SetFont('segoeui', '', 8);
@@ -44,11 +44,11 @@ class MYPDF extends TCPDF {
 
 		$this->SetY(16);
 		$this->SetFont('segoeui', '', 8);
-		$this->Cell(180, 10, 'Flat/Rm 4019 40/F One Midtown, 11 Hoi ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+		$this->Cell(180, 10, 'Flat/Rm 4019 40/F One Midtown, 11 Hoi  ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
 		$this->SetY(19);
 		$this->SetFont('segoeui', '', 8);
-		$this->Cell(180, 10, 'Shing Road, Tsuen Wan, N.T. HK', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+		$this->Cell(180, 10, 'Shing Road, Tsuen Wan, N.T. HK               ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
 		$this->SetY(28);
 		$this->SetFont('times', 'B', 20);
