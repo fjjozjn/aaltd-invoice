@@ -1332,7 +1332,7 @@ function get_jg_customer(){
 //20130805 get pvid only for payment new
 function get_payment_no_py(){
     global $act;
-    $pvid = '';
+    $pvid = [];
     if (isSysAdmin()){
         //20130812 先把 I S 的限制去掉，方便绑定旧的payment数据
         //20130823 payment_new 用只有 I 和 S 的，其他的不变
@@ -1365,7 +1365,7 @@ function get_payment_no_py(){
 }
 //20130805 get pvid (暂时还没有把用 admin_var.php $pvid 的统一过来)
 function get_proforma_no(){
-    $pvid = '';
+    $pvid = [];
     if (isSysAdmin()){
         $rs = mysql_q('select pvid from proforma where istatus <> ? order by pvid desc', 'delete');
     }else{
@@ -1385,7 +1385,7 @@ function get_proforma_no(){
 }
 //20150509 get vid (暂时还没有把用 admin_var.php $vid 的统一过来)
 function get_invoice_no(){
-    $vid = '';
+    $vid = [];
     if (isSysAdmin()){
         $rs = mysql_q('select vid from invoice where istatus <> ? order by vid desc', 'delete');
     }else{
@@ -1403,7 +1403,7 @@ function get_invoice_no(){
 }
 //20130805 get cn_no
 function get_credit_note_no(){
-    $cn_no = '';
+    $cn_no = [];
     if (isSysAdmin()){
         $rs = mysql_q('select cn_no from credit_note order by in_date desc');
     }else{
@@ -1422,7 +1422,7 @@ function get_credit_note_no(){
 }
 //20130808 get new payment py_no for old payment
 function get_py_no(){
-    $py_no = '';
+    $py_no = [];
     if (isSysAdmin()){
         $rs = mysql_q('select py_no from payment_new order by in_date desc');
     }else{
@@ -1442,7 +1442,7 @@ function get_py_no(){
 //20130814 get $pcid
 function get_pcid(){
     global $act;
-    $pcid = '';
+    $pcid = [];
     if (isSysAdmin()){
         if(strpos($act, 'overheads') !== false || strpos($act, 'settlement') !== false){
             $rs = mysql_q('select pcid from purchase where istatus <> ? AND (istatus = ? OR istatus = ?) order by mark_date desc', 'delete', '(I)', '(S)');
