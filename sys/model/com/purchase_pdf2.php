@@ -34,23 +34,23 @@ class MYPDF extends TCPDF
 
         $this->SetY(18);
         $this->SetFont('droidsansfallback', 'B', 17);
-        $this->Cell(126, 10, '', 0, false, 'C', 0, '', 0, false, 'T', 'M');
+        $this->Cell(126, 10, '    亮偉有限公司', 0, false, 'C', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(10);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Tel: (852) 2485 3638                                   ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Tel: (852) 2485 3638                       ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(13);
         $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Email: marketing@sparklingbright.com.hk', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->Cell(180, 10, 'Email: iris@sparklingbright.com.hk', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(16);
-        $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Flat/Rm 4019 40/F One Midtown, 11 Hoi  ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->SetFont('droidsansfallback', '', 8);
+        $this->Cell(180, 10, '香港新界荃灣海盛路11號                ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(19);
-        $this->SetFont('segoeui', '', 8);
-        $this->Cell(180, 10, 'Shing Road, Tsuen Wan, N.T. HK               ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
+        $this->SetFont('droidsansfallback', '', 8);
+        $this->Cell(180, 10, 'One Midtown 40樓 4019室             ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
         $this->SetY(28);
         $this->SetFont('droidsansfallback', 'B', 20);
